@@ -1,13 +1,16 @@
 import React,{useContext} from 'react'
 import { AuthContext } from '../contexts/AuthContext'
-
+import {Button} from 'react-bootstrap'
 
 function Dashboard(){
-    const {currUser}=useContext(AuthContext)
+    const {currUser,signOut}=useContext(AuthContext)
 
 
     return(
-        <h1>Hello, {currUser.email}</h1>
+        <>
+            <h1>Hello, {currUser.email}</h1>
+            <Button onClick={signOut}>Sign Out</Button>
+        </>
     )
 }
 export default Dashboard
