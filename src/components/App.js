@@ -1,7 +1,23 @@
 import React from'react';
+import SignUp from './SignUp'
+import {AuthProvider} from '../contexts/AuthContext'
+import {Container} from 'react-bootstrap'
 
 function App() {
-  return (<h1>We are all about the Greens</h1>);
+  return (
+  <div>
+    <AuthProvider>
+      <Container style = {{height: '100vh'}} className = 'd-flex align-items-center justify-content-center'>
+
+      <div style = {{width: '100%', maxWidth: '400px'}} >
+        <SignUp/>
+      </div>
+      </Container>
+    </AuthProvider>
+
+  </div>
+  
+  );
 }
 
 export default App;
