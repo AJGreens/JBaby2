@@ -37,24 +37,24 @@ function SignUp(){
 
             <Card.Body>
                 <Form onSubmit = {handleSubmit}>
-                <h3 className = 'mb-4 text-center'>Sign up</h3>
-                {error&& <Alert variant='danger'>{error}</Alert>}
+                    <h3 className = 'mb-4 text-center'>Sign up</h3>
+                    {error&& <Alert variant='danger'>{error}</Alert>}
 
-                <Form.Group className = 'mb-3'>
-                    <Form.Label> Username</Form.Label> 
-                     <Form.Control type = 'email' required ref = {emailRef}/>
-                </Form.Group>
-                <Form.Group className = 'mb-3'>
-                    <Form.Label>Password</Form.Label> 
-                     <Form.Control type = 'password' required ref={passwordRef}/>
-                </Form.Group>
-                <Form.Group className = 'mb-3'>
-                    <Form.Label>Confirm Password</Form.Label> 
-                     <Form.Control type = 'password'required ref={passwordConfirmRef}/>
-                </Form.Group>
+                    <Form.Group className = 'mb-3'>
+                        <Form.Label> Username</Form.Label> 
+                        <Form.Control type = 'email' required ref = {emailRef}/>
+                    </Form.Group>
+                    <Form.Group className = 'mb-3'>
+                        <Form.Label>Password</Form.Label> 
+                        <Form.Control type = 'password' required ref={passwordRef}/>
+                    </Form.Group>
+                    <Form.Group className = 'mb-3'>
+                        <Form.Label>Confirm Password</Form.Label> 
+                        <Form.Control type = 'password'required ref={passwordConfirmRef}/>
+                    </Form.Group>
 
 
-                <Button className = 'mt-3' style = {{width: '100%'}} type = 'submit' >Sign up</Button>
+                    <Button className = 'mt-3' style = {{width: '100%'}} type = 'submit' >Sign up</Button>
                 </Form>
             </Card.Body>
         </Card>
