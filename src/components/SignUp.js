@@ -17,7 +17,7 @@ function SignUp(){
     async function handleSubmit(e){
         e.preventDefault()
         if(passwordRef.current.value!==passwordConfirmRef.current.value){
-            setError('Passwords do not atch')
+            setError('Passwords do not match')
         }
         else{
             setError('')
@@ -46,7 +46,7 @@ function SignUp(){
                 </Form.Group>
                 <Form.Group className = 'mb-3'>
                     <Form.Label>Password</Form.Label> 
-                     <Form.Control type = 'password' required ref={passwordRef}/>
+                     <Form.Control min-length="6" type = 'password' required ref={passwordRef}/>
                 </Form.Group>
                 <Form.Group className = 'mb-3'>
                     <Form.Label>Confirm Password</Form.Label> 
