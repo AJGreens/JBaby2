@@ -1,6 +1,7 @@
 import React,{useState,useRef,useContext} from 'react'
 import {Card, Form, Button, Alert} from 'react-bootstrap'
 import {AuthContext} from '../contexts/AuthContext'
+import {Link,useHistory} from 'react-router-dom'
 
 
 
@@ -12,17 +13,20 @@ function SignUp(){
     const passwordRef= useRef()
     const passwordConfirmRef=useRef()
 
+    const history= useHistory()
+
     const [error,setError]= useState()
 
     async function handleSubmit(e){
         e.preventDefault()
         if(passwordRef.current.value!==passwordConfirmRef.current.value){
-            setError('Passwords do not atch')
+            setError('Passwords do not match')
         }
         else{
             setError('')
             try{
                 await signUp(emailRef.current.value,passwordRef.current.value)
+                history.push('/')
             }
             catch{
                 setError('Failed to sign up')
@@ -52,9 +56,8 @@ function SignUp(){
                         <Form.Label>Confirm Password</Form.Label> 
                         <Form.Control type = 'password'required ref={passwordConfirmRef}/>
                     </Form.Group>
-
-
                     <Button className = 'mt-3' style = {{width: '100%'}} type = 'submit' >Sign up</Button>
+                    <p className = 'text-center mt-2'>Already have an account? <Link to='/signin'>Sign In</Link></p>
                 </Form>
             </Card.Body>
         </Card>

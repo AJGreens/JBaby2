@@ -8,7 +8,7 @@ function Dashboard(){
 
     return(
         <>
-            <h1>Hello, {currUser.email}</h1>
+            <h1>Hello, {currUser.displayName}</h1>
             <Button onClick={signOut}>Sign Out</Button>
         </>
     )
