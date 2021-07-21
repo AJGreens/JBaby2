@@ -34,6 +34,7 @@ export function AuthProvider({children}){
         signUp,
         signIn,
         signInGoogle,
+        signOut,
         currUser
     }
 
