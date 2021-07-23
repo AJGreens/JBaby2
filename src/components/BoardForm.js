@@ -17,7 +17,7 @@ function BoardForm(props){
 
     useEffect(()=>{
         setUnit(Object.keys(items[itemIndex].serving)[0])//sets intial unit after component mounts
-        const ref= app.database().ref(currUser.uid)
+        const ref= app.database().ref(currUser.uid+"/"+props.fireRef)
         ref.on('value',snapshot=>{
             const userItems= snapshot.val()
             let allItems=[]
@@ -39,14 +39,14 @@ function BoardForm(props){
     
     function handleAdd(e){
         e.preventDefault()
-        const ref= app.database().ref(currUser.uid)
+        const ref= app.database().ref(currUser.uid+"/"+props.fireRef)
         const currObject=items[itemIndex];
         const serving= Math.ceil(quantity/currObject.serving[unit]*100)/100
         ref.push({name:currObject.name,quantity:quantity,unit:unit,serving:serving})
     }
     
     function handleRemove(itemToken){
-        const ref= app.database().ref(currUser.uid+"/"+itemToken)
+        const ref= app.database().ref(currUser.uid+"/"+props.fireRef+"/"+itemToken)
         ref.remove()
     }
 
