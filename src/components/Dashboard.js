@@ -65,7 +65,7 @@ function Dashboard(){
 
     return(
         <>
-            {/* <BoardForm list={veggieObjects}/> */}
+            <BoardForm list={veggieObjects}/>
             <h1>Hello, {currUser.displayName}</h1>
             <Button onClick={signOut}>Sign Out</Button>
             <h3>Fruits</h3>

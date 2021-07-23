@@ -35,7 +35,7 @@ function BoardForm(props){
 
 
 
-    })
+    },[])
     
     function handleAdd(e){
         e.preventDefault()
@@ -49,7 +49,7 @@ function BoardForm(props){
         const ref= app.database().ref(currUser.uid+"/"+itemToken)
         ref.remove()
     }
-    
+
     return(
         <>
         {/* FORM SECTION */}
