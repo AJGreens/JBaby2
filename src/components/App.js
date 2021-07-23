@@ -9,12 +9,13 @@ import {Container} from 'react-bootstrap'
 import {HashRouter as Router,Switch} from 'react-router-dom'
 
 function App() {
+  // , maxWidth: '400px'
   return (
   <div>
     <AuthProvider>
       <Router>
       <Container style = {{height: '100vh'}} className = 'd-flex align-items-center justify-content-center'>
-      <div style = {{width: '100%', maxWidth: '400px'}} >
+      <div style = {{width: '100%'}} >
         <Switch>
           <PrivateRouteMain path='/' exact component={Dashboard}/>
           <PrivateRouteAccount path='/signin' exact component={SignIn}/>

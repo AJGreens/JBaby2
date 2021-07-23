@@ -27,9 +27,11 @@ function Dashboard(){
         const ref= app.database().ref(currUser.uid)
         ref.push({name: fruitObjects[fruitID].name,quantity: quantity,unit: unit,serving: quantity/fruitObjects[fruitID].serving[unit]})
         console.log(quantity/fruitObjects[fruitID].serving[unit])
-
-            // serving: qtity/fruitObjects.serving[unit]}uan
-        }
+    }
+    function handleRemove(fruitToken){
+        const ref= app.database().ref(currUser.uid+"/"+fruitToken)
+        ref.remove()
+    }
 
    
 
@@ -63,7 +65,7 @@ function Dashboard(){
     return(
         <>
             <h1>Hello, {currUser.displayName}</h1>
-        
+            <Button onClick={signOut}>Sign Out</Button>
             <h3>Fruits</h3>
             
             <select id = 'chooseFruit' value = {fruitID} onChange = {(e)=>setFruitID(e.target.value)}>
@@ -86,12 +88,12 @@ function Dashboard(){
             <Button onClick = {handleAdd}>Add</Button>
             <ul>
                 {fruitList.map(fruit=>{
-                    return (<li>{fruit.name}</li>)
+                    return (<li key={fruit.id}>{fruit.name} {fruit.quantity}{fruit.unit} servings:{fruit.serving}<Button variant="danger" onClick={()=>handleRemove(fruit.id)}>Remove</Button></li>)
                 })
             }
                 
             </ul>
-            <Button onClick={signOut}>Sign Out</Button>
+            
         </>
     )
 }
