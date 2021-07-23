@@ -1,10 +1,10 @@
-import React,{useContext} from 'react'
+import React,{useContext, useState} from 'react'
 import { AuthContext } from '../contexts/AuthContext'
 import {Button} from 'react-bootstrap'
 
 function Dashboard(){
     const {currUser,signOut}=useContext(AuthContext)
-    const fruitOjects=[{"name":"Acerola – West Indian Cherry","serving":{"g":"5","fruit":"1"}},{"name":"Apple","serving":{"g":"140","fruit":"1"}},{"name":"Apricots","serving":{"g":"105","fruit":"3"}},{"name":"Avocado","serving":{"g":"130","fruit":"1/5"}},{"name":"Banana","serving":{"g":"140","fruit":"1"}},{"name":"Blackberries","serving":{"/A":"N","cup":"1"}},{"name":"Blackcurrant","serving":{"g":"59","ml":"125"}},{"name":"Blueberries","serving":{"g":"80","cup":"1/2"}},{"name":"Breadfruit","serving":{"g":"96","fruit":"1/4"}},{"name":"Cantaloupe","serving":{"g":"150","fruit":"1/4"}},{"name":"Carambola","serving":{"g":"89","fruit":"1"}},{"name":"Cherimoya","serving":{"g":"312","fruit":"1"}},{"name":"Cherries","serving":{"g":"140","cherries":"21","cup":"1"}},{"name":"Clementine","serving":{"g":"74","fruit":"1"}},{"name":"Coconut Meat","serving":{"g":"100"}},{"name":"Cranberries","serving":{"cup":"1"}},{"name":"Custard-Apple","serving":{"g":"120","fruit":"1/2"}},{"name":"Date Fruit","serving":{"g":"94","mL":"125"}},{"name":"Durian","serving":{"g":"128","mL":"125"}},{"name":"Elderberries","serving":{"g":"77","ml":"125"}},{"name":"Feijoa","serving":{"g":"100","fruits":"2"}},{"name":"Figs","serving":{"g":"100","fruit":"2"}},{"name":"Gooseberries","serving":{"g":"79","ml":"125"}},{"name":"Grapefruit","serving":{"g":"140","fruit":"1/2"}},{"name":"Grapes","serving":{"g":"140","grapes":"21","cup":"1"}},{"name":"Guava","serving":{"g":"90","fruit":"1"}},{"name":"Honeydew Melon","serving":{"g":"150","fruit":"1/6"}},{"name":"Jackfruit","serving":{"g":"87","ml":"125"}},{"name":"Java-Plum","serving":{"g":"60","fruits":"20"}},{"name":"Jujube Fruit","serving":{"g":"70","fruits":"5"}},{"name":"Kiwifruit","serving":{"g":"140","fruit":"2"}},{"name":"Kumquat","serving":{"g":"95","fruits":"5"}},{"name":"Lemon","serving":{"g":"55","fruit":"1"}},{"name":"Lime","serving":{"g":"55","fruit":"1"}},{"name":"Longan","serving":{"g":"64","fruits":"20"}},{"name":"Loquat","serving":{"g":"157","mL":"250"}},{"name":"Lychee","serving":{"g":"96","fruits":"10"}},{"name":"Mandarin","serving":{"g":"88","mediummandarin":"1"}},{"name":"Mango","serving":{"g":"140","fruit":"1/2"}},{"name":"Mangosteen","serving":{"g":"83","mL":"100"}},{"name":"Mulberries","serving":{"g":"74","ml":"125"}},{"name":"Nectarine","serving":{"g":"140","fruit":"1"}},{"name":"Olives","serving":{"g":"57","mL":"100"}},{"name":"Orange","serving":{"g":"140","fruit":"1"}},{"name":"Papaya","serving":{"g":"153","fruit":"1/2"}},{"name":"Passion Fruit","serving":{"g":"36","fruits":"2"}},{"name":"Peaches","serving":{"g":"140","fruit":"1"}},{"name":"Pear","serving":{"g":"140","fruit":"1"}},{"name":"Persimmon","serving":{"g":"168","fruit":"1"}},{"name":"Pitaya (Dragonfruit)","serving":{"cupscoopedflesh":"1/2","grams":"100"}},{"name":"Pineapple","serving":{"g":"140","mediumslices":"2"}},{"name":"Pitanga","serving":{"g":"73","mL":"100"}},{"name":"Plantain","serving":{"g":"81","mL":"125"}},{"name":"Plums","serving":{"g":"140","fruit":"1"}},{"name":"Pomegranate","serving":{"g":"77","fruit":"1/2"}},{"name":"Prickly Pear","serving":{"g":"103","fruit":"1"}},{"name":"Prunes","serving":{"g":"25","driedfruits":"3"}},{"name":"Pummelo","serving":{"g":"100","mL":"125"}},{"name":"Quince","serving":{"g":"92","fruit":"1"}},{"name":"Raspberries","serving":{"g":"80","cup":"1/2"}},{"name":"Rhubarb","serving":{"ml":"125","cup":"1/2"}},{"name":"Rose-Apple","serving":{"g":"100"}},{"name":"Sapodilla","serving":{"g":"85","fruit":"1/2"}},{"name":"Mamey Sapote","serving":{"g":"113","fruit":"1/2"}},{"name":"Soursop","serving":{"g":"119","mL":"125"}},{"name":"Strawberries","serving":{"g":"140","fruit":"7"}},{"name":"Sugar-Apple","serving":{"g":"106","mL":"100"}},{"name":"Tamarind","serving":{"g":"100"}},{"name":"Tangerine","serving":{"g":"140","fruit":"2"}},{"name":"Watermelon","serving":{"g":"150","fruit":"1/28","cupdiced":"1"}}]
+    const fruitObjects=[{"name":"Acerola – West Indian Cherry","serving":{"g":"5","fruit":"1"}},{"name":"Apple","serving":{"g":"140","fruit":"1"}},{"name":"Apricots","serving":{"g":"105","fruit":"3"}},{"name":"Avocado","serving":{"g":"130","fruit":"1/5"}},{"name":"Banana","serving":{"g":"140","fruit":"1"}},{"name":"Blackberries","serving":{"/A":"N","cup":"1"}},{"name":"Blackcurrant","serving":{"g":"59","ml":"125"}},{"name":"Blueberries","serving":{"g":"80","cup":"1/2"}},{"name":"Breadfruit","serving":{"g":"96","fruit":"1/4"}},{"name":"Cantaloupe","serving":{"g":"150","fruit":"1/4"}},{"name":"Carambola","serving":{"g":"89","fruit":"1"}},{"name":"Cherimoya","serving":{"g":"312","fruit":"1"}},{"name":"Cherries","serving":{"g":"140","cherries":"21","cup":"1"}},{"name":"Clementine","serving":{"g":"74","fruit":"1"}},{"name":"Coconut Meat","serving":{"g":"100"}},{"name":"Cranberries","serving":{"cup":"1"}},{"name":"Custard-Apple","serving":{"g":"120","fruit":"1/2"}},{"name":"Date Fruit","serving":{"g":"94","mL":"125"}},{"name":"Durian","serving":{"g":"128","mL":"125"}},{"name":"Elderberries","serving":{"g":"77","ml":"125"}},{"name":"Feijoa","serving":{"g":"100","fruits":"2"}},{"name":"Figs","serving":{"g":"100","fruit":"2"}},{"name":"Gooseberries","serving":{"g":"79","ml":"125"}},{"name":"Grapefruit","serving":{"g":"140","fruit":"1/2"}},{"name":"Grapes","serving":{"g":"140","grapes":"21","cup":"1"}},{"name":"Guava","serving":{"g":"90","fruit":"1"}},{"name":"Honeydew Melon","serving":{"g":"150","fruit":"1/6"}},{"name":"Jackfruit","serving":{"g":"87","ml":"125"}},{"name":"Java-Plum","serving":{"g":"60","fruits":"20"}},{"name":"Jujube Fruit","serving":{"g":"70","fruits":"5"}},{"name":"Kiwifruit","serving":{"g":"140","fruit":"2"}},{"name":"Kumquat","serving":{"g":"95","fruits":"5"}},{"name":"Lemon","serving":{"g":"55","fruit":"1"}},{"name":"Lime","serving":{"g":"55","fruit":"1"}},{"name":"Longan","serving":{"g":"64","fruits":"20"}},{"name":"Loquat","serving":{"g":"157","mL":"250"}},{"name":"Lychee","serving":{"g":"96","fruits":"10"}},{"name":"Mandarin","serving":{"g":"88","mediummandarin":"1"}},{"name":"Mango","serving":{"g":"140","fruit":"1/2"}},{"name":"Mangosteen","serving":{"g":"83","mL":"100"}},{"name":"Mulberries","serving":{"g":"74","ml":"125"}},{"name":"Nectarine","serving":{"g":"140","fruit":"1"}},{"name":"Olives","serving":{"g":"57","mL":"100"}},{"name":"Orange","serving":{"g":"140","fruit":"1"}},{"name":"Papaya","serving":{"g":"153","fruit":"1/2"}},{"name":"Passion Fruit","serving":{"g":"36","fruits":"2"}},{"name":"Peaches","serving":{"g":"140","fruit":"1"}},{"name":"Pear","serving":{"g":"140","fruit":"1"}},{"name":"Persimmon","serving":{"g":"168","fruit":"1"}},{"name":"Pitaya (Dragonfruit)","serving":{"cupscoopedflesh":"1/2","grams":"100"}},{"name":"Pineapple","serving":{"g":"140","mediumslices":"2"}},{"name":"Pitanga","serving":{"g":"73","mL":"100"}},{"name":"Plantain","serving":{"g":"81","mL":"125"}},{"name":"Plums","serving":{"g":"140","fruit":"1"}},{"name":"Pomegranate","serving":{"g":"77","fruit":"1/2"}},{"name":"Prickly Pear","serving":{"g":"103","fruit":"1"}},{"name":"Prunes","serving":{"g":"25","driedfruits":"3"}},{"name":"Pummelo","serving":{"g":"100","mL":"125"}},{"name":"Quince","serving":{"g":"92","fruit":"1"}},{"name":"Raspberries","serving":{"g":"80","cup":"1/2"}},{"name":"Rhubarb","serving":{"ml":"125","cup":"1/2"}},{"name":"Rose-Apple","serving":{"g":"100"}},{"name":"Sapodilla","serving":{"g":"85","fruit":"1/2"}},{"name":"Mamey Sapote","serving":{"g":"113","fruit":"1/2"}},{"name":"Soursop","serving":{"g":"119","mL":"125"}},{"name":"Strawberries","serving":{"g":"140","fruit":"7"}},{"name":"Sugar-Apple","serving":{"g":"106","mL":"100"}},{"name":"Tamarind","serving":{"g":"100"}},{"name":"Tangerine","serving":{"g":"140","fruit":"2"}},{"name":"Watermelon","serving":{"g":"150","fruit":"1/28","cupdiced":"1"}}]
 //     const fruits=["Acerola – West Indian Cherry", "Apple", "Apricots", "Avocado", "Banana", "Blackberries", "Blackcurrant", "Blueberries", "Breadfruit", 
 //     "Cantaloupe", "Carambola", "Cherimoya", "Cherries", "Clementine", "Coconut Meat", "Cranberries", "Custard-Apple",  "Date Fruit", 
 //     "Durian", "Elderberries", "Feijoa", "Figs", "Gooseberries", "Grapefruit", "Grapes", "Guava", "Honeydew Melon", "Jackfruit", 
@@ -76,6 +76,23 @@ function Dashboard(){
 
 
 
+    const iterAmts = ()=>{
+
+        const amts = fruitObjects[fruitID].serving
+        console.log(amts)
+        const myarr = []
+        for (var key in amts){
+            myarr.push(key)
+        }
+        console.log('myarr: ' + myarr[1])
+
+        return myarr
+
+    }
+
+
+    const [fruitID,setFruitID] = useState(0)
+
     
 
     return(
@@ -86,38 +103,60 @@ function Dashboard(){
             
             <div className = 'dropdown' style = {{height: '30px', overflow: 'hidden'}} >
                 
-                <select>
+                <select id = 'chooseFruit' value = {fruitID} onChange = {(e)=>setFruitID(e.target.value)}>
                     <option>--       select fruit      --</option>
-                    {fruitOjects.map(fruit=>{
+                    {fruitObjects.map((fruit, index)=>{
+
                         return(
-                            <option>{fruit.name}</option>          
+                            <option key = {index} value = {index}>{fruit.name}</option>          
                               )
                     })
                     }
                     
                 </select>
 
+                {/* <Button onClick = {()=>console.log(document.getElementById('chooseFruit').value)}>CLICK ME</Button> */}
+
 
 
 
 
                 <select>
+                    <option>1</option>
+                    <option>2</option>
                     <option>3</option>
+
                     
                 </select>
 
 
                 <select>  
-                    {/* if {(fruitObjects.contains) */}
+                
                     <option>-- handfuls  --</option>
-    
+                    {iterAmts().map(item=>{
+                        return(<option>{item}</option>)
+                    })}
+
+                    {/* {fruitObjects[fruitID].serving.map(key=>{
+                        return <option>key</option>
+                    })
+                    } */}
+                    
                     
                 </select>
             
 
             </div>
  
-            <Button>Add</Button>
+            <Button onClick = {()=>{
+                console.log('fruitID' + fruitID)
+
+                const amts = fruitObjects[document.getElementById('chooseFruit').value].serving
+
+                for (var key in amts){
+                    console.log('key'+key)
+                }
+            }}>Add</Button>
 
 
 
