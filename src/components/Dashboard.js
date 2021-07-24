@@ -1,8 +1,8 @@
 import React,{useContext} from 'react'
 import { AuthContext } from '../contexts/AuthContext'
-import {Button} from 'react-bootstrap'
-
+import {Button,Navbar,Container,Row,Col} from 'react-bootstrap'
 import BoardForm from './BoardForm'
+import '../style/dashboard.css'
 
 function Dashboard(){
     const {currUser,signOut}=useContext(AuthContext)
@@ -13,14 +13,27 @@ function Dashboard(){
 
     return(
         <>
-            
+        <Navbar bg="primary" variant="dark">
+            <Container>
+                <Navbar.Brand>Dashboard</Navbar.Brand>
+                <Button variant="success" onClick={signOut}>Sign Out</Button>
+            </Container>
+        </Navbar>
+        <div className="hello">
             <h1>Hello, {currUser.displayName}</h1>
-            <Button onClick={signOut}>Sign Out</Button>
-            <br/>
-            <br/>
-            <BoardForm list={veggieObjects} fireRef="veg"/>
-            <br/>
-            <BoardForm list={fruitObjects} fireRef="fruit"/>
+        </div>
+        <div className="foodGroups">
+            <Row>
+                <Col>
+                    <h4>Veggies</h4>
+                    <BoardForm list={veggieObjects} fireRef="veg"/>
+                </Col>
+                <Col>
+                    <h4>Fruits</h4>
+                    <BoardForm list={fruitObjects} fireRef="fruit"/>
+                </Col>
+            </Row>
+        </div>
             
         </>
     )
