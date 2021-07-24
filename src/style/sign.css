@@ -1,0 +1,67 @@
+
+/* import fruitimg from '../img/fruits.jpg' */
+
+
+.cardBody{
+    color: rgb(255, 255, 255);
+/* 
+    font-family: 'Courier New', Courier, monospace; */
+    /* background-color: pink; */
+    /* border-radius: 25px; */
+}
+.titleDiv{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 350px;
+    z-index: 1; 
+
+    text-align: center;
+    /* color: white; */
+    /* background-color: rgba(0, 0, 0, .7); */
+    height: 100%;
+    padding: 30vh 20px 0 20px;
+    /* border-radius: 25px; */
+
+    /* margin-left: 13%; */
+    /* justify-content: center; */
+
+    /* margin-top: 20vh; */
+}
+
+.everythingDiv{
+    color: white;
+
+    /* color:rgb(33, 113, 218); */
+    /* transform: scaleX(-1); */
+    background-image:linear-gradient( rgba(0, 0, 0, .3), rgba(0, 0, 0, .3) ), url('../img/fruitbowlflip.jpg'); 
+    background-color: #f4f4f4;
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: 80% ;
+
+    width: 100%;
+height:100%;
+
+    /* background-color: #258039; */
+    display: flex;
+    height: 100vh;
+    align-items: center;
+
+}
+
+.fruitImg{
+    
+    /* opacity: .5; */
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+    object-fit: cover;
+
+}
+
+.imgDiv{
+    position: absolute;
+    /* border: red solid 2px; */
+    height: 100%;
+    width: 100%
+
+}
