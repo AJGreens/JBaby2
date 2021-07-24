@@ -60,7 +60,7 @@ function BoardForm(props){
                 }
             </select>
 
-            <input value={quantity} onChange={(e)=>setQuantity(e.target.value)} type="number" min="0"/>
+            <input  value={quantity} onChange={(e)=>setQuantity(e.target.value)} type="number" min="0"/>
             
             <select value={unit} onChange={(e)=>setUnit(e.target.value)}>
                 {Object.keys(items[itemIndex].serving).map((name,index)=>{
@@ -78,6 +78,7 @@ function BoardForm(props){
             }
                 
         </ul>
+        {/* FORM SECTION */}
         </>
     )
 

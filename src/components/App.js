@@ -9,18 +9,18 @@ import {Container} from 'react-bootstrap'
 import {HashRouter as Router,Switch} from 'react-router-dom'
 
 function App() {
-  // , maxWidth: '400px'
+  // , 
   return (
   <div>
     <AuthProvider>
       <Router>
-      <Container style = {{height: '100vh'}} className = 'd-flex align-items-center justify-content-center'>
+      <Container style = {{height: '100vh',maxWidth: '400px'}} className = 'd-flex align-items-center justify-content-center'>
       <div style = {{width: '100%'}} >
         <Switch>
           <PrivateRouteMain path='/' exact component={Dashboard}/>
           <PrivateRouteAccount path='/signin' exact component={SignIn}/>
           <PrivateRouteAccount path='/signup' exact component={SignUp}/>
-
+          
         </Switch>
       </div>
       </Container>
