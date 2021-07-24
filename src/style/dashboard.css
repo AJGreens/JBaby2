@@ -1,8 +1,3 @@
-.hello{
-    text-align: center;
-    padding: 10px;
-    font-weight: bold;
-}
 .foodGroups{
     padding:5%;
     margin: 5%;
@@ -12,3 +7,12 @@
 }
 
 
+
+.deleteBtn{
+    border-radius: 2px;
+    background-color: #d9534f;
+    color:white;
+    border: 0px solid white;
+    padding: 1px 7px;
+    
+}

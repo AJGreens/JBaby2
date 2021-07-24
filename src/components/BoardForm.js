@@ -1,5 +1,5 @@
 import React,{useState,useEffect,useContext} from 'react'
-import {Button,Form,Row,Col,Glyphicon} from 'react-bootstrap'
+import {Button,Form,Row,Col} from 'react-bootstrap'
 import { AuthContext } from '../contexts/AuthContext'
 import {app} from './Firebase'
 import '../style/dashboard.css'
@@ -44,6 +44,7 @@ function BoardForm(props){
         e.preventDefault()
         const ref= app.database().ref(currUser.uid+"/"+props.fireRef)
         const currObject=items[itemIndex];
+        
         const serving= Math.ceil(quantity/currObject.serving[unit]*100)/100
         ref.push({name:currObject.name,quantity:quantity,unit:unit,serving:serving})
     }
@@ -85,7 +86,7 @@ function BoardForm(props){
         {/* FORM SECTION */}
         <ul className="itemList">
                 {userList.map(item=>{
-                    return (<li key={item.id}><b>{item.name}</b>({item.quantity}{item.unit}): {item.serving} servings  <Button variant="danger" onClick={()=>handleRemove(item.id)}><FontAwesomeIcon icon={faMinus} /></Button></li>)
+                    return (<li key={item.id}><b>{item.name}</b>({item.quantity}{item.unit}): {item.serving} servings  <button className="deleteBtn" variant="danger" onClick={()=>handleRemove(item.id)}><FontAwesomeIcon icon={faMinus} /></button></li>)
                 })
             }
                 
