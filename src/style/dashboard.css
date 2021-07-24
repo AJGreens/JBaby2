@@ -1,0 +1,18 @@
+.foodGroups{
+    padding:5%;
+    margin: 5%;
+}
+.foodGroups h4{
+    text-align: center;
+}
+
+
+
+.deleteBtn{
+    border-radius: 2px;
+    background-color: #d9534f;
+    color:white;
+    border: 0px solid white;
+    padding: 1px 7px;
+    
+}

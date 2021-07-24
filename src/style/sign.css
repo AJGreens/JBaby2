@@ -21,7 +21,7 @@
     padding: 30vh 20px 0 20px;
     /* border-radius: 25px; */
 
-    /* margin-left: 13%; */
+    margin-left: 13%;
     /* justify-content: center; */
 
     /* margin-top: 20vh; */
@@ -32,10 +32,10 @@
 
     /* color:rgb(33, 113, 218); */
     /* transform: scaleX(-1); */
-    background-image:linear-gradient( rgba(0, 0, 0, .3), rgba(0, 0, 0, .3) ), url('../img/fruitbowlflip.jpg'); 
+    background-image:linear-gradient( rgba(241, 55, 55, 1), rgba(0, 0, 0, 1) ), url('../img/fruitbowlflip.jpg'); 
     background-color: #f4f4f4;
     background-repeat: no-repeat;
-    background-size:contain;
+    background-size:cover;
     background-position: 80% ;
 
     width: 100%;
