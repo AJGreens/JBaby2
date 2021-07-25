@@ -10,19 +10,23 @@ function BoardForm(props){
     const {currUser}= useContext(AuthContext)
 
     const items=props.list
+    const d=new Date();
+    const dString=d.getMonth()+1+"-"+d.getDate()+"-"+d.getFullYear();
+    
 
     const [quantity, setQuantity]=useState(0)
     const [unit, setUnit] = useState('')
     const [itemIndex,setItemIndex] = useState(0)
 
     const [userList,setUserList]=useState([])
-    
+    console.log(dString)
 
 
 
     useEffect(()=>{
+        
         setUnit(Object.keys(items[itemIndex].serving)[0])//sets intial unit after component mounts
-        const ref= app.database().ref(currUser.uid+"/"+props.fireRef)
+        const ref= app.database().ref(currUser.uid+"/"+dString+"/"+props.fireRef)
         ref.on('value',snapshot=>{
             const userItems= snapshot.val()
             let allItems=[]
@@ -44,7 +48,7 @@ function BoardForm(props){
     
     function handleAdd(e){
         e.preventDefault()
-        const ref= app.database().ref(currUser.uid+"/"+props.fireRef)
+        const ref= app.database().ref(currUser.uid+"/"+dString+"/"+props.fireRef)
         const currObject=items[itemIndex];
         
         const serving= Math.ceil(quantity/currObject.serving[unit]*100)/100
@@ -52,7 +56,7 @@ function BoardForm(props){
     }
     
     function handleRemove(itemToken){
-        const ref= app.database().ref(currUser.uid+"/"+props.fireRef+"/"+itemToken)
+        const ref= app.database().ref(currUser.uid+"/"+dString+"/"+props.fireRef+"/"+itemToken)
         ref.remove()
     }
 
