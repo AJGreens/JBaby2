@@ -11,8 +11,8 @@ function Dashboard(){
     const veggieObjects=[{"name":"Amaranth Leaves","serving":{"g":"30","mL":"250"}},{"name":"Arrowroot","serving":{"g":"63","mL":"125"}},{"name":"Artichoke","serving":{"g":"128","Artichokes":"1"}},{"name":"Arugula","serving":{"g":"21","mL":"250"}},{"name":"Asparagus","serving":{"g":"85","spears":"10"}},{"name":"Bamboo Shoots","serving":{"g":"80","mL":"125"}},{"name":"Beans (Green)","serving":{"g":"85","beans":"20"}},{"name":"Beets","serving":{"g":"72","mL":"125"}},{"name":"Belgian Endive","serving":{"g":"95","mL":"250"}},{"name":"Bitter Melon*","serving":{"g":"53","mL":"125"}},{"name":"Bok Choy","serving":{"g":"90","mL":"125"}},{"name":"Broadbeans (Fava Beans)","serving":{"g":"80","mL":"125"}},{"name":"Broccoli","serving":{"g":"85","stalks":"0.5"}},{"name":"Broccoli Rabe","serving":{"cups":"2","g":"80"}},{"name":"Brussel Sprouts","serving":{"g":"76","sprouts":"4"}},{"name":"Cabbage (Green)","serving":{"g":"85","Cabbages":"0.92"}},{"name":"Cabbage (Red)","serving":{"g":"37","mL":"125"}},{"name":"Carrot","serving":{"g":"85","Carrots":"1"}},{"name":"Cassava (Yuca Root)","serving":{"g":"109","mL":"125"}},{"name":"Cauliflower","serving":{"g":"85","Cauliflowers":"0.17"}},{"name":"Celeriac (Celery Root)","serving":{"g":"82","mL":"125"}},{"name":"Celery","serving":{"g":"85","stalk":"1"}},{"name":"Chayote*","serving":{"g":"70","mL":"125","cup":"0.5"}},{"name":"Chicory (Curly Endive)","serving":{"g":"30","mL":"250"}},{"name":"Collards","serving":{"g":"19","mL":"125"}},{"name":"Corn","serving":{"g":"85","Corns":"1"}},{"name":"Crookneck","serving":{"g":"69","mL":"125"}},{"name":"Cucumber","serving":{"g":"85","Cucumbers":"0.25"}},{"name":"Daikon","serving":{"g":"338","Daikons":"1"}},{"name":"Dandelion Greens","serving":{"g":"58","ml":"125"}},{"name":"Edamame (Soybeans)","serving":{"g":"135","mL":"125"}},{"name":"Eggplant","serving":{"g":"43","mL":"125"}},{"name":"Fennel","serving":{"g":"46","mL":"125"}},{"name":"Fiddleheads","serving":{"g":"61","mL":"125"}},{"name":"Ginger Root","serving":{"g":"41","cup":"0.5"}},{"name":"Horseradish","serving":{"g":"100"}},{"name":"Jicama","serving":{"g":"63","mL":"125"}},{"name":"Kale","serving":{"g":"71","mL":"250"}},{"name":"Kohlrabi","serving":{"g":"71","mL":"125"}},{"name":"Leeks","serving":{"g":"47","leeks":"0.5"}},{"name":"Lettuce (Iceberg)","serving":{"g":"85","cups":"2","head":"0.25"}},{"name":"Lettuce (Leaf)","serving":{"g":"85","cups":"2"}},{"name":"Lettuce (Romaine)","serving":{"g":"85","cups":"2"}},{"name":"Mushrooms","serving":{"g":"85","Mushrooms":"5"}},{"name":"Mustard Greens","serving":{"g":"59","mL":"250"}},{"name":"Okra","serving":{"g":"53","mL":"125"}},{"name":"Onion (Red)","serving":{"g":"85","Red Onions":"0.5"}},{"name":"Onions","serving":{"g":"85","Onions":"0.5"}},{"name":"Parsnip","serving":{"g":"70","mL":"125"}},{"name":"Peas (Green)","serving":{"g":"77","mL":"125"}},{"name":"Pepper (Green)","serving":{"g":"85","Green Peppers":"0.5"}},{"name":"Pepper (Sweet Red)","serving":{"g":"85","Sweet Red Peppers":"0.5"}},{"name":"Potato (Red)","serving":{"g":"79","mL":"125"}},{"name":"Potato (White)","serving":{"g":"110","White Potatos":"1"}},{"name":"Potato (Yellow)","serving":{"g":"167","Yellow Potatos":"1"}},{"name":"Pumpkin","serving":{"g":"61","mL":"125"}},{"name":"Radicchio","serving":{"g":"100"}},{"name":"Radishes","serving":{"g":"61","mL":"125"}},{"name":"Rutabaga","serving":{"g":"74","mL":"125"}},{"name":"Salsify (Oysterplant)","serving":{"g":"56","mL":"100"}},{"name":"Shallots","serving":{"g":"68","mL":"100"}},{"name":"Snow Peas","serving":{"g":"85","mL":"125"}},{"name":"Sorrel (Dock)","serving":{"g":"338","radish":"1"}},{"name":"Spaghetti Squash","serving":{"cup":"1"}},{"name":"Spinach","serving":{"g":"85","cups":"2"}},{"name":"Squash (Butternut)","serving":{"g":"85","Butternut Squashs":"0.084"}},{"name":"Sugar Snap Peas","serving":{"g":"100"}},{"name":"Sweet Potato","serving":{"g":"110","Sweet Potatos":"0.5"}},{"name":"Swiss Chard","serving":{"g":"93","mL":"125"}},{"name":"Tomatillo*","serving":{"g":"70","mL":"125"}},{"name":"Tomato*","serving":{"g":"85","Tomato*s":"0.34"}},{"name":"Turnip","serving":{"mL":"125","cup":"0.5"}},{"name":"Watercress","serving":{"g":"36","mL":"250"}},{"name":"Yam Root","serving":{"g":"72","mL":"125"}},{"name":"Zucchini","serving":{"g":"85","Zucchinis":"0.5"}}]
     const dairyObjects=[{"name":"Cheese","serving":{"oz":"1.5","slices":"1", "dice": "3.5"}}, {"name":"Milk","serving":{"cups":"1","oz":"8"}}, {"name":"Yogurt","serving":{"cups":".75","oz":"6"}}]
 
-   
-   
+
+
     return(
         <>
         <Navbar bg="primary" variant="dark">
@@ -23,7 +23,7 @@ function Dashboard(){
         </Navbar>
         <div className="foodGroups">
             <Row>
-                <Col className="foodGroup veg">
+                <Col className="foodGroup veg" >
                     <h4>Veggies</h4>
                     <BoardForm list={veggieObjects} fireRef="veg"/>
                 </Col>
@@ -33,11 +33,27 @@ function Dashboard(){
                 </Col>
             </Row>
             <Row>
-                <Col>
+                <Col className="veg"></Col>
+                <Col className="foodGroup dairy">
                     <h4>Dairy</h4>
                     <BoardForm list={dairyObjects} fireRef="dairy"/>
                 </Col>
+                <Col className="fruit"></Col>
             </Row>
+      
+                {/* <div className="foodGroup veg" >
+                    <h4>Veggies</h4>
+                    <BoardForm list={veggieObjects} fireRef="veg"/>
+                </div>
+                <div className="foodGroup fruit">
+                    <h4>Fruits</h4>
+                    <BoardForm list={fruitObjects} fireRef="fruit"/>
+                </div>
+                <div className="foodGroup dairy">
+                    <h4>Dairy</h4>
+                    <BoardForm list={dairyObjects} fireRef="dairy"/>
+                </div> */}
+
         </div>
             
         </>
