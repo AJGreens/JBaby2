@@ -6,6 +6,7 @@ import {Container} from 'react-bootstrap'
 import '../style/sign.css'
 import fruitimg from '../img/fruits.jpg'
 import fruitbowl from '../img/fruitbowl.jpg'
+import logocirc from '../img/logocirc.png'
 // import logo from '../img/logo.png'
 
 function SignIn(){
@@ -53,19 +54,25 @@ function SignIn(){
 
 {/* <img className = 'fruitImg' src = {fruitimg} alt = 'fruits'/> */}
         <div className = 'titleDiv'>
-            <h1 style = {{fontSize: '40pt'}}>HealthFull</h1>
-            {/* <img width = '200px' src = {logo} alt = 'logo'/> */}
+            <div className = 'imgDiv' style = {{display: 'inline-block'}} >
+                <img className = 'logoCirc' src = {logocirc} alt = 'logocirc'/>
+            </div>
+                <h1 style = {{fontSize: '40pt', display: 'inline-block'}}>HealthFull</h1>
+
+
             <br/>
-            <h4>Eat Healthy.  Feel Full.  Start tracking your healthy food choices today.</h4>
+            <br/>
+   
+   
+            <h4 className = 'text-center'>Eat Healthy.  Feel Full.  Start tracking your healthy food choices today.</h4>
         </div>
 
-        {/* <div className = 'imgDiv' >
-            <img className = 'fruitImg' src = {fruitbowl} alt = 'fruitbowl'/>
-        </div> */}
+
+
         
 
         {/* className = 'd-flex align-items-center justify-content-center' */}
-     <Container style = {{maxWidth: '400px', marginRight: '60px'}} >
+     <Container style = {{maxWidth: '400px', marginRight: '100px'}} >
       <div style = {{width: '100%'}}> 
         <Card style = {{background: 'linear-gradient( rgba(0, 0, 0, .4),  rgba(0, 0, 0, .4))', minWidth: '400px', border: 'white solid 0px'}}>
             <Card.Body className = 'cardBody'>
