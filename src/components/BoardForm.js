@@ -18,6 +18,8 @@ function BoardForm(props){
     const [userList,setUserList]=useState([])
     
 
+
+
     useEffect(()=>{
         setUnit(Object.keys(items[itemIndex].serving)[0])//sets intial unit after component mounts
         const ref= app.database().ref(currUser.uid+"/"+props.fireRef)
@@ -84,7 +86,7 @@ function BoardForm(props){
                 {unit&&<Button className="w-25" onClick = {handleAdd}>Add</Button>}
             </Form>
         {/* FORM SECTION */}
-        <ul className="itemList">
+        <ul className="itemList scroll">
                 {userList.map(item=>{
                     return (<li key={item.id}><b>{item.name}</b>({item.quantity}{item.unit}): {item.serving} servings  <button className="deleteBtn" variant="danger" onClick={()=>handleRemove(item.id)}><FontAwesomeIcon icon={faMinus} /></button></li>)
                 })
