@@ -5,8 +5,8 @@ import Dashboard from './Dashboard'
 import PrivateRouteMain from './PrivateRouteMain';
 import PrivateRouteAccount from './PrivateRouteAccount';
 import {AuthProvider} from '../contexts/AuthContext'
-import {Container} from 'react-bootstrap'
 import {HashRouter as Router,Switch} from 'react-router-dom'
+import Summary from './Summary'
 
 function App() {
   // , 
@@ -14,16 +14,13 @@ function App() {
   <div>
     <AuthProvider>
       <Router>
-      {/* <Container style = {{height: '100vh',maxWidth: '400px'}} className = 'd-flex align-items-center justify-content-center'>
-      <div style = {{width: '100%'}} > */}
         <Switch>
           <PrivateRouteMain path='/' exact component={Dashboard}/>
           <PrivateRouteAccount path='/signin' exact component={SignIn}/>
           <PrivateRouteAccount path='/signup' exact component={SignUp}/>
+          <PrivateRouteMain path = '/summary' exact component = {Summary}/>
 
         </Switch>
-      {/* </div> */}
-      {/* </Container> */}
       </Router>
     </AuthProvider>
 

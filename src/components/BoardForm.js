@@ -44,7 +44,7 @@ function BoardForm(props){
 
 
 
-    },[])
+    },[currUser.uid, dString, itemIndex, items,props.fireRef])
     
     function handleAdd(e){
         e.preventDefault()

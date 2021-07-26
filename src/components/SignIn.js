@@ -4,10 +4,9 @@ import { AuthContext } from '../contexts/AuthContext'
 import {Link,useHistory} from 'react-router-dom'
 import {Container} from 'react-bootstrap'
 import '../style/sign.css'
-import fruitimg from '../img/fruits.jpg'
-import fruitbowl from '../img/fruitbowl.jpg'
+// import fruitimg from '../img/fruits.jpg'
+// import fruitbowl from '../img/fruitbowl.jpg'
 import logocirc from '../img/logocirc.png'
-// import logo from '../img/logo.png'
 
 function SignIn(){
     const{signIn,signInGoogle}=useContext(AuthContext)
