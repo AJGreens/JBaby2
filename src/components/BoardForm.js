@@ -90,9 +90,12 @@ function BoardForm(props){
                 {unit&&<Button className="w-25" onClick = {handleAdd}>Add</Button>}
             </Form>
         {/* FORM SECTION */}
-        <ul className="itemList scroll">
+        <ul className={"itemList scroll "+props.fireRef+"List"}>
                 {userList.map(item=>{
-                    return (<li key={item.id}><b>{item.name}</b>({item.quantity}{item.unit}): {item.serving} servings  <button className="deleteBtn" variant="danger" onClick={()=>handleRemove(item.id)}><FontAwesomeIcon icon={faMinus} /></button></li>)
+                    return (<li key={item.id}> 
+                        <b>{item.name}</b>({item.quantity}{item.unit}): {item.serving} servings   <button className="deleteBtn" variant="danger" onClick={()=>handleRemove(item.id)}>
+                        <FontAwesomeIcon icon={faMinus} /></button></li>
+                        )
                 })
             }
                 

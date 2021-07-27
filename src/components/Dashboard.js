@@ -1,8 +1,10 @@
 import React from 'react'
-import {Row,Col} from 'react-bootstrap'
+import {Row,Col,Container} from 'react-bootstrap'
 import BoardForm from './BoardForm'
 import '../style/dashboard.css'
 import MyNav from './MyNav'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCarrot,faAppleAlt,faCheese } from '@fortawesome/free-solid-svg-icons'
 
 function Dashboard(){
     
@@ -14,26 +16,28 @@ function Dashboard(){
 
     return(
         <>
-        <MyNav/>
-        <div className="foodGroups">
+        <MyNav dActive={true} sActive={false}/>
+        <Container fluid className="foodGroups text-center">
             <Row>
                 <Col className="foodGroup veg" >
-                    <h4>Veggies</h4>
+                    <h4>Veggies <FontAwesomeIcon icon={faCarrot} /></h4>
                     <BoardForm list={veggieObjects} fireRef="veg"/>
                 </Col>
                 <Col className="foodGroup fruit">
-                    <h4>Fruits</h4>
+                    <h4>Fruits <FontAwesomeIcon icon={faAppleAlt} /></h4>
                     <BoardForm list={fruitObjects} fireRef="fruit"/>
                 </Col>
-            </Row>
-            <Row>
-                <Col className="veg"></Col>
                 <Col className="foodGroup dairy">
-                    <h4>Dairy</h4>
+                    <h4>Dairy <FontAwesomeIcon icon={faCheese} /></h4>
                     <BoardForm list={dairyObjects} fireRef="dairy"/>
                 </Col>
-                <Col className="fruit"></Col>
             </Row>
+       
+            {/* <Row>
+                <Col className="veg"></Col>
+      
+                <Col className="fruit"></Col>
+            </Row> */}
       
                 {/* <div className="foodGroup veg" >
                     <h4>Veggies</h4>
@@ -48,7 +52,7 @@ function Dashboard(){
                     <BoardForm list={dairyObjects} fireRef="dairy"/>
                 </div> */}
 
-        </div>
+        </Container>
             
         </>
     )
