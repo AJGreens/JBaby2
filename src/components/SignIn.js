@@ -51,6 +51,7 @@ function SignIn(){
 
 <div className = 'everythingDiv'>
 
+
 {/* <img className = 'fruitImg' src = {fruitimg} alt = 'fruits'/> */}
         <div className = 'titleDiv'>
             <div className = 'imgDiv' style = {{display: 'inline-block'}} >

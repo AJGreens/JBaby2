@@ -30,12 +30,13 @@
     /* margin-top: 20vh; */
 }
 
+
 .everythingDiv{
     color: white;
 
     /* color:rgb(33, 113, 218); */
     /* transform: scaleX(-1); */
-    background-image:linear-gradient(rgba(0, 0, 0, 0) , rgba(0, 0, 0, .8)), url('../img/wood2.jpg'); 
+    background-image:linear-gradient(rgba(0, 0, 0, 00) , rgba(0, 0, 0, .8)), url('../img/lesswood.jpg'); 
     background-color: #f4f4f4;
     background-repeat: no-repeat;
     background-size:cover;
