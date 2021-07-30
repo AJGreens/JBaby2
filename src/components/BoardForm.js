@@ -19,7 +19,7 @@ function BoardForm(props){
     const [itemIndex,setItemIndex] = useState(0)
 
     const [userList,setUserList]=useState([])
-    console.log(dString)
+    // console.log(dString)
 
 
 
@@ -50,14 +50,40 @@ function BoardForm(props){
         e.preventDefault()
         const ref= app.database().ref(currUser.uid+"/"+dString+"/"+props.fireRef)
         const currObject=items[itemIndex];
-        
         const serving= Math.ceil(quantity/currObject.serving[unit]*100)/100
+        
+        const servsRef= app.database().ref(currUser.uid+"/"+dString)
+        let currServAmount=0;
+        const servString=props.fireRef+"Serv";
+
+        servsRef.on("value", (snapshot)=>{
+            const x = snapshot.val();
+            if (x[servString]!=='undefined'){
+                currServAmount=x[servString]
+            }
+        })
+        
+        currServAmount+=serving
+        servsRef.child(servString).set(currServAmount)
         ref.push({name:currObject.name,quantity:quantity,unit:unit,serving:serving})
     }
     
-    function handleRemove(itemToken){
-        const ref= app.database().ref(currUser.uid+"/"+dString+"/"+props.fireRef+"/"+itemToken)
+    function handleRemove(item){
+        const ref= app.database().ref(currUser.uid+"/"+dString+"/"+props.fireRef+"/"+item.id)
         ref.remove()
+        const servsRef= app.database().ref(currUser.uid+"/"+dString)
+        let currServAmount=0;
+        const servString=props.fireRef+"Serv";
+
+        servsRef.on("value", (snapshot)=>{
+            const x = snapshot.val();
+            if (x[servString]!=='undefined'){
+                currServAmount=x[servString]
+            }
+        })
+        // const serving= Math.ceil(item.serving*100)/100
+        currServAmount-=item.serving
+        servsRef.child(servString).set(currServAmount)
     }
 
     return(
@@ -93,7 +119,7 @@ function BoardForm(props){
         <ul className={"itemList scroll "+props.fireRef+"List"}>
                 {userList.map(item=>{
                     return (<li key={item.id}> 
-                        <b>{item.name}</b>({item.quantity}{item.unit}): {item.serving} servings   <button className="deleteBtn" variant="danger" onClick={()=>handleRemove(item.id)}>
+                        <b>{item.name}</b>({item.quantity}{item.unit}): {item.serving} servings   <button className="deleteBtn" variant="danger" onClick={()=>handleRemove(item)}>
                         <FontAwesomeIcon icon={faMinus} /></button></li>
                         )
                 })

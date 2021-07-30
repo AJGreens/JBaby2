@@ -19,7 +19,7 @@
 /* blue */
 /* #31A9B8  */
 
-.veg{
+/* .veg{
     background: linear-gradient(315deg, #f5be41 50%,   #f5be41 50%);
 }
 .fruit{
@@ -27,7 +27,7 @@
 }
 .dairy{
     background: linear-gradient(45deg, #CF3721  50%, #31A9B8 50%);
-}
+} */
 
 /* .veg{
     background: linear-gradient(315deg, #f5be41 50%,   #258039 50%);
@@ -38,6 +38,27 @@
 .dairy{
     background: linear-gradient(315deg, #31A9B8  50%, #CF3721 50%);
 } */
+
+/* .veg{
+    background: linear-gradient(315deg, #f5be41 47%,white 47% 48.5%,white 48.5% 50%,#f5be41 50%);
+}
+.fruit{
+    background: linear-gradient(45deg, #f5be41 47%,white 47% 48.5%,white 48.5% 50%, #CF3721 50%);
+}
+.dairy{
+    background: linear-gradient(315deg, #31A9B8  47%,white 47% 48.5%,white 48.5% 50%, #CF3721 50%);
+} */
+
+.veg{
+    background: linear-gradient(315deg, #f5be41 30%,white 30% 50%,white 50% 70%,#258039 70%);
+}
+.fruit{
+    background: linear-gradient(45deg, #f5be41 30%,white 30% 50%,white 50% 70%, #CF3721 70%);
+}
+.dairy{
+    background: linear-gradient(315deg, #31A9B8  30%,white 30% 50%,white 50% 70%, #CF3721 70%);
+}
+
 
 
 
@@ -85,18 +106,18 @@
 
 
 .itemList{
-    /* background-color: white; */
+    background-color: white;
     height: 40vh;
-    width: 100%;
+    width: 70%;
+    margin:auto;
+    text-align: center;
     padding: 2vh;
-    margin: 0;
     overflow:auto; 
     overflow-y:scroll;
-    border-radius: 15px;
-    /* list-style-type: none; */
+    border-radius: 5px;
     list-style-position: inside;
     list-style: none;
-    color: white;
+    color: black;
 }
 .itemList li{
     padding-bottom: 3px;
