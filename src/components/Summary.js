@@ -37,7 +37,7 @@ function Summary(){
 
     return(
         <>
-            <MyNav/>
+            <MyNav dActive={false} sActive={true}/>
             <h1> this is the summary page</h1>
             <p>
                 <ul>

@@ -1,11 +1,75 @@
+body{
+    background-color: red;
+background-image: linear-gradient(#D8BCAB, #D8BCAB);
+    /* border: red solid 2px; */
+}
 .foodGroups{
-    padding:2%;
-    margin: 2%;
+    /* padding:2%; */
+    /* margin: auto 2px; */
     
+    /* border: #ffffff 2vh solid; */
+    color: white;
 }
 .foodGroups h4{
     text-align: center;
+    color: white;
 }
+.foodGroup{
+    color:black;
+    /* height: 89vh; */
+    /* padding: 2%; */
+}
+/* green */
+/* #258039 */
+/* blue */
+/* #31A9B8  */
+
+.veg{
+  
+    background: linear-gradient(315deg, #f5be41 50%,   #f5be41 50%);
+}
+.fruit{
+    /* border: red solid 2px; */
+    background: #CF3721 ;
+    /* background: linear-gradient(45deg, #f5be41 50%, #CF3721 50%); */
+}
+.dairy{
+    /* background: linear-gradient(45deg, #CF3721  50%, #31A9B8 50%); */
+    background: #31A9B8 ;
+}
+
+.veg{
+    /* background: linear-gradient(315deg, #f5be41 50%,   #258039 50%); */
+    background: radial-gradient( #258039  65%,  #D8BCAB 70%);
+    height: 45vw;
+    max-height: 30vw;
+    max-width: 45vw;
+/* 
+    padding: 10%; */
+    margin: auto;
+    /* border: red solid 2px; */
+}
+.fruit{
+    background: radial-gradient( #f5be41  60%,  #D8BCAB 65%);
+    height: 45vw;
+    max-height: 30vw;
+    max-width: 45vw;
+    /* padding: 10%; */
+    margin: auto;
+    /* background: linear-gradient(45deg, #f5be41 50%, #CF3721 50%); */
+}
+.dairy{
+    background: radial-gradient(  #CF3721 55%,  #D8BCAB 60%);
+    height: 45vw;
+    max-height: 30vw;
+    max-width: 45vw;
+    /* padding: 10%; */
+    margin: auto;
+    /* background: linear-gradient(315deg, #31A9B8  50%, #CF3721 50%); */
+}
+
+
+
 /* .foodGroup{
     color:white;
     border-radius: 50%;
@@ -47,3 +111,23 @@
     width: 100%;
     height: 50%;
 } */
+
+
+.itemList{
+    background-color: rgb(0, 0, 0, .1);
+    height: 50%;
+    width: 100%;
+    /* padding: 2vh; */
+    margin: 0;
+    overflow:auto; 
+    /* overflow-y:scroll; */
+    border-radius: 15px;
+    /* list-style-type: none; */
+    list-style-position: inside;
+    list-style: none;
+    color: white;
+}
+.itemList li{
+    padding-bottom: 3px;
+}
+
