@@ -19,7 +19,7 @@ function Dashboard(){
         {/* style = {{ padding: '8%',  maxWidth: '30vw'} */}
         <MyNav dActive={true} sActive={false}/>
         <Container fluid className="foodGroups text-center">
-            <Row style = {{margin: 'auto', width: '100%'}}>
+            <Row>
                 <Col className="foodGroup veg">
                     <h4>Veggies <FontAwesomeIcon icon={faCarrot} /></h4>
                     <BoardForm list={veggieObjects} fireRef="veg"/>

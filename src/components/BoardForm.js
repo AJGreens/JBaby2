@@ -18,16 +18,8 @@ function BoardForm(props){
     const [unit, setUnit] = useState('')
     const [itemIndex,setItemIndex] = useState(0)
     const [userList,setUserList]=useState([])
-    // console.log(dString)
-    const[currServ,setCurrServ]=useState(0)
 
     useEffect(()=>{
-
-        // app.database().ref(currUser.uid+'/'+dString+'/fruitServ').on('value',snapshot=>{
-        //     console.log(snapshot.val())
-        //     setCurrServ(snapshot.val())
-        // })
-        // console.log(currServ)
         
         setUnit(Object.keys(items[itemIndex].serving)[0])//sets intial unit after component mounts
         const ref= app.database().ref(currUser.uid+"/"+dString+"/"+props.fireRef)
@@ -46,11 +38,11 @@ function BoardForm(props){
             setUserList(allItems)
         }) 
 
-    },[currUser.uid, dString, itemIndex, items,props.fireRef,currServ])
+    },[currUser.uid, dString, itemIndex, items,props.fireRef])
 
 
 useEffect(()=>{
-    const myRef = app.database().ref(currUser.uid+ "/" + dString +"/"+ "TotalServs")
+    const myRef = app.database().ref(currUser.uid+ "/" + dString +"/TotalServs")
     myRef.once("value", snapshot=>{
         const items = snapshot.val()
 
@@ -62,16 +54,12 @@ useEffect(()=>{
             })
         }
     })
-
-
-},[])
+},[currUser.uid,dString])
 
 
 
     
     function handleAdd(e){
-        console.log('handle add called')
-
         e.preventDefault()
         const ref= app.database().ref(currUser.uid+"/"+dString+"/"+props.fireRef)
         const currObject=items[itemIndex];
@@ -83,24 +71,18 @@ useEffect(()=>{
     
     function handleRemove(item){
         const ref= app.database().ref(currUser.uid+"/"+dString+"/"+props.fireRef+"/"+item.id)
-       
-        ref.once("value", snapshot=>{
-            const items = snapshot.val()
-            makeTotalServs((-1*items['serving']))
-
-        })
-
+        console.log(-1*item.serving)
+        makeTotalServs((-1*item.serving))
         ref.remove()
     }
 
 
     function makeTotalServs(addOn){
-        const myRef = app.database().ref(currUser.uid+ "/" + dString +"/"+ "TotalServs")
+        const myRef = app.database().ref(currUser.uid+ "/" + dString +"/TotalServs")
         myRef.once("value", snapshot=>{
             const items = snapshot.val()
-            var updatedTotalServs = items[props.fireRef]+addOn;
+            const updatedTotalServs = (parseFloat(items[props.fireRef])+addOn).toFixed(2);
             myRef.update({[props.fireRef]: updatedTotalServs})
-
         })
     }
 
