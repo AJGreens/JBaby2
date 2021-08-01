@@ -17,13 +17,17 @@ function BoardForm(props){
     const [quantity, setQuantity]=useState(0)
     const [unit, setUnit] = useState('')
     const [itemIndex,setItemIndex] = useState(0)
-
     const [userList,setUserList]=useState([])
-    console.log(dString)
-
-
+    // console.log(dString)
+    const[currServ,setCurrServ]=useState(0)
 
     useEffect(()=>{
+
+        // app.database().ref(currUser.uid+'/'+dString+'/fruitServ').on('value',snapshot=>{
+        //     console.log(snapshot.val())
+        //     setCurrServ(snapshot.val())
+        // })
+        // console.log(currServ)
         
         setUnit(Object.keys(items[itemIndex].serving)[0])//sets intial unit after component mounts
         const ref= app.database().ref(currUser.uid+"/"+dString+"/"+props.fireRef)
@@ -40,25 +44,68 @@ function BoardForm(props){
                 })
             }
             setUserList(allItems)
-        })
+        }) 
+
+    },[currUser.uid, dString, itemIndex, items,props.fireRef,currServ])
+
+
+useEffect(()=>{
+    const myRef = app.database().ref(currUser.uid+ "/" + dString +"/"+ "TotalServs")
+    myRef.once("value", snapshot=>{
+        const items = snapshot.val()
+
+        if(items===null){
+            myRef.set({
+                veg: 0,
+                fruit: 0,
+                dairy: 0
+            })
+        }
+    })
+
+
+},[])
 
 
 
-    },[currUser.uid, dString, itemIndex, items,props.fireRef])
     
     function handleAdd(e){
+        console.log('handle add called')
+
         e.preventDefault()
         const ref= app.database().ref(currUser.uid+"/"+dString+"/"+props.fireRef)
         const currObject=items[itemIndex];
-        
         const serving= Math.ceil(quantity/currObject.serving[unit]*100)/100
+        makeTotalServs(serving)
         ref.push({name:currObject.name,quantity:quantity,unit:unit,serving:serving})
+
     }
     
-    function handleRemove(itemToken){
-        const ref= app.database().ref(currUser.uid+"/"+dString+"/"+props.fireRef+"/"+itemToken)
+    function handleRemove(item){
+        const ref= app.database().ref(currUser.uid+"/"+dString+"/"+props.fireRef+"/"+item.id)
+       
+        ref.once("value", snapshot=>{
+            const items = snapshot.val()
+            makeTotalServs((-1*items['serving']))
+
+        })
+
         ref.remove()
     }
+
+
+    function makeTotalServs(addOn){
+        const myRef = app.database().ref(currUser.uid+ "/" + dString +"/"+ "TotalServs")
+        myRef.once("value", snapshot=>{
+            const items = snapshot.val()
+            var updatedTotalServs = items[props.fireRef]+addOn;
+            myRef.update({[props.fireRef]: updatedTotalServs})
+
+        })
+    }
+
+
+
 
     return(
         <>
@@ -93,7 +140,7 @@ function BoardForm(props){
         <ul className={"itemList scroll "+props.fireRef+"List"}>
                 {userList.map(item=>{
                     return (<li key={item.id}> 
-                        <b>{item.name}</b>({item.quantity}{item.unit}): {item.serving} servings   <button className="deleteBtn" variant="danger" onClick={()=>handleRemove(item.id)}>
+                        <b>{item.name}</b>({item.quantity}{item.unit}): {item.serving} servings   <button className="deleteBtn" variant="danger" onClick={()=>handleRemove(item)}>
                         <FontAwesomeIcon icon={faMinus} /></button></li>
                         )
                 })

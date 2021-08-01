@@ -16,18 +16,19 @@ function Dashboard(){
 
     return(
         <>
+        {/* style = {{ padding: '8%',  maxWidth: '30vw'} */}
         <MyNav dActive={true} sActive={false}/>
         <Container fluid className="foodGroups text-center">
             <Row style = {{margin: 'auto', width: '100%'}}>
-                <Col className="foodGroup veg" style = {{padding: '8%', maxWidth: '30vw'}} >
+                <Col className="foodGroup veg">
                     <h4>Veggies <FontAwesomeIcon icon={faCarrot} /></h4>
                     <BoardForm list={veggieObjects} fireRef="veg"/>
                 </Col>
-                <Col className="foodGroup fruit"  style = {{padding: '8%',  maxWidth: '30vw'}} >
+                <Col className="foodGroup fruit" >
                     <h4>Fruits <FontAwesomeIcon icon={faAppleAlt} /></h4>
                     <BoardForm list={fruitObjects} fireRef="fruit"/>
                 </Col>
-                <Col className="foodGroup dairy" style = {{ padding: '8%',  maxWidth: '30vw'}}>
+                <Col className="foodGroup dairy">
                     <h4>Dairy <FontAwesomeIcon icon={faCheese} /></h4>
                     <BoardForm list={dairyObjects} fireRef="dairy"/>
                 </Col>
