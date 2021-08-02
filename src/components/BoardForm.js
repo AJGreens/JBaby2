@@ -34,6 +34,7 @@ function BoardForm(props){
         ref.on('value',snapshot=>{
             const userItems= snapshot.val()
             let allItems=[]
+
             for(let item in userItems){
                 allItems.push({
                     id:item,
@@ -42,6 +43,7 @@ function BoardForm(props){
                     unit:userItems[item].unit,
                     serving:userItems[item].serving
                 })
+           
             }
             setUserList(allItems)
         }) 
@@ -51,8 +53,10 @@ function BoardForm(props){
 
 useEffect(()=>{
     const myRef = app.database().ref(currUser.uid+ "/" + dString +"/"+ "TotalServs")
+
     myRef.once("value", snapshot=>{
         const items = snapshot.val()
+        console.log('once called')
 
         if(items===null){
             myRef.set({
@@ -70,7 +74,6 @@ useEffect(()=>{
 
     
     function handleAdd(e){
-        console.log('handle add called')
 
         e.preventDefault()
         const ref= app.database().ref(currUser.uid+"/"+dString+"/"+props.fireRef)
@@ -83,7 +86,6 @@ useEffect(()=>{
     
     function handleRemove(item){
         const ref= app.database().ref(currUser.uid+"/"+dString+"/"+props.fireRef+"/"+item.id)
-       
         ref.once("value", snapshot=>{
             const items = snapshot.val()
             makeTotalServs((-1*items['serving']))
