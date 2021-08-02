@@ -11,9 +11,10 @@ function BoardForm(props){
 
     const items=props.list
     const d=new Date();
-    const dString=d.getMonth()+1+"-"+d.getDate()+"-"+d.getFullYear();
-    
+    const dFormat=d.getMonth()+1+"-"+d.getDate()+"-"+d.getFullYear();
 
+    const [dString] = useState(dFormat)
+    
     const [quantity, setQuantity]=useState(0)
     const [unit, setUnit] = useState('')
     const [itemIndex,setItemIndex] = useState(0)
@@ -43,27 +44,24 @@ function BoardForm(props){
     },[currUser.uid, dString, itemIndex, items,props.fireRef])
 
 
-// useEffect(()=>{
-//     console.log('this boy called')
-//     const myRef = app.database().ref(currUser.uid+ "/" + dString +"/TotalServs")
-//     myRef.once("value", snapshot=>{
-//         const items = snapshot.val()
-//         console.log('once called')
+useEffect(()=>{
+    const myRef = app.database().ref(currUser.uid+ "/" + dString +"/TotalServs")
+    myRef.once("value", snapshot=>{
+        const items = snapshot.val()
 
-//         if(items===null){
-//             myRef.set({
-//                 veg: 0,
-//                 fruit: 0,
-//                 dairy: 0
-//             })
-//         }
-//     })
-// },[currUser.uid, dString])
-
+        if(items===null){
+            myRef.set({
+                veg: 0,
+                fruit: 0,
+                dairy: 0
+            })
+        }
+    })
+},[currUser.uid,dString])
 
 
     
-    function handleAdd(e){
+        function handleAdd(e){
         e.preventDefault()
         const ref= app.database().ref(currUser.uid+"/"+dString+"/"+props.fireRef)
         const currObject=items[itemIndex];
