@@ -20,16 +20,17 @@ function Dashboard(){
         <MyNav dActive={true} sActive={false}/>
         <Container fluid className="foodGroups text-center">
             <Row>
+
                 <Col className="foodGroup veg">
-                    <h4>Veggies <FontAwesomeIcon icon={faCarrot} /></h4>
+                    <h4>Veggies <FontAwesomeIcon style= {{color: 'orange'}}icon={faCarrot} /></h4>
                     <BoardForm list={veggieObjects} fireRef="veg"/>
                 </Col>
                 <Col className="foodGroup fruit" >
-                    <h4>Fruits <FontAwesomeIcon icon={faAppleAlt} /></h4>
+                    <h4>Fruits <FontAwesomeIcon style= {{color: '#F1422A'}}icon={faAppleAlt} /></h4>
                     <BoardForm list={fruitObjects} fireRef="fruit"/>
                 </Col>
                 <Col className="foodGroup dairy">
-                    <h4>Dairy <FontAwesomeIcon icon={faCheese} /></h4>
+                    <h4>Dairy <FontAwesomeIcon style= {{color: 'yellow'}}icon={faCheese} /></h4>
                     <BoardForm list={dairyObjects} fireRef="dairy"/>
                 </Col>
             </Row>

@@ -10,9 +10,13 @@ body{
     color: white;
   
     /* background: radial-gradient(circle, rgba(245,190,65,1) 33%, rgba(207,55,33,1) 33%, rgba(207,55,33,1) 56%, rgba(49,169,184,1) 56%);     */
-    background-image: linear-gradient(90deg, rgba(245,190,65,1) 23%, rgba(207,55,33,1) 43%, rgba(207,55,33,1) 56%, rgba(49,169,184,1) 76%);
+    /* background-image: linear-gradient(90deg, rgba(245,190,65,1) 23%, rgba(207,55,33,1) 43%, rgba(207,55,33,1) 56%, rgba(49,169,184,1) 76%); */
+    /* background-image: linear-gradient(90deg, rgba(255,174,3,1) 23%, rgba(207,55,33,1) 43%, rgba(207,55,33,1) 56%, rgba(237,175,184,1) 76%); */
+    /* background-image: linear-gradient(90deg, rgba(255,149,5,1) 23%, rgba(203,0,0,1) 43%, rgba(203,0,0,1) 56%, rgba(102,44,145,1) 76%); */
+    /* background-image: linear-gradient(0deg,#2C6E49 0%, #DC965a 0%); */
 }
 .foodGroups h4{
+
     
     text-align: center;
     color: white;
@@ -21,8 +25,16 @@ body{
     /* border-left: white 4px dotted; */
     color:black;
     height: 89vh;
+    border: white solid 2px;
+    background-image: linear-gradient(0deg,black 0%,  #0A369D  20%);
+    border-radius: 25px;
+    /* height: 93vh; */
     padding: 2%;
 }
+
+
+
+
 /* green */
 /* #258039 */
 /* blue */
@@ -120,12 +132,19 @@ body{
 } */
 
 .deleteBtn{
+
     border-radius: 2px;
     background-color: #d9534f;
     color:white;
     border: 0px solid white;
     padding: 1px 7px;
     
+}
+
+.deleteBtn:hover{
+    background-color: #b1423e;
+    color:rgb(201, 197, 197);
+
 }
 
 /* .scroll{
@@ -135,9 +154,30 @@ body{
     height: 50%;
 } */
 
+.blackBtn{
+
+
+    /* background-color: #0a2342 !important; */
+    /* background-color: #3454d1 !important; */
+    /* background-color: #2364aa !important; */
+    /* background-color: #53599a !important; */
+    background-color: #4472CA!important;
+
+/* 
+    color: black !important; */
+    border: none !important;
+    /* border: rgb(4, 5, 65) solid 2px !important; */
+    box-shadow: none !important;
+}
+.blackBtn:hover{
+    background-color: rgb(53, 50, 50) !important; 
+
+}
+
 
 .itemList{
-    background-color: rgb(255,255,255,.5);
+    background-color: rgb(255,255,255,1);
+    
     height: 50%;
     width: 100%;
     /* padding: 2vh; */
@@ -155,3 +195,9 @@ body{
     padding-bottom: 3px;
 }
 
+.customNav{
+    color: black !important;
+    /* background-color: #0a2342  !important; */
+    background-color: black !important;
+    /* background-color: #2364aa !important; */
+}

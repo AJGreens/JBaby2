@@ -3,15 +3,16 @@ import {Nav,Navbar, Container,Button} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import {AuthContext} from '../contexts/AuthContext'
 import logoPic from '../img/logocirc.png'
+import '../style/dashboard.css'
 
 
 
 function MyNav(props){
     const {signOut}= useContext(AuthContext)
     return(
-        <Navbar bg="primary" variant="dark" style={{height:"7vh"}}>
-            <Container>
-                <Nav>
+        <Navbar bg="primry" className = 'customNav' variant="dark" style={{height:"7vh"}}>
+            <Container >
+                <Nav >
                     <Navbar.Brand as={Link} to="/">
                         <img
                             alt=""
