@@ -10,6 +10,7 @@ function BoardForm(props){
     const {currUser}= useContext(AuthContext)
 
     const items=props.list
+    console.log('a new date was set')
     const d=new Date();
     const dFormat=d.getMonth()+1+"-"+d.getDate()+"-"+d.getFullYear();
 
@@ -62,6 +63,7 @@ useEffect(()=>{
 
     
         function handleAdd(e){
+            console.log('add called')
         e.preventDefault()
         const ref= app.database().ref(currUser.uid+"/"+dString+"/"+props.fireRef)
         const currObject=items[itemIndex];
