@@ -8,60 +8,79 @@ function Summary(){
     const {currUser}=useContext(AuthContext)
 
     const [dateList,setDateList]= useState([])
-    const [servState,setServState]=useState({})
+    const [servState,setServState]=useState()
+    const today = new Date();
+    const [show,setShow]=useState(false)
+    const todayString=today.getMonth()+1+"-"+today.getDate()+"-"+today.getFullYear();
 
-    const d=new Date();
-    const dString=d.getMonth()+1+"-"+d.getDate()+"-"+d.getFullYear();
 
-    
+
+
+
+ 
     useEffect(()=>{
+        const ref= app.database().ref(currUser.uid);
 
-        const myRef = app.database().ref(currUser.uid)
-
-        myRef.on('value', snapshot=>{
-            const allDates=snapshot.val()
-            let tempList=[]
-            for(let date in allDates){
-                tempList.push(date)
-            }
-            setDateList(tempList)
-        })
-        
-    }
-    ,[currUser.uid])
-
-    console.log(servState)
-
-    useEffect(()=>{
-        const ref= app.database().ref(currUser.uid+"/"+dString+"/TotalServs")
+        let pastSixDays=[]
+        let vfdArray = {veg:[],fruit:[],dairy:[]}
         ref.on('value',snapshot=>{
-            const allServs= snapshot.val()
+            const allDatesStored= snapshot.val()
+            for(let i=6;i>=0;i--){
+                const d= new Date();
+                d.setDate(d.getDate()-i)
+                const dString=d.getMonth()+1+"-"+d.getDate()+"-"+d.getFullYear();
+                pastSixDays.push(dString)
 
-            let allLabelObjects=[]
-
-            for (var serv in allServs){
-                console.log(serv)
-                console.log(parseFloat(allServs[serv]))
-                const oneLabel={
+                if(allDatesStored[dString]){
+                    const storedVFD=allDatesStored[dString]["TotalServs"];
+                    for(let serv in storedVFD){
+                        vfdArray[serv].push(parseFloat(storedVFD[serv]))
+                    }
+                }
+                else{
+                    vfdArray["veg"].push(0)
+                    vfdArray["fruit"].push(0)
+                    vfdArray["dairy"].push(0)
+                }
+                
+            }
+            let allLabels=[]
+            const colors=["#f5be41","#CF3721","#31A9B8"]
+            let c=0;
+            for(let serv in vfdArray){
+                allLabels.push({
                     label: serv,
-                    backgroundColor: 'rgba(75,192,192,1)',
+                    backgroundColor: colors[c],
                     borderColor: 'rgba(0,0,0,1)',
                     borderWidth: 2,
-                    data: [parseFloat(allServs[serv])]
-                }
-                allLabelObjects.push(oneLabel)
+                    data: vfdArray[serv]
+                })
+                c++;
             }
-            const state = {
-                labels: [dString],//date
-                datasets: allLabelObjects
-              }
-            setServState(state)
+            setServState({
+                labels: pastSixDays,
+                datasets: allLabels
+            })
+
+
+
+
+
+
+
 
         })
+
+
+
+
+
+
+
+
+
+
     },[])
-
-
-
 
     
 
@@ -69,29 +88,7 @@ function Summary(){
     return(
         <>
             <MyNav dActive={false} sActive={true}/>
-            <h1> this is the summary page</h1>
-            <p>
-                <ul>
-                    {dateList.map(item=>{
-                        return <li>{item}</li>
-                    })
-                }
-                </ul>
-            </p>
-            <Bar 
-                data={servState} 
-                options={{
-                    title:{
-                        display:true,
-                        text:'Average Rainfall per month',
-                        fontSize:20
-                    },
-                    legend:{
-                        display:true,
-                        position:'right'
-                    }
-                }}
-            />
+            <Bar data={servState}/>
         </>
 
 

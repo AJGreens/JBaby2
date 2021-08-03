@@ -1,19 +1,12 @@
 body{
-    /* background-color: red; */
     color: white;
-    /* border: red solid 2px; */
 }
 .foodGroups{
-    /* padding:2vh; */
-    /* margin: 2vh; */
     border: #ffffff 2vh solid;
     color: white;
-  
-    /* background: radial-gradient(circle, rgba(245,190,65,1) 33%, rgba(207,55,33,1) 33%, rgba(207,55,33,1) 56%, rgba(49,169,184,1) 56%);     */
-    background-image: linear-gradient(90deg, rgba(245,190,65,1) 23%, rgba(207,55,33,1) 43%, rgba(207,55,33,1) 56%, rgba(49,169,184,1) 76%);
+
 }
 .foodGroups h4{
-    
     text-align: center;
     color: white;
 }
@@ -22,62 +15,36 @@ body{
     height: 89vh;
     padding: 2%;
 }
-/* green */
-/* #258039 */
-/* blue */
-/* #31A9B8  */
 
-/* .veg{
-    background: linear-gradient(315deg, #f5be41 50%,   #f5be41 50%);
-}
-.fruit{
-    /* border: red solid 2px; */
-    /* background: #CF3721 ; */
-    /* background: linear-gradient(45deg, #f5be41 50%, #CF3721 50%); */
-/* } */
-/* .dairy{
-    background: linear-gradient(45deg, #CF3721  50%, #31A9B8 50%);
-}  */
 
-/* .veg{ */
-    /* background: linear-gradient(315deg, #f5be41 50%,   #258039 50%); */
-    /* background: radial-gradient( #258039  65%,  #D8BCAB 70%);
-    height: 45vw;
-    max-height: 30vw;
-    max-width: 45vw; */
-/* 
-    padding: 10%; */
-    /* margin: auto; */
-    /* border: red solid 2px; */
-/* } */
-/* .fruit{ */
-    /* background: radial-gradient( #f5be41  60%,  #D8BCAB 65%);
-    height: 45vw;
-    max-height: 30vw;
-    max-width: 45vw; */
-    /* padding: 10%; */
-    /* margin: auto; */
-    /* background: linear-gradient(45deg, #f5be41 50%, #CF3721 50%); */
-/* } */
-/* .dairy{ */
-    /* background: radial-gradient(  #CF3721 55%,  #D8BCAB 60%);
-    height: 45vw;
-    max-height: 30vw;
-    max-width: 45vw; */
-    /* padding: 10%; */
-    /* margin: auto; */
-    /* background: linear-gradient(315deg, #31A9B8  50%, #CF3721 50%); */
-/* } */
+/* splits */
 
 .veg{
-    /* background: linear-gradient(315deg, #f5be41 45%,white 47% 48.5%,white 48.5% 50%,#f5be41 53%); */
+    background:linear-gradient(90deg, rgba(245,190,65,1) 50%, rgba(255,255,255,1) 50%);
 }
 .fruit{
-    /* background: linear-gradient(45deg, #CF3721 45%,white 47% 48.5%,white 48.5% 50%, #CF3721 53%); */
+    background:linear-gradient(90deg, rgba(255,255,255,1) 10%, rgba(207,55,33,1) 10%, rgba(207,55,33,1) 90%, rgba(255,255,255,1) 90%);
 }
 .dairy{
-    /* background: linear-gradient(315deg, #31A9B8  45%,white 47% 48.5%,white 48.5% 50%, #31A9B8 53%); */
+    background: linear-gradient(50deg, white  50%, #31A9B8 50% 100%);
 }
+
+
+
+/* catogories */
+
+/* .veg{
+    background:#f5be41;
+}
+.fruit{
+    background: linear-gradient(45deg, #f5be41 50%, #CF3721 50% 100%);
+}
+.dairy{
+    background: linear-gradient(45deg, #CF3721  50%, #31A9B8 50% 100%);
+} */
+
+
+/* large white zig-zag */
 
 /* .veg{
     background: linear-gradient(315deg, #f5be41 30%,white 30% 50%,white 50% 70%,#258039 70%);
@@ -91,33 +58,6 @@ body{
 
 
 
-
-/* .foodGroup{
-    color:white;
-    border-radius: 50%;
-    padding:100px;
-    vertical-align: top;
-    display: inline-block;
-    margin: 10px;
-
-    
-}
-.veg{
-    background-color: #F26419;
-    width:40vw;
-    height: 40vw;
-}
-.fruit{
-    background-color: #F6AE2D;
-    width:35vw;
-    height: 35vw;
-}
-.dairy{
-    background-color: #98C1D9;
-    width:30vw;
-    height: 30vw;
-} */
-
 .deleteBtn{
     border-radius: 2px;
     background-color: #d9534f;
@@ -127,22 +67,14 @@ body{
     
 }
 
-/* .scroll{
-    overflow:hidden; 
-    overflow-y:scroll;
-    width: 100%;
-    height: 50%;
-} */
-
-
 .itemList{
     background-color: white;
-    height: 50%;
+    height: 40%;
     width: 100%;
-    /* padding: 2vh; */
+    padding: 4vh;
     margin: 0;
     overflow:auto; 
-    /* overflow-y:scroll; */
+    overflow-y:scroll;
     border-radius: 15px;
     /* list-style-type: none; */
     list-style-position: inside;
