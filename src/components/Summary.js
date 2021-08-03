@@ -3,6 +3,7 @@ import MyNav from './MyNav'
 import {app} from "./Firebase"
 import { AuthContext} from '../contexts/AuthContext'
 import {Bar} from 'react-chartjs-2'
+import {Button} from 'react-bootstrap'
 
 function Summary(){
     const {currUser}=useContext(AuthContext)
@@ -12,6 +13,7 @@ function Summary(){
     const today = new Date();
     const [show,setShow]=useState(false)
     const todayString=today.getMonth()+1+"-"+today.getDate()+"-"+today.getFullYear();
+    const [dayCount, setDayCount] = useState(6)
 
 
 
@@ -25,7 +27,7 @@ function Summary(){
         let vfdArray = {veg:[],fruit:[],dairy:[]}
         ref.on('value',snapshot=>{
             const allDatesStored= snapshot.val()
-            for(let i=6;i>=0;i--){
+            for(let i=dayCount;i>=0;i--){
                 const d= new Date();
                 d.setDate(d.getDate()-i)
                 const dString=d.getMonth()+1+"-"+d.getDate()+"-"+d.getFullYear();
@@ -49,9 +51,10 @@ function Summary(){
             let c=0;
             for(let serv in vfdArray){
                 allLabels.push({
+                    type: dayCount===30? 'line': 'bar',
                     label: serv,
                     backgroundColor: colors[c],
-                    borderColor: 'rgba(0,0,0,1)',
+                    borderColor: dayCount===30? colors[c]:'rgba(0,0,0,1)',
                     borderWidth: 2,
                     data: vfdArray[serv],
                     plugins: {
@@ -73,48 +76,51 @@ function Summary(){
             allLabels.push({
                 type: 'line',
                 label: 'Line Dataset',
-                data: [5, 5, 5, 5, 5, 5, 5],
+                data: [2, 2, 2, 2, 2, 2, 2],
                 pointRadius:0,
                 borderColor:colors[0],
                 borderDash:[25, 25],
 
             })
 
-
-
             setServState({
                 labels: pastSixDays,
                 datasets: allLabels
             })
 
-
-
-
-
-
-
-
         })
 
 
-
-
-
-
-
-
-
-
-    },[])
+    },[dayCount])
 
     
 
 
     return(
-        <>
+        <div style = {{textAlign: 'center'}}>
             <MyNav dActive={false} sActive={true}/>
-            <Bar data={servState}/>
-        </>
+            <Bar data={servState} options={{
+       legend: {
+         display: false
+       },
+       scales: {
+         yAxes: [{
+           ticks: {
+              max: 40,
+              min: 0,
+              stepSize: 3
+            }
+          }]
+         },
+        title: {
+         display: true,
+         text: "hello"
+        }
+     }}/>
+            <Button onClick = {()=>setDayCount(0)}>Today</Button> 
+            <Button onClick = {()=>setDayCount(6)}>Past 7 days</Button>
+            <Button onClick = {()=>setDayCount(30)}>Past 30 days</Button>
+        </div>
 
 
 
