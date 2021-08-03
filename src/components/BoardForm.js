@@ -137,7 +137,8 @@ useEffect(()=>{
                     </Form.Group>
                 </Row>
                 {unit&&<Button className="w-25 blackBtn" onClick = {handleAdd}>Add</Button>}
-                <p style = {{color: 'white'}}>Ideal Daily Servings: {props.idealserv} | Today's Total Servings: {totalServs} </p>
+                {/* <p style = {{color: 'white'}}>Ideal Daily Servings: {props.idealserv} </p>
+                <p style = {{color: 'white'}}> Today's Total Servings: {totalServs}</p> */}
             </Form>
         {/* FORM SECTION */}
         <ul className={"itemList scroll "+props.fireRef+"List"}>
@@ -150,6 +151,9 @@ useEffect(()=>{
             }
                 
         </ul>
+        <br/>
+        <p style = {{color: 'white'}}>Ideal Daily Servings: {props.idealserv} </p>
+                <p style = {{color: 'white'}}> Today's Total Servings: {totalServs}</p>
         {/* FORM SECTION */}
         </>
     )
