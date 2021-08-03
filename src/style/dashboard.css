@@ -11,13 +11,53 @@ body{
     color: white;
 }
 .foodGroup{
+    /* border-left: white 4px dotted; */
     color:black;
     height: 89vh;
     padding: 2%;
 }
 
+.veg{
+    /* background: linear-gradient(315deg, #f5be41 50%,   #f5be41 50%); */
+}
+.fruit{
+    /* border: red solid 2px; */
+    /* background: #CF3721 ; */
+    /* background: linear-gradient(45deg, #f5be41 50%, #CF3721 50%); */
+ }
+/* .dairy{
+    background: linear-gradient(45deg, #CF3721  50%, #31A9B8 50%);
+}  */
 
-/* splits */
+/* .veg{ */
+    /* background: linear-gradient(315deg, #f5be41 50%,   #258039 50%); */
+    /* background: radial-gradient( #258039  65%,  #D8BCAB 70%);
+    height: 45vw;
+    max-height: 30vw;
+    max-width: 45vw; */
+/* 
+    padding: 10%; */
+    /* margin: auto; */
+    /* border: red solid 2px; */
+/* } */
+/* .fruit{ */
+    /* background: radial-gradient( #f5be41  60%,  #D8BCAB 65%);
+    height: 45vw;
+    max-height: 30vw;
+    max-width: 45vw; */
+    /* padding: 10%; */
+    /* margin: auto; */
+    /* background: linear-gradient(45deg, #f5be41 50%, #CF3721 50%); */
+/* } */
+/* .dairy{ */
+    /* background: radial-gradient(  #CF3721 55%,  #D8BCAB 60%);
+    height: 45vw;
+    max-height: 30vw;
+    max-width: 45vw; */
+    /* padding: 10%; */
+    /* margin: auto; */
+    /* background: linear-gradient(315deg, #31A9B8  50%, #CF3721 50%); */
+/* } */
 
 .veg{
     background:linear-gradient(90deg, rgba(245,190,65,1) 50%, rgba(255,255,255,1) 50%);
@@ -76,6 +116,7 @@ body{
     overflow:auto; 
     overflow-y:scroll;
     border-radius: 15px;
+    /* border: white solid 2px; */
     /* list-style-type: none; */
     list-style-position: inside;
     list-style: none;

@@ -11,9 +11,10 @@ function BoardForm(props){
 
     const items=props.list
     const d=new Date();
-    const dString=d.getMonth()+1+"-"+d.getDate()+"-"+d.getFullYear();
-    
+    const dFormat=d.getMonth()+1+"-"+d.getDate()+"-"+d.getFullYear();
 
+    const [dString] = useState(dFormat)
+    
     const [quantity, setQuantity]=useState(0)
     const [unit, setUnit] = useState('')
     const [itemIndex,setItemIndex] = useState(0)
@@ -26,6 +27,7 @@ function BoardForm(props){
         ref.on('value',snapshot=>{
             const userItems= snapshot.val()
             let allItems=[]
+
             for(let item in userItems){
                 allItems.push({
                     id:item,
@@ -34,6 +36,7 @@ function BoardForm(props){
                     unit:userItems[item].unit,
                     serving:userItems[item].serving
                 })
+           
             }
             setUserList(allItems)
         }) 
@@ -57,9 +60,8 @@ useEffect(()=>{
 },[currUser.uid,dString])
 
 
-
     
-    function handleAdd(e){
+        function handleAdd(e){
         e.preventDefault()
         const ref= app.database().ref(currUser.uid+"/"+dString+"/"+props.fireRef)
         const currObject=items[itemIndex];
