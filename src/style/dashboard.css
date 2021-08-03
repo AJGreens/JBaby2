@@ -77,7 +77,7 @@ body{
     /* margin: auto; */
     /* background: linear-gradient(315deg, #31A9B8  50%, #CF3721 50%); */
 /* } */
-
+/* 
 .veg{
     background:linear-gradient(90deg, rgba(245,190,65,1) 50%, rgba(255,255,255,1) 50%);
 }
@@ -86,7 +86,7 @@ body{
 }
 .dairy{
     background: linear-gradient(50deg, white  50%, #31A9B8 50% 100%);
-}
+} */
 
 
 
@@ -169,7 +169,7 @@ body{
     padding: 4vh;
     margin: 0;
     overflow:auto; 
-    overflow-y:scroll;
+    /* overflow-y:scroll; */
     border-radius: 15px;
     /* border: white solid 2px; */
     /* list-style-type: none; */

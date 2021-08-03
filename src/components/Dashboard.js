@@ -23,15 +23,15 @@ function Dashboard(){
 
                 <Col className="foodGroup veg">
                     <h4>Veggies <FontAwesomeIcon style= {{color: 'orange'}}icon={faCarrot} /></h4>
-                    <BoardForm list={veggieObjects} fireRef="veg"/>
+                    <BoardForm list={veggieObjects} fireRef="veg" idealserv = '2.5' />
                 </Col>
                 <Col className="foodGroup fruit" >
                     <h4>Fruits <FontAwesomeIcon style= {{color: '#F1422A'}}icon={faAppleAlt} /></h4>
-                    <BoardForm list={fruitObjects} fireRef="fruit"/>
+                    <BoardForm list={fruitObjects} fireRef="fruit" idealserv = '2'/>
                 </Col>
                 <Col className="foodGroup dairy">
                     <h4>Dairy <FontAwesomeIcon style= {{color: 'yellow'}}icon={faCheese} /></h4>
-                    <BoardForm list={dairyObjects} fireRef="dairy"/>
+                    <BoardForm list={dairyObjects} fireRef="dairy" idealserv = '3'/>
                 </Col>
             </Row>
        

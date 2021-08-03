@@ -20,6 +20,7 @@ function BoardForm(props){
     const [unit, setUnit] = useState('')
     const [itemIndex,setItemIndex] = useState(0)
     const [userList,setUserList]=useState([])
+    const [totalServs, setTotalServs] = useState("0.00")
 
     useEffect(()=>{
         
@@ -52,13 +53,28 @@ useEffect(()=>{
 
         if(items===null){
             myRef.set({
-                veg: 0,
-                fruit: 0,
-                dairy: 0
+                veg: "0.00",
+                fruit: "0.00",
+                dairy: "0.00"
             })
         }
+
     })
 },[currUser.uid,dString])
+
+useEffect(()=>{
+    const myRef = app.database().ref(currUser.uid+ "/" + dString +"/TotalServs")
+    myRef.on("value", snapshot=>{
+        const items = snapshot.val()
+
+        for (let item in items){
+            if (item === props.fireRef){
+                setTotalServs(items[item])
+            }
+        }
+        
+    })
+},[])
 
 
     
@@ -121,6 +137,7 @@ useEffect(()=>{
                     </Form.Group>
                 </Row>
                 {unit&&<Button className="w-25 blackBtn" onClick = {handleAdd}>Add</Button>}
+                <p style = {{color: 'white'}}>Ideal Daily Servings: {props.idealserv} | Today's Total Servings: {totalServs} </p>
             </Form>
         {/* FORM SECTION */}
         <ul className={"itemList scroll "+props.fireRef+"List"}>

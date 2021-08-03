@@ -53,16 +53,35 @@ function Summary(){
                     backgroundColor: colors[c],
                     borderColor: 'rgba(0,0,0,1)',
                     borderWidth: 2,
-                    data: vfdArray[serv]
+                    data: vfdArray[serv],
+                    plugins: {
+                    annotation: {
+                        annotations: [{
+                            type: 'line',
+                            mode: 'horizontal',
+                            scaleID: 'y-axis-0',
+                            value: '26',
+                            borderColor: 'tomato',
+                            borderWidth: 1
+                        }],
+                        drawTime: "afterDraw" // (default)
+                    }
+                }
                 })
                 c++;
             }
-
             allLabels.push({
                 type: 'line',
                 label: 'Line Dataset',
-                data: [5, 5],
+                data: [5, 5, 5, 5, 5, 5, 5],
+                pointRadius:0,
+                borderColor:colors[0],
+                borderDash:[25, 25],
+
             })
+
+
+
             setServState({
                 labels: pastSixDays,
                 datasets: allLabels
