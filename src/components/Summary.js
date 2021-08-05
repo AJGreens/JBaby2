@@ -4,28 +4,25 @@ import {app} from "./Firebase"
 import { AuthContext} from '../contexts/AuthContext'
 import {Bar} from 'react-chartjs-2'
 import {Button} from 'react-bootstrap'
+import { Chart } from 'chart.js';
+import annotationPlugin from 'chartjs-plugin-annotation';
+
+Chart.register(annotationPlugin);
+
 
 function Summary(){
     const {currUser}=useContext(AuthContext)
-
-    const [dateList,setDateList]= useState([])
     const [servState,setServState]=useState()
     const today = new Date();
-    const [show,setShow]=useState(false)
     const todayString=today.getMonth()+1+"-"+today.getDate()+"-"+today.getFullYear();
     const [dayCount, setDayCount] = useState(6)
-
-
-
-
 
  
     useEffect(()=>{
         const ref= app.database().ref(currUser.uid);
-
         let pastSixDays=[]
         let vfdArray = {veg:[],fruit:[],dairy:[]}
-        ref.on('value',snapshot=>{
+        ref.once('value',snapshot=>{
             const allDatesStored= snapshot.val()
             for(let i=dayCount;i>=0;i--){
                 const d= new Date();
@@ -56,32 +53,10 @@ function Summary(){
                     backgroundColor: colors[c],
                     borderColor: dayCount===30? colors[c]:'rgba(0,0,0,1)',
                     borderWidth: 2,
-                    data: vfdArray[serv],
-                    plugins: {
-                    annotation: {
-                        annotations: [{
-                            type: 'line',
-                            mode: 'horizontal',
-                            scaleID: 'y-axis-0',
-                            value: '26',
-                            borderColor: 'tomato',
-                            borderWidth: 1
-                        }],
-                        drawTime: "afterDraw" // (default)
-                    }
-                }
+                    data: vfdArray[serv]
                 })
                 c++;
             }
-            allLabels.push({
-                type: 'line',
-                label: 'Line Dataset',
-                data: [2, 2, 2, 2, 2, 2, 2],
-                pointRadius:0,
-                borderColor:colors[0],
-                borderDash:[25, 25],
-
-            })
 
             setServState({
                 labels: pastSixDays,
@@ -90,42 +65,63 @@ function Summary(){
 
         })
 
-
     },[dayCount])
 
-    
+    const options = {
+        plugins: {
+            autocolors: false,
+            title: {
+                display: true,
+                text: 'Custom Chart Title'
+            },
+            annotation: {
+              annotations: {
+                vegLine: {
+                  type: 'line',
+                  yMin: 2.5,
+                  yMax: 2.5,
+                  borderColor: "#f5be41",
+                  borderWidth: 5,
+                  borderDash:[25,5],
+                  
+                },
+                fruitLine:{
+                    type: 'line',
+                    yMin: 2,
+                    yMax: 2,
+                    borderColor: "#CF3721",
+                    borderWidth: 5,
+                    borderDash:[25,10]
+
+                },
+                dairyLine:{
+                    type: 'line',
+                    yMin: 3,
+                    yMax: 3,
+                    borderColor: "#31A9B8",
+                    borderWidth: 5,
+                    borderDash:[25,15],
+                    label:{
+                        backgroundColor:"#31A9B8",
+                        color:"#ffffff",
+                        content:"dairy guide",
+                        enabled:true
+                    }
+                }
+              }
+            }
+          }
+      };
 
 
     return(
         <div style = {{textAlign: 'center'}}>
             <MyNav dActive={false} sActive={true}/>
-            <Bar data={servState} options={{
-       legend: {
-         display: false
-       },
-       scales: {
-         yAxes: [{
-           ticks: {
-              max: 40,
-              min: 0,
-              stepSize: 3
-            }
-          }]
-         },
-        title: {
-         display: true,
-         text: "hello"
-        }
-     }}/>
+            <Bar data={servState} options={options} />
             <Button onClick = {()=>setDayCount(0)}>Today</Button> 
             <Button onClick = {()=>setDayCount(6)}>Past 7 days</Button>
             <Button onClick = {()=>setDayCount(30)}>Past 30 days</Button>
         </div>
-
-
-
-
-
 
     )
 
