@@ -10,7 +10,7 @@ import '../style/dashboard.css'
 function MyNav(props){
     const {signOut}= useContext(AuthContext)
     return(
-        <Navbar bg="primry" className = 'customNav' variant="dark" style={{height:"7vh"}}>
+        <Navbar bg="primary" className = 'customNav' variant="dark" style={{height:"7vh"}}>
             <Container >
                 <Nav >
                     <Navbar.Brand as={Link} to="/">
