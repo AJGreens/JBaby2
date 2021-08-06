@@ -23,6 +23,7 @@ function Summary(){
 
  
     useEffect(()=>{
+        console.log("useffect")
         setLoading(true)
         const ref= app.database().ref(currUser.uid);
         let pastSixDays=[]
