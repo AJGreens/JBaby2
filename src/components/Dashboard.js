@@ -16,7 +16,6 @@ function Dashboard(){
 
     return(
         <>
-        {/* style = {{ padding: '8%',  maxWidth: '30vw'} */}
         <MyNav dActive={true} sActive={false}/>
         <Container fluid className="foodGroups text-center">
             <Row>
@@ -35,25 +34,6 @@ function Dashboard(){
                 </Col>
             </Row>
        
-            {/* <Row>
-                <Col className="veg"></Col>
-      
-                <Col className="fruit"></Col>
-            </Row> */}
-      
-                {/* <div className="foodGroup veg" >
-                    <h4>Veggies</h4>
-                    <BoardForm list={veggieObjects} fireRef="veg"/>
-                </div>
-                <div className="foodGroup fruit">
-                    <h4>Fruits</h4>
-                    <BoardForm list={fruitObjects} fireRef="fruit"/>
-                </div>
-                <div className="foodGroup dairy">
-                    <h4>Dairy</h4>
-                    <BoardForm list={dairyObjects} fireRef="dairy"/>
-                </div> */}
-
         </Container>
             
         </>

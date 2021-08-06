@@ -3,9 +3,6 @@ import {Card, Form, Button, Alert} from 'react-bootstrap'
 import {AuthContext} from '../contexts/AuthContext'
 import {Link,useHistory} from 'react-router-dom'
 
-
-
-
 function SignUp(){
     const {signUp}= useContext(AuthContext)
 
@@ -38,7 +35,6 @@ function SignUp(){
 
     return(
         <Card style = {{maxWidth: '400px'}}>
-
             <Card.Body>
                 <Form onSubmit = {handleSubmit}>
                     <h3 className = 'mb-4 text-center'>Sign up</h3>
@@ -64,11 +60,6 @@ function SignUp(){
         
     )
 }
-
-
-
-
-
 
 
 

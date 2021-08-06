@@ -187,3 +187,21 @@ body{
     /* background-color: black !important; */
     /* background-color: #2364aa !important; */
 }
+
+.chartBtn{
+    border: none !important;
+    box-shadow: none !important;
+    background-color: #10b23b !important;
+ 
+}
+.chartBtn:hover{
+    background-color: #0b852b !important; 
+
+}
+
+.activeChartBtn{
+    border: none !important;
+    box-shadow: none !important;
+    background-color: #06531b  !important;
+}
+

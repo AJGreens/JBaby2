@@ -10,7 +10,6 @@ function BoardForm(props){
     const {currUser}= useContext(AuthContext)
 
     const items=props.list
-    console.log('a new date was set')
     const d=new Date();
     const dFormat=d.getMonth()+1+"-"+d.getDate()+"-"+d.getFullYear();
 
@@ -23,13 +22,11 @@ function BoardForm(props){
     const [totalServs, setTotalServs] = useState("0.00")
 
     useEffect(()=>{
-        
         setUnit(Object.keys(items[itemIndex].serving)[0])//sets intial unit after component mounts
         const ref= app.database().ref(currUser.uid+"/"+dString+"/"+props.fireRef)
         ref.on('value',snapshot=>{
             const userItems= snapshot.val()
             let allItems=[]
-
             for(let item in userItems){
                 allItems.push({
                     id:item,
@@ -46,47 +43,46 @@ function BoardForm(props){
     },[currUser.uid, dString, itemIndex, items,props.fireRef])
 
 
-useEffect(()=>{
-    const myRef = app.database().ref(currUser.uid+ "/" + dString +"/TotalServs")
-    myRef.once("value", snapshot=>{
-        const items = snapshot.val()
+    useEffect(()=>{
+        const myRef = app.database().ref(currUser.uid+ "/" + dString +"/TotalServs")
+        myRef.once("value", snapshot=>{
+            const items = snapshot.val()
 
-        if(items===null){
-            myRef.set({
-                veg: "0.00",
-                fruit: "0.00",
-                dairy: "0.00"
-            })
-        }
-
-    })
-},[currUser.uid,dString])
-
-useEffect(()=>{
-    const myRef = app.database().ref(currUser.uid+ "/" + dString +"/TotalServs")
-    myRef.on("value", snapshot=>{
-        const items = snapshot.val()
-
-        for (let item in items){
-            if (item === props.fireRef){
-                setTotalServs(items[item])
+            if(items===null){
+                myRef.set({
+                    veg: "0.00",
+                    fruit: "0.00",
+                    dairy: "0.00"
+                })
             }
-        }
-        
-    })
-},[])
+
+        })
+    },[currUser.uid,dString])
+
+    useEffect(()=>{
+
+        const myRef = app.database().ref(currUser.uid+ "/" + dString +"/TotalServs")
+        myRef.on("value", snapshot=>{
+            const items = snapshot.val()
+
+            for (let item in items){
+                if (item === props.fireRef){
+                    setTotalServs(items[item])
+                }
+            }
+            
+        })
+    },[dString])
 
 
     
-        function handleAdd(e){
-            console.log('add called')
+    function handleAdd(e){
         e.preventDefault()
         const ref= app.database().ref(currUser.uid+"/"+dString+"/"+props.fireRef)
         const currObject=items[itemIndex];
         const serving= Math.ceil(quantity/currObject.serving[unit]*100)/100
         makeTotalServs(serving)
         ref.push({name:currObject.name,quantity:quantity,unit:unit,serving:serving})
-
     }
     
     function handleRemove(item){
@@ -137,8 +133,6 @@ useEffect(()=>{
                     </Form.Group>
                 </Row>
                 {unit&&<Button className="w-25 blackBtn" onClick = {handleAdd}>Add</Button>}
-                {/* <p style = {{color: 'white'}}>Ideal Daily Servings: {props.idealserv} </p>
-                <p style = {{color: 'white'}}> Today's Total Servings: {totalServs}</p> */}
             </Form>
         {/* FORM SECTION */}
         <ul className={"itemList scroll "+props.fireRef+"List"}>

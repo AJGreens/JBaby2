@@ -4,8 +4,6 @@ import { AuthContext } from '../contexts/AuthContext'
 
 function PrivateRouteMain({component: Component,...rest}){
     const {currUser}= useContext(AuthContext)
-
-
     return(
         <Route {...rest} render ={()=>{return currUser? <Component/> : <Redirect to = '/signin'/>  }}/>
             

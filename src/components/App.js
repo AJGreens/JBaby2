@@ -9,9 +9,9 @@ import {HashRouter as Router,Switch} from 'react-router-dom'
 import Summary from './Summary'
 
 function App() {
-  // , 
   return (
   <div>
+    
     <AuthProvider>
       <Router>
         <Switch>
@@ -19,7 +19,6 @@ function App() {
           <PrivateRouteAccount path='/signin' exact component={SignIn}/>
           <PrivateRouteAccount path='/signup' exact component={SignUp}/>
           <PrivateRouteMain path = '/summary' exact component = {Summary}/>
-
         </Switch>
       </Router>
     </AuthProvider>
