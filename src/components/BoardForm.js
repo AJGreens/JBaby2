@@ -5,6 +5,7 @@ import {app} from './Firebase'
 import '../style/dashboard.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMinus } from '@fortawesome/free-solid-svg-icons'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 function BoardForm(props){
     const {currUser}= useContext(AuthContext)
@@ -20,6 +21,7 @@ function BoardForm(props){
     const [itemIndex,setItemIndex] = useState(0)
     const [userList,setUserList]=useState([])
     const [totalServs, setTotalServs] = useState("0.00")
+    const colors=["#E89005","#CF3721","#31A9B8"]
 
     useEffect(()=>{
         setUnit(Object.keys(items[itemIndex].serving)[0])//sets intial unit after component mounts
@@ -104,14 +106,14 @@ function BoardForm(props){
 
 
 
-
+    // style = {{background: props.fireRef==="veg" ? colors[0] : (props.fireRef==='fruit' ? colors[1] : colors[2])}}
     return(
-        <>
+        <div className = 'mainFormDivs' >
         {/* FORM SECTION */}
-            <Form className="text-center mb-4">
-                <Row className="mb-3">
-                    <Form.Group as={Col}>
-                        <select className="form-select" value={itemIndex} onChange={(e)=>{setItemIndex(e.target.value)}}>
+            <Form className="text-center mb-4" style = {{width: '100%'}}>
+                <Row className="mb-3 row justify-content-md-center"  >
+                    <Form.Group className = "col " style = {{padding: '0 10px 0 10px'}}>
+                        <select className= 'form-select' value={itemIndex} onChange={(e)=>{setItemIndex(e.target.value)}}>
                             {items.map((item,index)=>{
                                 return <option value={index} key={index}>{item.name}</option>
                             })
@@ -119,12 +121,12 @@ function BoardForm(props){
                         </select>
                     </Form.Group>
 
-                    <Form.Group as={Col}>  
-                        <Form.Control value={quantity} onChange={(e)=>setQuantity(e.target.value)} type="number" min="0"/>
+                    <Form.Group className = "col-sm-auto " style = {{padding: 0}}  >  
+                        <Form.Control    value={quantity} onChange={(e)=>setQuantity(e.target.value)} type="number" min="0" max = '9999'/>
                     </Form.Group>  
 
-                    <Form.Group as={Col}>  
-                        <select className="form-select" value={unit} onChange={(e)=>setUnit(e.target.value)}>
+                    <Form.Group className = "col-sm-auto " style = {{padding: '0 10px 0 10px'}} >  
+                        <select className= 'form-select'  value={unit} onChange={(e)=>setUnit(e.target.value)}>
                             {Object.keys(items[itemIndex].serving).map((name,index)=>{
                                 return <option value={name} key={index}>{name}</option>
                             })
@@ -135,21 +137,21 @@ function BoardForm(props){
                 {unit&&<Button className="w-25 blackBtn" onClick = {handleAdd}>Add</Button>}
             </Form>
         {/* FORM SECTION */}
-        <ul className={"itemList scroll "+props.fireRef+"List"}>
+        <ul className={"itemList scroll "+props.fireRef+"List"} >
                 {userList.map(item=>{
                     return (<li key={item.id}> 
-                        <b>{item.name}</b>({item.quantity}{item.unit}): {item.serving} servings   <button className="deleteBtn" variant="danger" onClick={()=>handleRemove(item)}>
-                        <FontAwesomeIcon icon={faMinus} /></button></li>
+                        {item.name}({item.quantity}{item.unit}): {item.serving} servings <button className="deleteBtn" variant="danger" onClick={()=>handleRemove(item)}>
+                        <FontAwesomeIcon icon={faTimes} /></button></li>
                         )
                 })
             }
                 
         </ul>
-        <br/>
-        <p style = {{color: 'white'}}>Ideal Daily Servings: {props.idealserv} </p>
-                <p style = {{color: 'white'}}> Today's Total Servings: {totalServs}</p>
+ 
+        {/* <span style = {{color: 'white'}}>Ideal Daily Servings: {props.idealserv} <br/>
+      Today's Total Servings: {totalServs}</span> */}
         {/* FORM SECTION */}
-        </>
+        </div>
     )
 
 }
