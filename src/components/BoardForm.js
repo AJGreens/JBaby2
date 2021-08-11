@@ -145,9 +145,9 @@ function BoardForm(props){
             }
                 
         </ul>
-        <br/>
-        <p style = {{color: 'white'}}>Ideal Daily Servings: {props.idealserv} </p>
-                <p style = {{color: 'white'}}> Today's Total Servings: {totalServs}</p>
+        {/* <br/> */}
+        {/* <p>Ideal Daily Servings: {props.idealserv} </p>
+        <p> Today's Total Servings: {totalServs}</p> */}
         {/* FORM SECTION */}
         </>
     )

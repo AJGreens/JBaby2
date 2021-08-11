@@ -21,7 +21,7 @@ function Dashboard(){
             <Row>
 
                 <Col className="foodGroup veg">
-                    <h4>Veggies <FontAwesomeIcon style= {{color: 'orange'}}icon={faCarrot} /></h4>
+                    <h4>Veggies <FontAwesomeIcon style= {{color: '#f5be41'}}icon={faCarrot} /></h4>
                     <BoardForm list={veggieObjects} fireRef="veg" idealserv = '2.5' />
                 </Col>
                 <Col className="foodGroup fruit" >
@@ -29,7 +29,7 @@ function Dashboard(){
                     <BoardForm list={fruitObjects} fireRef="fruit" idealserv = '2'/>
                 </Col>
                 <Col className="foodGroup dairy">
-                    <h4>Dairy <FontAwesomeIcon style= {{color: 'yellow'}}icon={faCheese} /></h4>
+                    <h4>Dairy <FontAwesomeIcon style= {{color: '#31A9B8 '}}icon={faCheese}/></h4>
                     <BoardForm list={dairyObjects} fireRef="dairy" idealserv = '3'/>
                 </Col>
             </Row>
