@@ -33,26 +33,29 @@
   
 .vegTitle{
    color: #06531b;
+   border: #06531b solid 2px;
 }
   
 .fruitTitle{
    color:#8b150f;
+      border: #8b150f solid 2px;
 }
 .dairyTitle{
    color:#c6971e ;
+      border: #c6971e solid 2px;
 }
   
   
   
 .veg{
    background-image: url('../img/broccoli.jpg') ;
-   background: linear-gradient(90deg, rgba(255,255,255,1) 50%, rgba(80,33,187,.2) 50%, rgba(0,0,0,.2) 100%), url('../img/broccoli.jpg') ;
+   background: linear-gradient(90deg, rgba(255,255,255,1) 25%, rgba(0, 0, 0, 0.2) 25%, rgba(0,0,0,.2) 75%, rgba(255,255,255,1) 75%),  url('../img/broccoli.jpg') ;
    background-size: cover;
 }
  .fruit{
    background: rgba(207, 55, 33, .4);
    background: rgba(0, 0, 0, 0.5);
-   background: linear-gradient(90deg, rgba(255,255,255,1) 50%, rgba(80,33,187,.2) 50%, rgba(0,0,0,.2) 100%), url('../img/apples.jpg') ;
+   background: linear-gradient(90deg, rgba(255,255,255,1) 25%, rgba(0, 0, 0, 0.2) 25%, rgba(0,0,0,.2) 75%,rgba(255,255,255,1) 75%), url('../img/apples.jpg') ;
    background-size: cover;
 }
   
@@ -60,12 +63,13 @@
 .dairy{
    background: rgba(49, 169, 184, .4);
    background: rgba(0, 0, 0, 0.5);
-   background: linear-gradient(90deg, rgba(255,255,255,1) 50%, rgba(80,33,187,.2) 50%, rgba(0,0,0,.2) 100%), url('../img/chez.jpg') ;
+   background: linear-gradient(90deg, rgba(255,255,255,1) 25%, rgba(0, 0, 0, 0.2) 25%, rgba(0,0,0,.2) 75%,rgba(255,255,255,1) 75%), url('../img/chez.jpg') ;
    background-size: cover;
 }
   
 .vegList{
    background-color: rgba(255, 255, 255, 1);
+   border: #06531b solid 2px;
    /* border: #06531b solid 4px; */
    /* box-shadow: #06531b 5px 5px 0px 0; */
   
@@ -73,12 +77,14 @@
 .fruitList{
   
    background-color: rgba(255, 255, 255, 1);
+   border: #8b150f solid 2px;
    /* border: #8b150f solid 4px  */
    /* box-shadow: #8b150f 5px 5px 0px 0; */
 }
 
 .dairyList{
    background-color: rgba(255, 255, 255, 1);
+      border: #c6971e solid 2px;
    /* border: #c6971e solid 4px; */
    /* box-shadow: #c6971e 5px 5px 0px 0; */
 }
