@@ -1,3 +1,4 @@
+
 import React,{useState,useEffect,useContext} from 'react'
 import {Button,Form,Row,Col} from 'react-bootstrap'
 import { AuthContext } from '../contexts/AuthContext'
@@ -5,7 +6,8 @@ import {app} from './Firebase'
 import '../style/dashboard.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMinus } from '@fortawesome/free-solid-svg-icons'
-
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
+ 
 function BoardForm(props){
     const {currUser}= useContext(AuthContext)
 
@@ -23,7 +25,7 @@ function BoardForm(props){
 
     useEffect(()=>{
         setUnit(Object.keys(items[itemIndex].serving)[0])//sets intial unit after component mounts
-        const ref= app.database().ref(currUser.uid+"/"+dString+"/"+props.fireRef)
+        const ref= app.database().ref(currUser.uid+"/"+dString+"/Lists/"+props.fireRef)
         ref.on('value',snapshot=>{
             const userItems= snapshot.val()
             let allItems=[]
@@ -78,7 +80,7 @@ function BoardForm(props){
     
     function handleAdd(e){
         e.preventDefault()
-        const ref= app.database().ref(currUser.uid+"/"+dString+"/"+props.fireRef)
+        const ref= app.database().ref(currUser.uid+"/"+dString+"/Lists/"+props.fireRef)
         const currObject=items[itemIndex];
         const serving= Math.ceil(quantity/currObject.serving[unit]*100)/100
         makeTotalServs(serving)
@@ -86,7 +88,7 @@ function BoardForm(props){
     }
     
     function handleRemove(item){
-        const ref= app.database().ref(currUser.uid+"/"+dString+"/"+props.fireRef+"/"+item.id)
+        const ref= app.database().ref(currUser.uid+"/"+dString+"/Lists/"+props.fireRef+"/"+item.id)
         console.log(-1*item.serving)
         makeTotalServs((-1*item.serving))
         ref.remove()

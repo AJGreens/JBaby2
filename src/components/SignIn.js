@@ -7,7 +7,7 @@ import '../style/sign.css'
 import logocirc from '../img/logocirc.png'
 
 function SignIn(){
-    const{signIn,signInGoogle}=useContext(AuthContext)
+    const{signIn,signInGoogle,currUser}=useContext(AuthContext)
 
     const emailRef=useRef()
     const passwordRef=useRef()
