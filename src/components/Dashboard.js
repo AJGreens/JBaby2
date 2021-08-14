@@ -21,17 +21,17 @@ function Dashboard(){
 
     useEffect(()=>{
         console.log(currUser)
-        const ref= app.database().ref(currUser.uid+'/LastLogIn')
-        ref.once('value',snapshot=>{
+        const dateRef= app.database().ref(currUser.uid+'/LastLogIn')
+        dateRef.once('value',snapshot=>{
             const val=snapshot.val()
             if(val==null){
-                ref.set({"date":dString})
+                dateRef.set({"date":dString})
             }
             else{
                 if(dString!==val.date){
                     const ref= app.database().ref(currUser.uid+"/"+val.date+"/Lists")
-                    ref.delete()
-                    ref.update({"date":dString})
+                    ref.remove()
+                    dateRef.update({"date":dString})
                 }
             }
         })
