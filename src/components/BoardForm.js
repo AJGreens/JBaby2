@@ -110,7 +110,7 @@ function BoardForm(props){
     return(
         <>
         {/* FORM SECTION */}
-            <Form className="text-center mb-4">
+            <Form className="text-center mb-4 newForm">
                 <Row className="mb-3">
                     <Form.Group as={Col}>
                         <select className="form-select" value={itemIndex} onChange={(e)=>{setItemIndex(e.target.value)}}>
@@ -147,9 +147,6 @@ function BoardForm(props){
             }
                 
         </ul>
-        {/* <br/> */}
-        {/* <p>Ideal Daily Servings: {props.idealserv} </p>
-        <p> Today's Total Servings: {totalServs}</p> */}
         {/* FORM SECTION */}
         </>
     )
