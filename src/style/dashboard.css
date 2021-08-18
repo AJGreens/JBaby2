@@ -1,8 +1,9 @@
 .foodGroups{
    height: 93vh;
-   padding-left: 20px;
-   padding-right: 20px;
+   /* padding-left: 20px;
+   padding-right: 20px; */
    color: white;
+   background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 17%, rgba(49,169,184,1) 17%, rgba(49,169,184,1) 38%, rgba(255,255,255,1) 38%, rgba(255,255,255,1) 39%, rgba(255,255,255,1) 47%, rgba(245,190,65,1) 47%, rgba(245,190,65,1) 63%, rgba(255,255,255,1) 63%, rgba(255,255,255,1) 71%, rgba(207,55,33,1) 71%, rgba(207,55,33,1) 85%, rgba(255,255,255,1) 85%);
  }
 
 .foodGroup{
@@ -10,6 +11,12 @@
    color:black;
    height: 100%;
    min-width: 300px;
+}
+
+.foodGroup img{
+    width: 500px;
+
+    z-index: -1;
 }
   
 .foodGroup span{
@@ -22,54 +29,71 @@
   
 .foodGroupTitle{
    font-size:32px;
-   background: white;
-   border-radius: 10px;
+   background: rgb(255, 255, 255);
+   /* border-radius: 10px; */
    padding:5px;
    width:170px;
    margin: auto;
    margin-top:10px;
+   margin-bottom: 60px;
+   color: black;
 }
   
   
 .vegTitle{
-   color: #06531b;
-   border: #06531b solid 2px;
+   color: black;
+
+   border-bottom: rgba(245,190,65,1) solid 10px;
+
+   
 }
   
 .fruitTitle{
-   color:#8b150f;
-      border: #8b150f solid 2px;
+   /* color:#8b150f; */
+      border-bottom: rgba(207,55,33,1) solid 10px;
+
 }
 .dairyTitle{
-   color:#c6971e ;
-      border: #c6971e solid 2px;
+   /* color:#c6971e ; */
+      border-bottom: rgba(49,169,184,1) solid 10px;
+
 }
-  
-  
+ 
   
 .veg{
-   background-image: url('../img/broccoli.jpg') ;
-   background: linear-gradient(90deg, rgba(255,255,255,1) 25%, rgba(0, 0, 0, 0.2) 25%, rgba(0,0,0,.2) 75%, rgba(255,255,255,1) 75%),  url('../img/broccoli.jpg') ;
+   /* background-image: url('../img/broccoli.jpg') ; */
+
+   /* background: linear-gradient(90deg, rgb(0, 0, 0) 5%, rgba(0, 0, 0, 0.9) 20%, rgba(98, 101, 98, 0) 50%, rgba(62, 210, 39,0) 50%, rgba(0, 0, 0, 0.9) 80%, rgb(0, 0, 0) 95%),   url('../img/sickwood.jpg') ; */
+   /* background: linear-gradient(195deg, rgba(255,255,255,1) 40%, rgba(245,190,65,1) 40%, rgba(245,190,65,1) 56%,    rgba(255,255,255,1) 56%); */
    background-size: cover;
+
 }
  .fruit{
-   background: rgba(207, 55, 33, .4);
-   background: rgba(0, 0, 0, 0.5);
-   background: linear-gradient(90deg, rgba(255,255,255,1) 25%, rgba(0, 0, 0, 0.2) 25%, rgba(0,0,0,.2) 75%,rgba(255,255,255,1) 75%), url('../img/apples.jpg') ;
+
+   /* background: rgba(207, 55, 33, .4); */
+   /* background: rgba(0, 0, 0, 0.5); */
+   /* background: linear-gradient(90deg, rgb(0, 0, 0) 5%, rgba(0, 0, 0, 0.9) 20%, rgba(98, 101, 98, 0) 50%, rgba(62, 210, 39,0) 50%, rgba(0, 0, 0, 0.9) 80%, rgb(0, 0, 0) 95%),  url('../img/sickwood.jpg') ; */
+   /* background: linear-gradient(165deg, rgba(255,255,255,1) 40%, rgba(207,55,33,1) 40%,     rgba(207,55,33,1) 56%, rgba(255,255,255,1) 56%); */
+
    background-size: cover;
+
 }
   
   
 .dairy{
-   background: rgba(49, 169, 184, .4);
-   background: rgba(0, 0, 0, 0.5);
-   background: linear-gradient(90deg, rgba(255,255,255,1) 25%, rgba(0, 0, 0, 0.2) 25%, rgba(0,0,0,.2) 75%,rgba(255,255,255,1) 75%), url('../img/chez.jpg') ;
+   /* background: rgba(49, 169, 184, .4);
+   background: rgba(0, 0, 0, 0.5); */
+   /* background: linear-gradient(90deg, rgb(0, 0, 0) 5%, rgba(0, 0, 0, 0.9) 20%, rgba(98, 101, 98, 0) 50%, rgba(62, 210, 39,0) 50%, rgba(0, 0, 0, 0.9) 80%, rgb(0, 0, 0) 95%); */
+   /* background: linear-gradient(195deg, rgba(255,255,255,1) 40%, rgba(49,169,184,1) 40%, rgba(49,169,184,1) 56%, rgba(255,255,255,1) 56%); */
+
    background-size: cover;
 }
   
 .vegList{
    background-color: rgba(255, 255, 255, 1);
-   border: #06531b solid 2px;
+   /* border: #06531b solid 2px; */
+
+    
    /* border: #06531b solid 4px; */
    /* box-shadow: #06531b 5px 5px 0px 0; */
   
@@ -77,14 +101,17 @@
 .fruitList{
   
    background-color: rgba(255, 255, 255, 1);
-   border: #8b150f solid 2px;
+   /* border: #8b150f solid 2px; */
+
    /* border: #8b150f solid 4px  */
    /* box-shadow: #8b150f 5px 5px 0px 0; */
 }
 
 .dairyList{
    background-color: rgba(255, 255, 255, 1);
-      border: #c6971e solid 2px;
+   border: rgba(49,169,184,1) solid 2px;
+      /* border: #c6971e solid 2px; */
+  
    /* border: #c6971e solid 4px; */
    /* box-shadow: #c6971e 5px 5px 0px 0; */
 }
@@ -124,21 +151,24 @@
 }
   
 .itemList{
-   background-color: rgba(255, 255, 255, 1);
+    margin-top: 80px !important;
+   background-color: rgb(255, 255, 255);
+
    text-align: left;
    height: 170px;
    height: 18vw;
    min-height: 160px;
-   width: 80%;
+   width: 90%;
    margin-top: 60px;
    margin: auto;
    overflow:auto;
-   border-radius: 15px;
+   /* border-radius: 15px; */
    list-style: none;
-   color: white;
+   color: rgb(0, 0, 0);
    padding:10px;
-   color: black;
-   /* border: black solid 2px; */
+   /* color: black; */
+   /* border-bottom: black solid 8px;
+   border-right: black solid 8px; */
   
  }
 .itemList li{

@@ -7,6 +7,7 @@ import '../style/dashboard.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMinus } from '@fortawesome/free-solid-svg-icons'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
+
  
 function BoardForm(props){
     const {currUser}= useContext(AuthContext)
@@ -110,8 +111,8 @@ function BoardForm(props){
     return(
         <>
         {/* FORM SECTION */}
-            <Form className="text-center mb-4">
-                <Row className="mb-3">
+            <Form className="text-center mb-4" >
+                <Row className="mb-3" >
                     <Form.Group as={Col}>
                         <select className="form-select" value={itemIndex} onChange={(e)=>{setItemIndex(e.target.value)}}>
                             {items.map((item,index)=>{
@@ -140,7 +141,7 @@ function BoardForm(props){
         <ul className={"itemList scroll "+props.fireRef+"List"}>
                 {userList.map(item=>{
                     return (<li key={item.id}> 
-                        <b>{item.name}</b>({item.quantity}{item.unit}): {item.serving} servings   <button className="deleteBtn" variant="danger" onClick={()=>handleRemove(item)}>
+                        {item.name}({item.quantity}{item.unit}): {item.serving} servings   <button className="deleteBtn" variant="danger" onClick={()=>handleRemove(item)}>
                         <FontAwesomeIcon icon={faMinus} /></button></li>
                         )
                 })
