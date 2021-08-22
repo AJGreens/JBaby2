@@ -73,27 +73,7 @@
   
 }
   
-.itemList{
-   background-color: rgba(255, 255, 255, 1);
-   text-align: left;
-   max-height: inherit;
-   height: 40%;
-   width: 90%;
-   margin-top: 60px;
-   margin: 0 auto 10px;
-   overflow:auto;
-   /* border-radius: 15px; */
-   list-style: none;
-   color: white;
-   padding:10px;
-   color: black;
-   /* border-top: solid #2A7EC3 5px; */
-   border-top: solid #20A39E 5px;
-   
- }
-.itemList li{
-   padding-bottom: 3px;
-}
+
   
 .chartBtn{
    border: none !important;
@@ -110,4 +90,43 @@
    background-color: #06531b  !important;
 }
 
-  
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+
+ }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+   
+ }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+   .itemList{
+      background-color: rgba(255, 255, 255, 1);
+      text-align: left;
+      max-height: inherit;
+      height: 40%;
+      width: 90%;
+      margin-top: 60px;
+      margin: 0 auto 10px;
+      overflow:auto;
+      /* border-radius: 15px; */
+      list-style: none;
+      color: white;
+      padding:10px;
+      color: black;
+      /* border-top: solid #2A7EC3 5px; */
+      border-top: solid #20A39E 5px;
+      
+    }
+   .itemList li{
+      padding-bottom: 3px;
+   }
+ }
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+
+ }
