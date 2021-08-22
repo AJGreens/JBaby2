@@ -42,19 +42,19 @@ function Dashboard(){
         <MyNav dActive={true} sActive={false}/>
         <Container fluid className="foodGroups text-center">
             <Row>
-                    <Col className="foodGroup veg">
+                    <Col className="foodGroup veg"  md={12} lg={4}>
                         <div className="clouds">
                             <h2>Veggies <FontAwesomeIcon style= {{color: '#FFDB5C'}}icon={faCarrot} /></h2>
                             <BoardForm list={veggieObjects} fireRef="veg" idealserv = '2.5' />
                         </div>
                     </Col>
-                    <Col className="foodGroup fruit" >
+                    <Col className="foodGroup fruit"  md={12} lg={4}>
                         <div className="clouds">
                             <h2>Fruits <FontAwesomeIcon style= {{color: '#FA6E59'}}icon={faAppleAlt} /></h2>
                             <BoardForm list={fruitObjects} fireRef="fruit" idealserv = '2.00'/>
                         </div>
                     </Col>
-                    <Col className="foodGroup dairy">
+                    <Col className="foodGroup dairy"  md={12} lg={4}>
                         <div className="clouds">
                             <h2>Dairy <FontAwesomeIcon style= {{color: '#4897D8'}}icon={faCheese}/></h2>
                             <BoardForm list={dairyObjects} fireRef="dairy" idealserv = '3.00'/>
