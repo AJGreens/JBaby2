@@ -7,7 +7,6 @@ import { AuthContext } from '../contexts/AuthContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCarrot,faAppleAlt,faCheese } from '@fortawesome/free-solid-svg-icons'
 import {app} from './Firebase'
-
  
 function Dashboard(){
     const{currUser}=useContext(AuthContext)
@@ -41,25 +40,31 @@ function Dashboard(){
     return(
         <>
         <MyNav dActive={true} sActive={false}/>
-        <div style = {{width: '100%'}} className="foodGroups d-flex justify-content-center align-items-center text-center">
-            <Row className = 'text-center' style = {{border: 'red solid 0px'}}>
+        <Container fluid className="foodGroups text-center">
+            <Row>
                     <Col className="foodGroup veg">
-                        <h4 className = "foodGroupTitle">Veggies <FontAwesomeIcon style= {{color: '#FFDB5C'}}icon={faCarrot} /></h4>
-                        <BoardForm list={veggieObjects} fireRef="veg" idealserv = '2.5' />
+                        <div className="clouds">
+                            <h2>Veggies <FontAwesomeIcon style= {{color: '#FFDB5C'}}icon={faCarrot} /></h2>
+                            <BoardForm list={veggieObjects} fireRef="veg" idealserv = '2.5' />
+                        </div>
                     </Col>
                     <Col className="foodGroup fruit" >
-                        <h4 className = "foodGroupTitle">Fruits <FontAwesomeIcon style= {{color: '#FA6E59'}}icon={faAppleAlt} /></h4>
-                        <BoardForm list={fruitObjects} fireRef="fruit" idealserv = '2'/>
+                        <div className="clouds">
+                            <h2>Fruits <FontAwesomeIcon style= {{color: '#FA6E59'}}icon={faAppleAlt} /></h2>
+                            <BoardForm list={fruitObjects} fireRef="fruit" idealserv = '2.00'/>
+                        </div>
                     </Col>
                     <Col className="foodGroup dairy">
-                        <h4 className = "foodGroupTitle">Dairy <FontAwesomeIcon style= {{color: '#4897D8'}}icon={faCheese}/></h4>
-                        <BoardForm list={dairyObjects} fireRef="dairy" idealserv = '3'/>
+                        <div className="clouds">
+                            <h2>Dairy <FontAwesomeIcon style= {{color: '#4897D8'}}icon={faCheese}/></h2>
+                            <BoardForm list={dairyObjects} fireRef="dairy" idealserv = '3.00'/>
+                        </div>
                     </Col>
             </Row>
-        </div>
+       
+        </Container>
             
         </>
     )
 }
 export default Dashboard
-

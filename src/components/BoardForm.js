@@ -1,4 +1,3 @@
-
 import React,{useState,useEffect,useContext} from 'react'
 import {Button,Form,Row,Col} from 'react-bootstrap'
 import { AuthContext } from '../contexts/AuthContext'
@@ -7,7 +6,6 @@ import '../style/dashboard.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMinus } from '@fortawesome/free-solid-svg-icons'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
-
  
 function BoardForm(props){
     const {currUser}= useContext(AuthContext)
@@ -111,23 +109,34 @@ function BoardForm(props){
     return(
         <>
         {/* FORM SECTION */}
-            <Form className={"text-center newForm " +props.fireRef + "Form"}>
+            <Form className="text-center mb-4 newForm">
                 <Row className="mb-3">
-                    <Form.Group className = 'col' style = {{padding: '0'}}>
-                        <select className={"form-select " + props.fireRef + "Select" } value={itemIndex} onChange={(e)=>{setItemIndex(e.target.value)}}>
+             
+                    <Form.Group as={Col}>
+                        <select className="form-select" value={itemIndex} onChange={(e)=>{setItemIndex(e.target.value)}}>
                             {items.map((item,index)=>{
                                 return <option value={index} key={index}>{item.name}</option>
                             })
                             }
                         </select>
                     </Form.Group>
+                </Row>
+                <Row className="mb-3">
+                    {/* <Form.Group as={Col}>
+                        <select className="form-select" value={itemIndex} onChange={(e)=>{setItemIndex(e.target.value)}}>
+                            {items.map((item,index)=>{
+                                return <option value={index} key={index}>{item.name}</option>
+                            })
+                            }
+                        </select>
+                    </Form.Group> */}
 
-                    <Form.Group className = 'col-sm-auto' style = {{padding: '0 10px 0 10px'}}>  
-                        <Form.Control className = {props.fireRef + "Select"}value={quantity} onChange={(e)=>setQuantity(e.target.value)} type="number" min="0" max = '9999'/>
+                    <Form.Group as={Col}>  
+                        <Form.Control value={quantity} onChange={(e)=>setQuantity(e.target.value)} type="number" min="0" max="9999"/>
                     </Form.Group>  
 
-                    <Form.Group className = 'col-sm-auto' style = {{padding: '0'}}>  
-                        <select className={"form-select " + props.fireRef + "Select"}  value={unit} onChange={(e)=>setUnit(e.target.value)}>
+                    <Form.Group as={Col}>  
+                        <select className="form-select" value={unit} onChange={(e)=>setUnit(e.target.value)}>
                             {Object.keys(items[itemIndex].serving).map((name,index)=>{
                                 return <option value={name} key={index}>{name}</option>
                             })
@@ -141,18 +150,15 @@ function BoardForm(props){
         <ul className={"itemList scroll "+props.fireRef+"List"}>
                 {userList.map(item=>{
                     return (<li key={item.id}> 
-                        {item.name}({item.quantity}{item.unit}): {item.serving} servings   <button className="deleteBtn" variant="danger" onClick={()=>handleRemove(item)}>
-                        <FontAwesomeIcon icon={faTimes} /></button></li>
+                        <b>{item.name}</b>({item.quantity}{item.unit}): {item.serving} servings   <button className="deleteBtn" variant="danger" onClick={()=>handleRemove(item)}>
+                        <FontAwesomeIcon icon={faMinus} /></button></li>
                         )
                 })
             }
                 
         </ul>
-        <span style = {{color: 'black'}}>Ideal Daily Servings: {props.idealserv} <br/>
-     Today's Total Servings: {totalServs}</span>
-       {/* FORM SECTION */}
-      
-        
+        <h6>{totalServs} / {props.idealserv} Ideal Daily Servings</h6>
+
         {/* FORM SECTION */}
         </>
     )

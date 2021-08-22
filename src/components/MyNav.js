@@ -10,9 +10,11 @@ import '../style/dashboard.css'
 function MyNav(props){
     const {signOut}= useContext(AuthContext)
     return(
-        <Navbar bg="primay" className = 'customNav' variant="dark" style={{height:"7vh", backgroundColor: 'brown'}}>
+        // style={{height:"7vh",background:"linear-gradient(120deg, rgba(72,151,216,1) 65%, rgba(255,219,92,1) 65%)"}}
+        // background:"#2A7EC3"
+        <Navbar variant="dark" style={{height:"7vh",background:"#2A7EC3"}}>
             <Container >
-                <Nav >
+                <Nav  className="me-auto myNav" style = {{ border: 'red solid 2px'}}>
                     <Navbar.Brand as={Link} to="/">
                         <img
                             alt=""
@@ -24,7 +26,7 @@ function MyNav(props){
                     <Nav.Link as={Link} active={props.dActive}  to="/">Dashboard</Nav.Link>
                     <Nav.Link as={Link} active={props.sActive} to="/summary">Summary </Nav.Link>
                 </Nav>
-                <Button variant="success" onClick={signOut}>Sign Out</Button>
+                <Button variant="outline-light" onClick={signOut} style = {{float: 'right'}}>Sign Out</Button>
             </Container>
         </Navbar>    
     )
