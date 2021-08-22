@@ -109,7 +109,7 @@ function Summary(){
                 title:{
                     display: true,
                     text: 'Servings'
-                }
+                },
             }
         },
         plugins: {
@@ -120,11 +120,11 @@ function Summary(){
                   type: 'line',
                   yMin: 2.5,
                   yMax: 2.5,
-                  borderColor: "#f5be41",
+                  borderColor: "#FFDB5C",
                   borderWidth: 5,
                   borderDash:[25,5],
                   label:{
-                    backgroundColor:"#f5be41",
+                    backgroundColor:"#FFDB5C",
                     color:"#ffffff",
                     content:"veg goal",
                     enabled:true
@@ -135,11 +135,11 @@ function Summary(){
                     type: 'line',
                     yMin: 2,
                     yMax: 2,
-                    borderColor: "#CF3721",
+                    borderColor: "#FA6E59",
                     borderWidth: 5,
                     borderDash:[25,10],
                     label:{
-                        backgroundColor:"#CF3721",
+                        backgroundColor:"#FA6E59",
                         color:"#ffffff",
                         content:"fruit goal",
                         enabled:true
@@ -150,11 +150,11 @@ function Summary(){
                     type: 'line',
                     yMin: 3,
                     yMax: 3,
-                    borderColor: "#31A9B8",
+                    borderColor: "#4897D8",
                     borderWidth: 5,
                     borderDash:[25,15],
                     label:{
-                        backgroundColor:"#31A9B8",
+                        backgroundColor:"#4897D8",
                         color:"#ffffff",
                         content:"dairy goal",
                         enabled:true

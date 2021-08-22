@@ -158,6 +158,8 @@ function BoardForm(props){
             }
                 
         </ul>
+        <h6>{totalServs} / {props.idealserv} Ideal Daily Servings</h6>
+
         {/* FORM SECTION */}
         </>
     )

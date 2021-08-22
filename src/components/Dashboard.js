@@ -51,13 +51,13 @@ function Dashboard(){
                     <Col className="foodGroup fruit" >
                         <div className="clouds">
                             <h2>Fruits <FontAwesomeIcon style= {{color: '#FA6E59'}}icon={faAppleAlt} /></h2>
-                            <BoardForm list={fruitObjects} fireRef="fruit" idealserv = '2'/>
+                            <BoardForm list={fruitObjects} fireRef="fruit" idealserv = '2.00'/>
                         </div>
                     </Col>
                     <Col className="foodGroup dairy">
                         <div className="clouds">
                             <h2>Dairy <FontAwesomeIcon style= {{color: '#4897D8'}}icon={faCheese}/></h2>
-                            <BoardForm list={dairyObjects} fireRef="dairy" idealserv = '3'/>
+                            <BoardForm list={dairyObjects} fireRef="dairy" idealserv = '3.00'/>
                         </div>
                     </Col>
             </Row>
