@@ -1,140 +1,98 @@
+/* Blue: #4897D8 */
+/* Yellow: #FFDB5C*/
+/* Red: #FA6E59*/
+/* Orange: #F8A055*/
+
+/* *{
+   border: red solid 1px;
+} */
+
 .foodGroups{
+   background: linear-gradient(80deg, #FFDB5C 33.33%, rgba(250,110,89,1) 33.33%, rgba(250,110,89,1) 66.66%, rgba(72,151,216,1) 66.66%);
+  /* background: rgb(237, 95, 182); */
+   /* background: rgb(168, 239, 180); */
+   /* background-image: linear-gradient(to right top, #f8a055, #f99754, #fa8e54, #fb8554, #fb7b56, #fe716a, #fc6a7f, #f56794, #db71ba, #b281d4, #7f8ede, #4897d8); */
    height: 93vh;
-   /* padding-left: 20px;
-   padding-right: 20px; */
+   padding-left: 20px;
+   padding-right: 20px;
    color: white;
-   background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 17%, rgba(49,169,184,1) 17%, rgba(49,169,184,1) 38%, rgba(255,255,255,1) 38%, rgba(255,255,255,1) 39%, rgba(255,255,255,1) 47%, rgba(245,190,65,1) 47%, rgba(245,190,65,1) 63%, rgba(255,255,255,1) 63%, rgba(255,255,255,1) 71%, rgba(207,55,33,1) 71%, rgba(207,55,33,1) 85%, rgba(255,255,255,1) 85%);
+   border:solid 2vh white;
+   display: flex;
+   align-items: center;
+   text-align: center;
+width: 100%;
+
+   /* font-family: arial; */
  }
+
+
 
 .foodGroup{
    position: relative;
    color:black;
-   height: 100%;
+   height: 40vw;
+   max-height: 72vh;
+   min-height: 440px;
    min-width: 300px;
-}
+   border-radius: 25px;
+   margin: auto 15px;
 
-.foodGroup img{
-    width: 500px;
 
-    z-index: -1;
+   /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+   /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
+   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+   /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 6px; */
+   padding: 20px;
+   background: white;
+   /* border: black solid 2px; */
 }
-  
 .foodGroup span{
-    position: absolute;
-    bottom: 0;
-    left: 0;    
-    right: 0;
-    margin: auto;
- }
-  
-.foodGroupTitle{
-   font-size:32px;
-   background: rgb(255, 255, 255);
-   /* border-radius: 10px; */
-   padding:5px;
-   width:170px;
-   margin: auto;
-   margin-top:10px;
-   margin-bottom: 60px;
-   color: black;
-}
-  
-  
-.vegTitle{
-   color: black;
-
-   border-bottom: rgba(245,190,65,1) solid 10px;
-
-   
-}
-  
-.fruitTitle{
-   /* color:#8b150f; */
-      border-bottom: rgba(207,55,33,1) solid 10px;
-
-}
-.dairyTitle{
-   /* color:#c6971e ; */
-      border-bottom: rgba(49,169,184,1) solid 10px;
-
-}
+   position: absolute;
+   bottom: 0;
  
-  
-.veg{
-   /* background-image: url('../img/broccoli.jpg') ; */
+   left: 0;
+   right: 0;
+   margin: auto;
+}
 
-   /* background: linear-gradient(90deg, rgb(0, 0, 0) 5%, rgba(0, 0, 0, 0.9) 20%, rgba(98, 101, 98, 0) 50%, rgba(62, 210, 39,0) 50%, rgba(0, 0, 0, 0.9) 80%, rgb(0, 0, 0) 95%),   url('../img/sickwood.jpg') ; */
-   /* background: linear-gradient(195deg, rgba(255,255,255,1) 40%, rgba(245,190,65,1) 40%, rgba(245,190,65,1) 56%,    rgba(255,255,255,1) 56%); */
-   background-size: cover;
+
+
+
+
+.foodGroupTitle{
+
+font-size: 30px;
 
 }
- .fruit{
 
-   /* background: rgba(207, 55, 33, .4); */
-   /* background: rgba(0, 0, 0, 0.5); */
-   /* background: linear-gradient(90deg, rgb(0, 0, 0) 5%, rgba(0, 0, 0, 0.9) 20%, rgba(98, 101, 98, 0) 50%, rgba(62, 210, 39,0) 50%, rgba(0, 0, 0, 0.9) 80%, rgb(0, 0, 0) 95%),  url('../img/sickwood.jpg') ; */
-   /* background: linear-gradient(165deg, rgba(255,255,255,1) 40%, rgba(207,55,33,1) 40%,     rgba(207,55,33,1) 56%, rgba(255,255,255,1) 56%); */
-
-   background-size: cover;
-
-}
-  
-  
-.dairy{
-   /* background: rgba(49, 169, 184, .4);
-   background: rgba(0, 0, 0, 0.5); */
-   /* background: linear-gradient(90deg, rgb(0, 0, 0) 5%, rgba(0, 0, 0, 0.9) 20%, rgba(98, 101, 98, 0) 50%, rgba(62, 210, 39,0) 50%, rgba(0, 0, 0, 0.9) 80%, rgb(0, 0, 0) 95%); */
-   /* background: linear-gradient(195deg, rgba(255,255,255,1) 40%, rgba(49,169,184,1) 40%, rgba(49,169,184,1) 56%, rgba(255,255,255,1) 56%); */
-
-   background-size: cover;
-}
-  
 .vegList{
-   background-color: rgba(255, 255, 255, 1);
-   /* border: #06531b solid 2px; */
-
-    
-   /* border: #06531b solid 4px; */
-   /* box-shadow: #06531b 5px 5px 0px 0; */
-  
+   border-top: solid #7FD8BE 5px;
+   border-bottom: solid #7FD8BE 5px;
 }
 .fruitList{
-  
-   background-color: rgba(255, 255, 255, 1);
-   /* border: #8b150f solid 2px; */
-
-   /* border: #8b150f solid 4px  */
-   /* box-shadow: #8b150f 5px 5px 0px 0; */
+   border-top: solid #7FD8BE 5px;
+   border-bottom: solid #7FD8BE 5px;
 }
-
 .dairyList{
-   background-color: rgba(255, 255, 255, 1);
-   border: rgba(49,169,184,1) solid 2px;
-      /* border: #c6971e solid 2px; */
+   border-top: solid #7FD8BE 5px;
+   border-bottom: solid #7FD8BE 5px;
+}
+/* .vegSelect{
+   border: #F8A055 solid 1px !important;
+
+}
+.fruitSelect{
+   border: rgba(250,110,89,1) solid 1px !important;
+}
+.dairySelect{
+   border: #4897d8 solid 1px !important;
+} */
   
-   /* border: #c6971e solid 4px; */
-   /* box-shadow: #c6971e 5px 5px 0px 0; */
-}
-
-/* const borderColor = props.fireRef === 'veg' ? '#06531b' : (props.fireRef === 'fruit' ? '#8b150f ' : '#c6971e') */
-.vegInput{
-    border-left: #06531b solid 1px !important;
-
-}
-.fruitInput{
-    border-left: #8b150f solid 1px !important;
-    
-}
-.dairyInput{
-    border-left: #c6971e solid 1px !important;
-    
-}
-
 
 
 .deleteBtn{
    float: right;
-   border-radius: 2px;
+   /* border-radius: 2px; */
    background-color: rgba(2,2,2,0.0);
    color: rgb(0, 0, 0);
    border: 0px solid white;
@@ -151,24 +109,24 @@
 }
   
 .itemList{
-    margin-top: 80px !important;
-   background-color: rgb(255, 255, 255);
-
+   background-color: rgba(255, 255, 255, 1);
    text-align: left;
    height: 170px;
    height: 18vw;
    min-height: 160px;
-   width: 90%;
-   margin-top: 60px;
+   max-height: 37vh;
+   width: 100%;
+
    margin: auto;
    overflow:auto;
    /* border-radius: 15px; */
    list-style: none;
-   color: rgb(0, 0, 0);
+   color: white;
    padding:10px;
-   /* color: black; */
-   /* border-bottom: black solid 8px;
-   border-right: black solid 8px; */
+   padding-top: 5px;
+   color: black;
+   /* border-top: solid #4897d8 5px; */
+   /* border-top: solid #00CC66 5px; */
   
  }
 .itemList li{
@@ -190,175 +148,25 @@
    box-shadow: none !important;
    background-color: #06531b  !important;
 }
-  
-  
- 
- 
- 
- 
-     /* background: linear-gradient(90deg, #AE8E1C 0%, rgba(139,30,63,1) 50%, rgba(0,100,148,1) 100%); */
-    /* background-color: #000000 !important; */
-  
-  
-    /* background: linear-gradient(0deg, rgb(0, 0, 0) 0%,  rgb(13, 126, 255) 100%); */
-  
-    /* background: linear-gradient(to right, #780206, #061161); */
-    /* background: linear-gradient(90deg, #ff910b 0%, rgb(241, 55, 55) 50%, rgb(136, 19, 179) 100%); */
-    /* background: linear-gradient(0deg, #2B4570 0%,  #62929E 100%); */
-  
-  
- /* background-color: black !important; */
-    /* background: linear-gradient(0deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,.5) 100%), url('../img/art2.jpg');    */
-    /* background: linear-gradient(117deg, rgba(232,144,5,1) 0%, rgba(212,71,28,0) 33%, rgba(207,55,33,1) 50%, rgba(163,87,75,0) 66%, rgba(49,169,184,1) 100%);
-    background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%), url('../img/sickwood.jpg'); */
-    /* background: linear-gradient(117deg, rgba(232,144,5,1) 0%, rgba(232,144,5,1) 15%, rgba(207,55,33,1) 15%, rgba(207,55,33,1) 30%, rgba(49,169,184,1) 30%, rgba(49,169,184,1) 45%, rgba(232,144,5,1) 45%, rgba(232,144,5,1) 60%, rgba(207,55,33,1) 60%, rgba(207,55,33,1) 75%, rgba(49,169,184,1) 75%, rgba(49,169,184,1) 90%, rgba(232,144,5,1) 90%); */
-  
-  
-    /* background-size: cover; */
-  
-  
-  
-    /* background: linear-gradient(90deg,  #C8963E 0%, #C3423F 50%, #006BA6 100%); */
- 
-
-        /* font-family:Arial, Helvetica, sans-serif; */
-    /* font-weight:100; */
-    /* border: red solid 2px; */
-
-
-
-        /* padding-left: 40px;
-    padding-right: 40px; */
-    /* border: #ffffff 2vh solid; */
-
-
-
-        /* background: linear-gradient(to right, #8360c3, #2ebf91); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    /* background: linear-gradient(to right, #11998e, #38ef7d); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    /* background: linear-gradient(to right, #000000, #434343); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
-  
+.newForm{
+   /* border: red solid 2px; */
+   /* border-top: solid #A9F0D1 5px;
+   border-bottom: solid #A9F0D1 5px; */
+   margin-top: 20px;
+   margin-bottom: 20px;
    
-    /* background: linear-gradient(to right, #780206, #061161); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    /* background: linear-gradient(90deg, rgba(28,18,204,1) 0%, rgba(213,27,74,1) 50%, rgba(170,112,7,1) 100%);
-    background: linear-gradient(90deg, rgba(19,41,61,1) 0%, rgba(0,100,148,1) 50%, rgba(36,123,160,1) 100%);
-    background: linear-gradient(90deg, rgba(241,136,5,1) 0%, rgba(130,2,99,1) 50%, rgba(0,100,148,1) 100%);
-  
-    background: linear-gradient(90deg, rgba(241,136,5,1) 0%, rgba(139,30,63,1) 50%, rgba(0,100,148,1) 100%); */
-    /* background: linear-gradient(90deg, #AE8E1C 0%, rgba(139,30,63,1) 50%, rgba(0,100,148,1) 100%); */
-  
-    /* background: linear-gradient(to right, #aa4b6b, #6b6b83, #3b8d99);  */
-  
-    /* background: radial-gradient(circle, rgba(245,190,65,1) 33%, rgba(207,55,33,1) 33%, rgba(207,55,33,1) 56%, rgba(49,169,184,1) 56%);     */
-    /* background-image: linear-gradient(90deg, rgba(245,190,65,1) 23%, rgba(207,55,33,1) 43%, rgba(207,55,33,1) 56%, rgba(49,169,184,1) 76%); */
-    /* background-image: linear-gradient(90deg, rgba(255,174,3,1) 23%, rgba(207,55,33,1) 43%, rgba(207,55,33,1) 56%, rgba(237,175,184,1) 76%); */
-    /* background-image: linear-gradient(90deg, rgba(255,149,5,1) 23%, rgba(203,0,0,1) 43%, rgba(203,0,0,1) 56%, rgba(102,44,145,1) 76%); */
-    /* background-image: linear-gradient(0deg,#2C6E49 0%, #DC965a 0%); */
+   padding:10px;
+}
 
+/* .vegForm{
 
-        /* margin-left: 15px;
-    margin-right: 15px; */
+   border-bottom: solid #F8A055 5px;
+}
+.fruitForm{
 
-        /* border: yellow solid 2px; */
+   border-bottom: solid #FA6E59 5px;
+}
+.dairyForm{
 
-            /* background-color: rgba(255,255,255,.5) ; */
-    /* border: black solid 2px; */
-    /* border-left: white 4px dotted; */
-
-
-      
-    /* height: 89vh; */
-    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; */
-    /* box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset; */
-    /* box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; */
-    /* background-image: linear-gradient(0deg,black 0%,  #0A369D  20%); */
-    /* border-radius: 25px; */
-    /* padding-top: 10px; */
-   
-    /* border: white solid 8px; */
-    /* border-top-right-radius: 25px; */
-    /* margin:5px; */
-    /* border: blue solid 2px; */
-    /* padding: 8px; */
-        /* height: 35vw; */
-  
-     /* min-height: 475px; */
-    /* padding: 20px; */
-
-
-        /* font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
-    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-family:Georgia, 'Times New Roman', Times, serif; */
-
-        /* font-weight: bolder; */
-
-
-            /* border: rgb(255, 255, 255) solid 1px; */
-    /* padding-top: 0px; */
-
-     /* .fruit{
-    background: linear-gradient(45deg, #f5be41 50%, #CF3721 50% 100%);
- } */
- /* .dairy{
-    background: linear-gradient(45deg, #CF3721  50%, #31A9B8 50% 100%);
- } */
-  
-  
- /* large white zig-zag */
-  
- /* .veg{
-    background: linear-gradient(315deg, #f5be41 30%,white 30% 50%,white 50% 70%,#258039 70%);
- }
- .fruit{
-    background: linear-gradient(45deg, #f5be41 30%,white 30% 50%,white 50% 70%, #CF3721 70%);
- }
- .dairy{
-    background: linear-gradient(315deg, #31A9B8  30%,white 30% 50%,white 50% 70%, #CF3721 70%);
- } */
-  
-  
-      /* border: #06531b solid 12px; */
-    /* border-color: rgba(232, 144, 5, 1); */
-  
-    /* border-top-right-radius: 25px; */
-  
-    /* border-right: white solid 2px; */
-    /* border-top-right-radius: 25px; */
-  
-    /* background-color: rgba(255,255,255,0.1); */
- /* filter:brightness(); */
-    /* filter: blur(10px); */
-  /* background-color: rgba(245, 190, 65, .5); */
-    /* background: linear-gradient(315deg, #f5be41 50%,   #f5be41 50%); */
-        /* text-shadow: 2px 2px 0 #E89005; */
-    /* -webkit-text-stroke-color: #f5be41; */ 
-    /* -webkit-text-stroke-color: #E89005 ; */
-    /* color: #E89005 !important; */
-        /* padding-bottom: 12px; */
-
-            /* text-shadow: 2px 2px 0 rgba(207, 55, 33, 1); */
-    /* -webkit-text-stroke-color: rgba(207, 55, 33, 1); */
-
-
-        /* border-top: black solid 10px; */
-    /* border-right: black solid 10px; */
-    /* border: rgba(232, 144, 5, 1) solid 4px; */
-    /* box-shadow: rgba(232, 144, 5, 1) 0px 0px 20px 10px; */
-    /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),  url('../img/broccoli.jpg'); */
-
-
-        /* border: #c6971e solid 12px; */
-    /* border-color: rgba(49, 169, 184, 1);  */
-    /* border-top-left-radius: 25px; */
-    /* background-color: rgba(255,255,255,0.1); */
-    /* filter: blur(10px); */
-    /* background-color:  rgba(49, 169, 184, .5); */
-    /* background: linear-gradient(45deg, #CF3721  50%, #31A9B8 50%); */
-
-
-        /* margin-left: 10px; */
-    /* margin-right: 20px !important; */
-    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
-    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; */
-    /* box-shadow: rgb(0, 0, 0) 0px 0px 20px 0px; */
+   border-bottom: solid #4897D8 5px;
+} */

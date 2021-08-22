@@ -22,17 +22,17 @@ function Dashboard(){
 
     useEffect(()=>{
         console.log(currUser)
-        const lastLogRef= app.database().ref(currUser.uid+'/LastLogIn')
-        lastLogRef.once('value',snapshot=>{
+        const dateRef= app.database().ref(currUser.uid+'/LastLogIn')
+        dateRef.once('value',snapshot=>{
             const val=snapshot.val()
             if(val==null){
-                lastLogRef.set({"date":dString})
+                dateRef.set({"date":dString})
             }
             else{
                 if(dString!==val.date){
                     const ref= app.database().ref(currUser.uid+"/"+val.date+"/Lists")
                     ref.remove()
-                    lastLogRef.update({"date":dString})
+                    dateRef.update({"date":dString})
                 }
             }
         })
@@ -41,26 +41,22 @@ function Dashboard(){
     return(
         <>
         <MyNav dActive={true} sActive={false}/>
-        {/* <Container fluid className="foodGroups text-center"> */}
-            <div style = {{width: '100%', border: 'blue solid 0px'}} className="foodGroups d-flex justify-content-center align-items-center text-center">
-           <Row className ="tripleRow" style = {{height: '93vh',  minHeight: '365px', border: 'red solid 0px', width: '100%', marginTop: '0px'}}>
-
-                <Col className="foodGroup veg">
-                    <h4 className = 'foodGroupTitle vegTitle'>Veggies <FontAwesomeIcon style= {{color: '#f5be41'}}icon={faCarrot} /></h4>
-                    <BoardForm list={veggieObjects} fireRef="veg" idealserv = '2.5' />
-                </Col>
-                <Col className="foodGroup fruit" >
-                    <h4 className = 'foodGroupTitle fruitTitle'>Fruits <FontAwesomeIcon style= {{color: '#F1422A'}}icon={faAppleAlt} /></h4>
-                    <BoardForm list={fruitObjects} fireRef="fruit" idealserv = '2'/>
-                </Col>
-                <Col className="foodGroup dairy">
-                    <h4 className = 'foodGroupTitle dairyTitle'>Dairy <FontAwesomeIcon style= {{color: '#31A9B8 '}}icon={faCheese}/></h4>
-                    <BoardForm list={dairyObjects} fireRef="dairy" idealserv = '3'/>
-                </Col>
+        <div style = {{width: '100%'}} className="foodGroups d-flex justify-content-center align-items-center text-center">
+            <Row className = 'text-center' style = {{border: 'red solid 0px'}}>
+                    <Col className="foodGroup veg">
+                        <h4 className = "foodGroupTitle">Veggies <FontAwesomeIcon style= {{color: '#FFDB5C'}}icon={faCarrot} /></h4>
+                        <BoardForm list={veggieObjects} fireRef="veg" idealserv = '2.5' />
+                    </Col>
+                    <Col className="foodGroup fruit" >
+                        <h4 className = "foodGroupTitle">Fruits <FontAwesomeIcon style= {{color: '#FA6E59'}}icon={faAppleAlt} /></h4>
+                        <BoardForm list={fruitObjects} fireRef="fruit" idealserv = '2'/>
+                    </Col>
+                    <Col className="foodGroup dairy">
+                        <h4 className = "foodGroupTitle">Dairy <FontAwesomeIcon style= {{color: '#4897D8'}}icon={faCheese}/></h4>
+                        <BoardForm list={dairyObjects} fireRef="dairy" idealserv = '3'/>
+                    </Col>
             </Row>
-            </div>
-       
-        {/* </Container> */}
+        </div>
             
         </>
     )

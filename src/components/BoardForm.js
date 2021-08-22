@@ -111,10 +111,10 @@ function BoardForm(props){
     return(
         <>
         {/* FORM SECTION */}
-            <Form className="text-center mb-4" >
-                <Row className="mb-3" >
-                    <Form.Group as={Col}>
-                        <select className="form-select" value={itemIndex} onChange={(e)=>{setItemIndex(e.target.value)}}>
+            <Form className={"text-center newForm " +props.fireRef + "Form"}>
+                <Row className="mb-3">
+                    <Form.Group className = 'col' style = {{padding: '0'}}>
+                        <select className={"form-select " + props.fireRef + "Select" } value={itemIndex} onChange={(e)=>{setItemIndex(e.target.value)}}>
                             {items.map((item,index)=>{
                                 return <option value={index} key={index}>{item.name}</option>
                             })
@@ -122,12 +122,12 @@ function BoardForm(props){
                         </select>
                     </Form.Group>
 
-                    <Form.Group as={Col}>  
-                        <Form.Control value={quantity} onChange={(e)=>setQuantity(e.target.value)} type="number" min="0"/>
+                    <Form.Group className = 'col-sm-auto' style = {{padding: '0 10px 0 10px'}}>  
+                        <Form.Control className = {props.fireRef + "Select"}value={quantity} onChange={(e)=>setQuantity(e.target.value)} type="number" min="0" max = '9999'/>
                     </Form.Group>  
 
-                    <Form.Group as={Col}>  
-                        <select className="form-select" value={unit} onChange={(e)=>setUnit(e.target.value)}>
+                    <Form.Group className = 'col-sm-auto' style = {{padding: '0'}}>  
+                        <select className={"form-select " + props.fireRef + "Select"}  value={unit} onChange={(e)=>setUnit(e.target.value)}>
                             {Object.keys(items[itemIndex].serving).map((name,index)=>{
                                 return <option value={name} key={index}>{name}</option>
                             })
@@ -142,15 +142,17 @@ function BoardForm(props){
                 {userList.map(item=>{
                     return (<li key={item.id}> 
                         {item.name}({item.quantity}{item.unit}): {item.serving} servings   <button className="deleteBtn" variant="danger" onClick={()=>handleRemove(item)}>
-                        <FontAwesomeIcon icon={faMinus} /></button></li>
+                        <FontAwesomeIcon icon={faTimes} /></button></li>
                         )
                 })
             }
                 
         </ul>
-        {/* <br/> */}
-        {/* <p>Ideal Daily Servings: {props.idealserv} </p>
-        <p> Today's Total Servings: {totalServs}</p> */}
+        <span style = {{color: 'black'}}>Ideal Daily Servings: {props.idealserv} <br/>
+     Today's Total Servings: {totalServs}</span>
+       {/* FORM SECTION */}
+      
+        
         {/* FORM SECTION */}
         </>
     )
