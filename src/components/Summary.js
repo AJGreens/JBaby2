@@ -48,10 +48,11 @@ function Summary(){
             let dataSetB=[]
             let dataSetC=[]
     
-            const colors=["#f5be41","#CF3721","#31A9B8"]
+            // const colors=["#f5be41","#CF3721","#31A9B8"]
+            const colors=["#FFDB5C","#FA6E59","#4897D8"]
 
             let c=0;
-            const blankarr = ['','','','','','','','','','','','','','','','','','','','','','','','','','','','','','']
+            const blankarr = Array(30).fill('')
 
             for(let serv in vfdArray){
                 dataSetA.push({             //1 day DataSet

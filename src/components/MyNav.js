@@ -10,7 +10,9 @@ import '../style/dashboard.css'
 function MyNav(props){
     const {signOut}= useContext(AuthContext)
     return(
-        <Navbar bg="primary" className = 'customNav' variant="dark" style={{height:"7vh"}}>
+        // style={{height:"7vh",background:"linear-gradient(120deg, rgba(72,151,216,1) 65%, rgba(255,219,92,1) 65%)"}}
+        // background:"#2A7EC3"
+        <Navbar  className = 'customNav' variant="dark" style={{height:"7vh",background:"#2A7EC3"}}>
             <Container >
                 <Nav >
                     <Navbar.Brand as={Link} to="/">
@@ -24,7 +26,7 @@ function MyNav(props){
                     <Nav.Link as={Link} active={props.dActive}  to="/">Dashboard</Nav.Link>
                     <Nav.Link as={Link} active={props.sActive} to="/summary">Summary </Nav.Link>
                 </Nav>
-                <Button variant="success" onClick={signOut}>Sign Out</Button>
+                <Button variant="outline-light" onClick={signOut}>Sign Out</Button>
             </Container>
         </Navbar>    
     )

@@ -112,6 +112,7 @@ function BoardForm(props){
         {/* FORM SECTION */}
             <Form className="text-center mb-4 newForm">
                 <Row className="mb-3">
+             
                     <Form.Group as={Col}>
                         <select className="form-select" value={itemIndex} onChange={(e)=>{setItemIndex(e.target.value)}}>
                             {items.map((item,index)=>{
@@ -120,9 +121,19 @@ function BoardForm(props){
                             }
                         </select>
                     </Form.Group>
+                </Row>
+                <Row className="mb-3">
+                    {/* <Form.Group as={Col}>
+                        <select className="form-select" value={itemIndex} onChange={(e)=>{setItemIndex(e.target.value)}}>
+                            {items.map((item,index)=>{
+                                return <option value={index} key={index}>{item.name}</option>
+                            })
+                            }
+                        </select>
+                    </Form.Group> */}
 
                     <Form.Group as={Col}>  
-                        <Form.Control value={quantity} onChange={(e)=>setQuantity(e.target.value)} type="number" min="0"/>
+                        <Form.Control value={quantity} onChange={(e)=>setQuantity(e.target.value)} type="number" min="0" max="9999"/>
                     </Form.Group>  
 
                     <Form.Group as={Col}>  

@@ -43,16 +43,22 @@ function Dashboard(){
         <Container fluid className="foodGroups text-center">
             <Row>
                     <Col className="foodGroup veg">
-                        <h4>Veggies <FontAwesomeIcon style= {{color: '#f5be41'}}icon={faCarrot} /></h4>
-                        <BoardForm list={veggieObjects} fireRef="veg" idealserv = '2.5' />
+                        <div className="clouds">
+                            <h2>Veggies <FontAwesomeIcon style= {{color: '#FFDB5C'}}icon={faCarrot} /></h2>
+                            <BoardForm list={veggieObjects} fireRef="veg" idealserv = '2.5' />
+                        </div>
                     </Col>
                     <Col className="foodGroup fruit" >
-                        <h4>Fruits <FontAwesomeIcon style= {{color: '#F1422A'}}icon={faAppleAlt} /></h4>
-                        <BoardForm list={fruitObjects} fireRef="fruit" idealserv = '2'/>
+                        <div className="clouds">
+                            <h2>Fruits <FontAwesomeIcon style= {{color: '#FA6E59'}}icon={faAppleAlt} /></h2>
+                            <BoardForm list={fruitObjects} fireRef="fruit" idealserv = '2'/>
+                        </div>
                     </Col>
                     <Col className="foodGroup dairy">
-                        <h4>Dairy <FontAwesomeIcon style= {{color: '#31A9B8'}}icon={faCheese}/></h4>
-                        <BoardForm list={dairyObjects} fireRef="dairy" idealserv = '3'/>
+                        <div className="clouds">
+                            <h2>Dairy <FontAwesomeIcon style= {{color: '#4897D8'}}icon={faCheese}/></h2>
+                            <BoardForm list={dairyObjects} fireRef="dairy" idealserv = '3'/>
+                        </div>
                     </Col>
             </Row>
        
