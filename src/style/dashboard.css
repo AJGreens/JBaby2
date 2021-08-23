@@ -73,7 +73,7 @@
 
 .deleteBtn{
    float: right;
-   border-radius: 2px;
+   border-radius: 1px;
    background-color: rgba(2,2,2,0.0);
    color: rgb(0, 0, 0);
    border: 0px solid white;
@@ -108,6 +108,9 @@
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 
+   .signInContainer{
+      text-align: center;
+   }
 
  }
 
