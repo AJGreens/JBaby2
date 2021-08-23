@@ -3,7 +3,7 @@ import {Card,Form,Alert,Button} from 'react-bootstrap'
 import { AuthContext } from '../contexts/AuthContext'
 import {Link,useHistory} from 'react-router-dom'
 import {Container} from 'react-bootstrap'
-import '../style/sign.css'
+import '../style/signin.css'
 import logocirc from '../img/logocirc.png'
 
 function SignIn(){

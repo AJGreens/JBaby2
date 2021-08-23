@@ -36,9 +36,8 @@
    position: relative;
    color:black;
    height: 72vh;
-   width: 100;
-   border-radius: 25px;
    width: 100%;
+   border-radius: 25px;
    margin:auto 25px;
    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
    background: white;
@@ -71,12 +70,12 @@
    border: 0px solid white;
 }
 
-.blackBtn{
+.addBtn{
    background-color: #20A39E!important;
    border: none !important;
    box-shadow: none !important;
 }
-.blackBtn:hover{
+.addBtn:hover{
    background-color: rgb(53, 50, 50) !important;
   
 }
@@ -86,16 +85,16 @@
 .chartBtn{
    border: none !important;
    box-shadow: none !important;
-   background-color: #10b23b !important;
+   background-color: #20A39E !important;
 }
 .chartBtn:hover{
-   background-color: #0b852b !important;
+   background-color: rgb(53, 50, 50) !important;
   
 }
 .activeChartBtn{
    border: none !important;
    box-shadow: none !important;
-   background-color: #06531b  !important;
+   background-color: rgb(53, 50, 50)  !important;
 }
 .chartButtons{
    text-align: center;
@@ -107,7 +106,7 @@
    text-align: left;
    max-height: inherit;
    height: 40%;
-   width: 90%;
+   width: 100%;
    margin-top: 60px;
    margin: 0 auto 10px;
    overflow:auto;
@@ -142,7 +141,7 @@
       text-align: left;
       max-height: inherit;
       height: 40%;
-      width: 90%;
+      width: 95%;
       margin-top: 60px;
       margin: 0 auto 10px;
       overflow:auto;

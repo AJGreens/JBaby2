@@ -145,14 +145,14 @@ function BoardForm(props){
                         </select>
                     </Form.Group>
                 </Row>
-                {unit&&<Button className="w-25 blackBtn" onClick = {handleAdd}>Add</Button>}
+                {unit&&<Button className="w-25 addBtn" onClick = {handleAdd}>Add</Button>}
             </Form>
         {/* FORM SECTION */}
         <ul className={"itemList scroll "+props.fireRef+"List"}>
                 {userList.map(item=>{
                     return (<li key={item.id}> 
                         <b>{item.name}</b>({item.quantity}{item.unit}): {item.serving} servings   <button className="deleteBtn" variant="danger" onClick={()=>handleRemove(item)}>
-                        <FontAwesomeIcon icon={faMinus} /></button></li>
+                        <FontAwesomeIcon icon={faTimes} /></button></li>
                         )
                 })
             }

@@ -1,7 +1,8 @@
 import React,{useState,useRef,useContext} from 'react'
-import {Card, Form, Button, Alert} from 'react-bootstrap'
+import {Card, Form, Button, Alert, Container} from 'react-bootstrap'
 import {AuthContext} from '../contexts/AuthContext'
 import {Link,useHistory} from 'react-router-dom'
+import '../style/signup.css'
 
 function SignUp(){
     const {signUp}= useContext(AuthContext)
@@ -34,29 +35,31 @@ function SignUp(){
 
 
     return(
-        <Card style = {{maxWidth: '400px'}}>
-            <Card.Body>
-                <Form onSubmit = {handleSubmit}>
-                    <h3 className = 'mb-4 text-center'>Sign up</h3>
-                    {error&& <Alert variant='danger'>{error}</Alert>}
+        <div className="frame">
+`            <Card className="signUpForm">
+                <Card.Body>
+                    <Form onSubmit = {handleSubmit}>
+                        <h3 className = 'mb-4 text-center'>Sign up</h3>
+                        {error&& <Alert variant='danger'>{error}</Alert>}
 
-                    <Form.Group className = 'mb-3'>
-                        <Form.Label> Username</Form.Label> 
-                        <Form.Control type = 'email' required ref = {emailRef}/>
-                    </Form.Group>
-                    <Form.Group className = 'mb-3'>
-                        <Form.Label>Password</Form.Label> 
-                        <Form.Control type = 'password' required ref={passwordRef}/>
-                    </Form.Group>
-                    <Form.Group className = 'mb-3'>
-                        <Form.Label>Confirm Password</Form.Label> 
-                        <Form.Control type = 'password'required ref={passwordConfirmRef}/>
-                    </Form.Group>
-                    <Button className = 'mt-3' style = {{width: '100%'}} type = 'submit' >Sign up</Button>
-                    <p className = 'text-center mt-2'>Already have an account? <Link to='/signin'>Sign In</Link></p>
-                </Form>
-            </Card.Body>
-        </Card>
+                        <Form.Group className = 'mb-3'>
+                            <Form.Label> Username</Form.Label> 
+                            <Form.Control type = 'email' required ref = {emailRef}/>
+                        </Form.Group>
+                        <Form.Group className = 'mb-3'>
+                            <Form.Label>Password</Form.Label> 
+                            <Form.Control type = 'password' required ref={passwordRef}/>
+                        </Form.Group>
+                        <Form.Group className = 'mb-3'>
+                            <Form.Label>Confirm Password</Form.Label> 
+                            <Form.Control type = 'password'required ref={passwordConfirmRef}/>
+                        </Form.Group>
+                        <Button className = 'mt-3' style = {{width: '100%'}} type = 'submit' >Sign up</Button>
+                        <p className = 'text-center mt-2'>Already have an account? <Link to='/signin'>Sign In</Link></p>
+                    </Form>
+                </Card.Body>
+            </Card>`
+        </div>
         
     )
 }
