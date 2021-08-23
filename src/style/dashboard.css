@@ -44,6 +44,14 @@
    background: white;
    padding: 20px;
  }
+ .clouds h6{
+   position: absolute;
+   bottom: 20px;
+   left: 0;
+   right: 0;
+   margin: auto;
+
+}
 
 .foodGroup{
    position: relative;
@@ -89,16 +97,42 @@
    box-shadow: none !important;
    background-color: #06531b  !important;
 }
+.chartButtons{
+   text-align: center;
+}
+
+
+.itemList{
+   background-color: rgba(255, 255, 255, 1);
+   text-align: left;
+   max-height: inherit;
+   height: 40%;
+   width: 90%;
+   margin-top: 60px;
+   margin: 0 auto 10px;
+   overflow:auto;
+   list-style: none;
+   color: white;
+   padding:10px;
+   color: black;
+   border-top: solid #20A39E 5px;
+   
+ }
+.itemList li{
+   padding-bottom: 3px;
+}
 
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 
 
+
+
  }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
-   
+
  }
 
 /* Large devices (desktops, 992px and up) */
