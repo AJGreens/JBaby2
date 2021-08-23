@@ -12,21 +12,21 @@ function MyNav(props){
     return(
         // style={{height:"7vh",background:"linear-gradient(120deg, rgba(72,151,216,1) 65%, rgba(255,219,92,1) 65%)"}}
         // background:"#2A7EC3"
-        <Navbar variant="dark" style={{height:"7vh",background:"#2A7EC3"}}>
+        <Navbar variant="dark" style={{background:"#2A7EC3"}}>
             <Container >
-                <Nav  className="me-auto myNav" style = {{ border: 'red solid 2px'}}>
-                    <Navbar.Brand as={Link} to="/">
-                        <img
+                <Nav className="me-auto myNav">
+                    <Navbar.Brand as={Link} to="/" className="myNav" >
+                        <img 
                             alt=""
                             src={logoPic}
                             width="32"
                             height="30"
-                            className="d-inline-block align-top"
+                            className="logo"
                         />App Name</Navbar.Brand>
                     <Nav.Link as={Link} active={props.dActive}  to="/">Dashboard</Nav.Link>
                     <Nav.Link as={Link} active={props.sActive} to="/summary">Summary </Nav.Link>
                 </Nav>
-                <Button variant="outline-light" onClick={signOut} style = {{float: 'right'}}>Sign Out</Button>
+                <Button className="myNav" variant="outline-light" onClick={signOut} style = {{float: 'right'}}>Sign Out</Button>
             </Container>
         </Navbar>    
     )

@@ -8,13 +8,13 @@
 
 .veg{
    /* background: #FFDB5C; */
-   background: linear-gradient(60deg, #FFDB5C 15%, #FFDB5C 85%, rgba(250,110,89,1) 85%);
+   background: linear-gradient(60deg, #FFDB5C 10%, #FFDB5C 90%, rgba(250,110,89,1) 90%);
    /* background: linear-gradient(60deg,#4897D8 15%,rgba(255,255,255,1) 15%,rgba(255,255,255,1) 18%,#FFDB5C 18%, #FFDB5C 87%, rgba(255,255,255,1) 87%,rgba(255,255,255,1) 90%,rgba(250,110,89,1) 90%); */
    /* background: linear-gradient(60deg, #FFDB5C 15%, #FFDB5C 85%,#4897D8 85%,#4897D8 90%, rgba(250,110,89,1) 90%); */
 }
 .fruit{
    /* background: #FA6E59; */
-   background: linear-gradient(60deg, #FFDB5C 12%, rgba(250,110,89,1) 12%, rgba(250,110,89,1) 85%, #4897D8  85%);
+   background: linear-gradient(60deg, #FFDB5C 10%, rgba(250,110,89,1) 10%, rgba(250,110,89,1) 90%, #4897D8  90%);
    /* background: linear-gradient(60deg, #FFDB5C 12%,#4897D8 12%,#4897D8 15%, rgba(250,110,89,1) 15%, rgba(250,110,89,1) 85%, #4897D8  85%); */
 }
 .dairy{
@@ -26,7 +26,7 @@
 .foodGroups{
    /* background: linear-gradient(105deg, rgba(255,219,92,1) 33%, rgba(250,110,89,1) 33%, rgba(250,110,89,1) 66%, rgba(72,151,216,1) 66%); */
    /* background:linear-gradient(120deg, rgba(255,219,92,1) 45%, rgba(250,110,89,1) 45%, rgba(250,110,89,1) 55%, rgba(72,151,216,1) 55%); */
-   height: 93vh;
+   height: calc(100vh - 58px);
    padding-left: 20px;
    padding-right: 20px;
    color: white;
@@ -38,7 +38,7 @@
    color:black;
    height: 72vh;
    width: 100;
-   border: red solid 2px;
+  
 
    border-radius: 25px;
    width: 100%;
@@ -52,7 +52,7 @@
 
  .clouds h6{
       position: absolute;
-      bottom: 10px;
+      bottom: 20px;
     
       left: 0;
       right: 0;
@@ -61,10 +61,10 @@
  }
 
 .foodGroup{
-   border: blue solid 2px;
+
    position: relative;
    color:black;
-   height: 89vh;
+   height: calc(96vh - 58px);
    width:100%;
    display: flex;
    align-items: center;
@@ -89,32 +89,6 @@
   
 }
   
-.itemList{
-   background-color: rgba(255, 255, 255, 1);
-   text-align: left;
-
-
-   width: 90%;
-   margin-top: 60px;
-   margin: auto;
-   overflow:auto;
-   height: 40%;
-/* height: 12280px; */
-   /* border-radius: 15px; */
-   /* font-size: small; */
-   list-style: none;
-   color: white;
-   padding:10px;
-   color: black;
-   max-height: 100%;
-   /* border-top: solid #2A7EC3 5px; */
-   border-top: solid #20A39E 5px;
-   /* overflow: hidden; */
-   
- }
-.itemList li{
-   padding-bottom: 3px;
-}
   
 .chartBtn{
    border: none !important;
@@ -131,6 +105,71 @@
    background-color: #06531b  !important;
 }
 
-.myNav{
-/* font-size: 2vh; */
-}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+
+ }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+   
+ }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+   .itemList{
+      background-color: rgba(255, 255, 255, 1);
+      text-align: left;
+      max-height: inherit;
+      height: 40%;
+      width: 90%;
+      margin-top: 60px;
+      margin: 0 auto 10px;
+      overflow:auto;
+      /* border-radius: 15px; */
+      list-style: none;
+      color: white;
+      padding:10px;
+      color: black;
+      /* border-top: solid #2A7EC3 5px; */
+      border-top: solid #20A39E 5px;
+      
+    }
+   .itemList li{
+      padding-bottom: 3px;
+   }
+ }
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 4000px) { 
+
+   .myNav{
+      font-size: 50pt !important;
+   }
+   .logo{
+      width: 75px;
+      height: 70px;
+   }
+   .titles{
+      font-size: 80pt
+
+   }
+   .clouds{
+      font-size: 45pt;
+
+   }
+
+   .newForm{
+      font-size: 45pt !important;
+   }
+   .formo{     
+       font-size: 45pt !important;
+
+   }
+
+
+
+ 
+
+ }
