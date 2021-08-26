@@ -172,12 +172,14 @@ function Summary(){
     }
 
     return(
-        <div style = {{textAlign: 'center', height: '85vh'}}>
+        <div style = {{height:'85vh'}} >
             <MyNav dActive={false} sActive={true}/>
             <Bar data={activeBtn === 'b1'? dataA: (activeBtn ==='b2' ? dataB: dataC)} options={options} /> 
-            <Button className = {activeBtn==='b1'? 'activeChartBtn': 'chartBtn'}  name = 'b1' onClick = {handleClick}>Today</Button> &nbsp;
-            <Button className = {activeBtn==='b2'? 'activeChartBtn': 'chartBtn'}  name = 'b2' onClick = {handleClick}>Past 7 days</Button>  &nbsp;
-            <Button className = {activeBtn==='b3'? 'activeChartBtn': 'chartBtn'}  name = 'b3' onClick = {handleClick}>Past 30 days</Button> 
+            <div className="chartButtons">
+                <Button className = {activeBtn==='b1'? 'activeChartBtn': 'chartBtn'}  name = 'b1' onClick = {handleClick}>Today</Button> &nbsp;
+                <Button className = {activeBtn==='b2'? 'activeChartBtn': 'chartBtn'}  name = 'b2' onClick = {handleClick}>Past 7 days</Button>  &nbsp;
+                <Button className = {activeBtn==='b3'? 'activeChartBtn': 'chartBtn'}  name = 'b3' onClick = {handleClick}>Past 30 days</Button> 
+            </div>
         </div>
     )
 

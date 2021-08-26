@@ -7,6 +7,7 @@ import { AuthContext } from '../contexts/AuthContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCarrot,faAppleAlt,faCheese } from '@fortawesome/free-solid-svg-icons'
 import {app} from './Firebase'
+import blab from '../img/blab.png'
  
 function Dashboard(){
     const{currUser}=useContext(AuthContext)
@@ -40,29 +41,40 @@ function Dashboard(){
     return(
         <>
         <MyNav dActive={true} sActive={false}/>
-        <Container fluid className="foodGroups text-center">
+<div className = 'blobA' style = {{border: 'red solid 0px', height: '600px', width: '800px', zIndex:-1, position: 'absolute', left: -200, bottom: 0}}></div>
+<div className = 'blobAtoB' style = {{border: 'blue solid 0px', height: '600px', width: '800px', zIndex:-1, position: 'absolute', left: -100, right: 0, margin: 'auto',top: -100}}></div> 
+<div className = 'blobBtoC' style = {{border: 'blue solid 0px', height: '600px', width: '800px', zIndex:-1, position: 'absolute', left: 500, right: 0, margin: 'auto',top: -100}}></div> 
+
+{/* <div className = 'blobB' style = {{border: 'blue solid 0px', height: '600px', width: '800px', zIndex:-1, position: 'absolute', left: 100, right: 0, margin: 'auto',top: -200}}></div>   */}
+<div className = 'blobC' style = {{border: 'green solid 0px', height: '600px', width: '800px', zIndex:-1, position: 'absolute', right: -300, bottom: 0}}></div>      
+        <Container fluid className="foodGroups text-center ">
+  
             <Row>
-                    <Col className="foodGroup veg"  md={12} lg={4}>
-                        <div className="clouds">
+
+                    <Col className="foodGroup veg "  md={12} lg={4}>
+                        <div className="clouds cloudveg" >
+                        
                             <h2 className = 'titles'>Veggies <FontAwesomeIcon style= {{color: '#FFDB5C'}}icon={faCarrot} /></h2>
                             <BoardForm list={veggieObjects} fireRef="veg" idealserv = '2.5' />
                         </div>
                     </Col>
                     <Col className="foodGroup fruit"  md={12} lg={4}>
-                        <div className="clouds">
+                        <div className="clouds cloudfruit">
                             <h2 className = 'titles'>Fruits  <FontAwesomeIcon style= {{color: '#FA6E59'}}icon={faAppleAlt} /></h2>
                             <BoardForm list={fruitObjects} fireRef="fruit" idealserv = '2.00'/>
                         </div>
                     </Col>
                     <Col className="foodGroup dairy"  md={12} lg={4}>
-                        <div className="clouds">
+                        <div className="clouds clouddairy">
                             <h2 className = 'titles'>Dairy <FontAwesomeIcon style= {{color: '#4897D8'}}icon={faCheese}/></h2>
                             <BoardForm list={dairyObjects} fireRef="dairy" idealserv = '3.00'/>
                         </div>
                     </Col>
+            
             </Row>
-       
+
         </Container>
+
             
         </>
     )
