@@ -4,7 +4,7 @@ import { AuthContext } from '../contexts/AuthContext'
 import {Link,useHistory} from 'react-router-dom'
 import {Container} from 'react-bootstrap'
 import '../style/signin.css'
-import logocirc from '../img/logocirc.png'
+
 
 function SignIn(){
     const{signIn,signInGoogle,currUser}=useContext(AuthContext)
@@ -43,7 +43,7 @@ function SignIn(){
         <div className = 'everythingDiv'>
             <div className = 'titleDiv'>
                 <div className = 'imgDiv' style = {{display: 'inline-block'}} >
-                    <img className = 'logoCirc' src = {logocirc} alt = 'logocirc'/>
+                    {/* <img className = 'logoCirc' src = {logocirc} alt = 'logocirc'/> */}
                 </div>
                     <h1 style = {{fontSize: '40pt', display: 'inline-block'}}>HealthFull</h1>
                 <br/>

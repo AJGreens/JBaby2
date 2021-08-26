@@ -2,7 +2,6 @@ import React,{useContext} from 'react'
 import {Nav,Navbar, Container,Button} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import {AuthContext} from '../contexts/AuthContext'
-import logoPic from '../img/logocirc.png'
 import '../style/dashboard.css'
 
 
@@ -18,7 +17,6 @@ function MyNav(props){
                 <Navbar.Brand as={Link} to="/">
                             <img
                                 alt=""
-                                src={logoPic}
                                 width="32"
                                 height="30"
                                 className="d-inline-block align-top"

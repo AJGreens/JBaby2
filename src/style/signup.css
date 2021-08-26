@@ -7,8 +7,8 @@
     border:white solid 10px;
     width: 100vw;
     height: 100vh;
-    /* background: linear-gradient(60deg, #FFDB5C 20%, rgba(255,255,255,0) 20%, rgba(255,255,255,0) 80%, #4897D8 80%), linear-gradient(120deg, #FA6E59 20%, rgba(255,255,255,0) 20%, rgba(255,255,255,0) 80%, #F8A055 80%),#ffffff; */
-    background: linear-gradient(30deg, #FFDB5C 20%, rgba(255,255,255,0) 20%),linear-gradient(60deg, #4897D8 20%, rgba(255,255,255,0) 20%),linear-gradient(120deg, #FA6E59 15%, rgba(255,255,255,0) 15%),linear-gradient(150deg, #F8A055 17%, rgba(255,255,255,0) 17%);
+    background: linear-gradient(60deg, #FFDB5C 20%, rgba(255,255,255,0) 20%, rgba(255,255,255,0) 80%, #4897D8 80%), linear-gradient(120deg, #FA6E59 20%, rgba(255,255,255,0) 20%, rgba(255,255,255,0) 80%, #F8A055 80%),#ffffff;
+    /* background: linear-gradient(30deg, #FFDB5C 20%, rgba(255,255,255,0) 20%),linear-gradient(60deg, #4897D8 20%, rgba(255,255,255,0) 20%),linear-gradient(120deg, #FA6E59 15%, rgba(255,255,255,0) 15%),linear-gradient(150deg, #F8A055 17%, rgba(255,255,255,0) 17%); */
     
     display:flex;
     align-items: center;
