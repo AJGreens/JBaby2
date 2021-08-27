@@ -49,7 +49,9 @@ function Summary(){
             let dataSetC=[]
     
             // const colors=["#f5be41","#CF3721","#31A9B8"]
-            const colors=["#FFDB5C","#FA6E59","#4897D8"]
+            // const colors=["#FFDB5C","#FA6E59","#4897D8"]
+            const colors=["#FFDB5C","#5fd797","#4897D8"]
+            
 
             let c=0;
             const blankarr = Array(30).fill('')
@@ -135,11 +137,11 @@ function Summary(){
                     type: 'line',
                     yMin: 2,
                     yMax: 2,
-                    borderColor: "#FA6E59",
+                    borderColor: "#5fd797",
                     borderWidth: 5,
                     borderDash:[25,10],
                     label:{
-                        backgroundColor:"#FA6E59",
+                        backgroundColor:"#5fd797",
                         color:"#ffffff",
                         content:"fruit goal",
                         enabled:true

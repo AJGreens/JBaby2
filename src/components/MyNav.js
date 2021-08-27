@@ -2,7 +2,6 @@ import React,{useContext} from 'react'
 import {Nav,Navbar, Container,Button} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import {AuthContext} from '../contexts/AuthContext'
-import logoPic from '../img/logocirc.png'
 import '../style/dashboard.css'
 
 
@@ -13,12 +12,11 @@ function MyNav(props){
         // style={{height:"7vh",background:"linear-gradient(120deg, rgba(72,151,216,1) 65%, rgba(255,219,92,1) 65%)"}}
         // background:"#2A7EC3"
         // style={{height:"7vh",background:"#2A7EC3"}}
-        <Navbar expand="lg" className = 'customNav' style={{background:"#2A7EC3"}} variant="dark" >
+        <Navbar expand="lg" className = 'customNav' style={{background:"#104F55"}} variant="dark" >
             <Container>
                 <Navbar.Brand as={Link} to="/">
                             <img
                                 alt=""
-                                src={logoPic}
                                 width="32"
                                 height="30"
                                 className="d-inline-block align-top"

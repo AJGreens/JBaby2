@@ -1,3 +1,4 @@
+
 import React,{useState,useEffect,useContext} from 'react'
 import {Button,Form,Row,Col} from 'react-bootstrap'
 import { AuthContext } from '../contexts/AuthContext'
@@ -113,7 +114,7 @@ function BoardForm(props){
                 <Row className="mb-3">
              
                     <Form.Group as={Col}>
-                        <select className="form-select formo" value={itemIndex} onChange={(e)=>{setItemIndex(e.target.value)}}>
+                        <select className="form-select" value={itemIndex} onChange={(e)=>{setItemIndex(e.target.value)}}>
                             {items.map((item,index)=>{
                                 return <option value={index} key={index}>{item.name}</option>
                             })
@@ -132,11 +133,11 @@ function BoardForm(props){
                     </Form.Group> */}
 
                     <Form.Group as={Col}>  
-                        <Form.Control value={quantity} className = "formo" onChange={(e)=>setQuantity(e.target.value)} type="number" min="0" max="9999"/>
+                        <Form.Control value={quantity} onChange={(e)=>setQuantity(e.target.value)} type="number" min="0" max="9999"/>
                     </Form.Group>  
 
                     <Form.Group as={Col}>  
-                        <select className="form-select formo" value={unit} onChange={(e)=>setUnit(e.target.value)}>
+                        <select className="form-select" value={unit} onChange={(e)=>setUnit(e.target.value)}>
                             {Object.keys(items[itemIndex].serving).map((name,index)=>{
                                 return <option value={name} key={index}>{name}</option>
                             })
@@ -157,7 +158,7 @@ function BoardForm(props){
             }
                 
         </ul>
-        <h6 className = 'progbar'>{totalServs} / {props.idealserv} Ideal Daily Servings</h6>
+        <h6>{totalServs} / {props.idealserv} Ideal Daily Servings</h6>
         {/* FORM SECTION */}
         </>
     )
