@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/JBaby2/static/css/main.aac3732e.chunk.css",
+    "main.js": "/JBaby2/static/js/main.ae4b3b51.chunk.js",
+    "main.js.map": "/JBaby2/static/js/main.ae4b3b51.chunk.js.map",
+    "runtime-main.js": "/JBaby2/static/js/runtime-main.fb7c86c7.js",
+    "runtime-main.js.map": "/JBaby2/static/js/runtime-main.fb7c86c7.js.map",
+    "static/css/2.4be38407.chunk.css": "/JBaby2/static/css/2.4be38407.chunk.css",
+    "static/js/2.87364fe9.chunk.js": "/JBaby2/static/js/2.87364fe9.chunk.js",
+    "static/js/2.87364fe9.chunk.js.map": "/JBaby2/static/js/2.87364fe9.chunk.js.map",
+    "index.html": "/JBaby2/index.html",
+    "static/css/2.4be38407.chunk.css.map": "/JBaby2/static/css/2.4be38407.chunk.css.map",
+    "static/css/main.aac3732e.chunk.css.map": "/JBaby2/static/css/main.aac3732e.chunk.css.map",
+    "static/js/2.87364fe9.chunk.js.LICENSE.txt": "/JBaby2/static/js/2.87364fe9.chunk.js.LICENSE.txt",
+    "static/media/dashboard.css": "/JBaby2/static/media/veg.6f73ab4b.svg",
+    "static/media/logo.a669944b.png": "/JBaby2/static/media/logo.a669944b.png",
+    "static/media/sign.css": "/JBaby2/static/media/sign.5d943370.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fb7c86c7.js",
+    "static/css/2.4be38407.chunk.css",
+    "static/js/2.87364fe9.chunk.js",
+    "static/css/main.aac3732e.chunk.css",
+    "static/js/main.ae4b3b51.chunk.js"
+  ]
+}
