@@ -46,7 +46,6 @@ function SignIn(){
                     <div className="headings">
                         <img src={logo}/>
                         <h1>Playtful</h1>
-                        
                     </div>
                     <Container className="containForm">
                             <Card>
