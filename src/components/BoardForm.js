@@ -1,4 +1,3 @@
-
 import React,{useState,useEffect,useContext} from 'react'
 import {Button,Form,Row,Col} from 'react-bootstrap'
 import { AuthContext } from '../contexts/AuthContext'
@@ -123,14 +122,6 @@ function BoardForm(props){
                     </Form.Group>
                 </Row>
                 <Row className="mb-3">
-                    {/* <Form.Group as={Col}>
-                        <select className="form-select" value={itemIndex} onChange={(e)=>{setItemIndex(e.target.value)}}>
-                            {items.map((item,index)=>{
-                                return <option value={index} key={index}>{item.name}</option>
-                            })
-                            }
-                        </select>
-                    </Form.Group> */}
 
                     <Form.Group as={Col}>  
                         <Form.Control value={quantity} onChange={(e)=>setQuantity(e.target.value)} type="number" min="0" max="9999"/>
@@ -145,7 +136,7 @@ function BoardForm(props){
                         </select>
                     </Form.Group>
                 </Row>
-                {unit&&<Button className="w-25 addBtn" onClick = {handleAdd}>Add</Button>}
+                {unit&&<Button className="w-25" id="addBtn" onClick = {handleAdd}>Add</Button>}
             </Form>
         {/* FORM SECTION */}
         <ul className={"itemList scroll "+props.fireRef+"List"}>

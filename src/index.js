@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './components/App';
 import $ from 'jquery';
 import 'bootstrap/dist/css/bootstrap.min.css';

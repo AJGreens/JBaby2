@@ -43,13 +43,10 @@ function Summary(){
                 d.setDate(d.getDate()+1)
             }
    
-            // let allLabels=[]
             let dataSetA=[]
             let dataSetB=[]
             let dataSetC=[]
-    
-            // const colors=["#f5be41","#CF3721","#31A9B8"]
-            // const colors=["#FFDB5C","#FA6E59","#4897D8"]
+
             const colors=["#FFDB5C","#5fd797","#4897D8"]
             
 
@@ -161,6 +158,19 @@ function Summary(){
                         content:"dairy goal",
                         enabled:true
                     }
+                },
+                invisibleLine:{
+                    type: 'line',
+                    yMin: 3.5,
+                    yMax: 3.5,
+                    borderColor: "rgba(255,255,255,0)",
+                    borderWidth: 1,
+                    borderDash:[25,15],
+                    label:{
+                        backgroundColor:"#4897D8",
+                        color:"#ffffff",
+                        enabled:true
+                    }
                 }
               }
             }
@@ -178,9 +188,9 @@ function Summary(){
             <MyNav dActive={false} sActive={true}/>
             <Bar data={activeBtn === 'b1'? dataA: (activeBtn ==='b2' ? dataB: dataC)} options={options} /> 
             <div className="chartButtons">
-                <Button className = {activeBtn==='b1'? 'activeChartBtn': 'chartBtn'}  name = 'b1' onClick = {handleClick}>Today</Button> &nbsp;
-                <Button className = {activeBtn==='b2'? 'activeChartBtn': 'chartBtn'}  name = 'b2' onClick = {handleClick}>Past 7 days</Button>  &nbsp;
-                <Button className = {activeBtn==='b3'? 'activeChartBtn': 'chartBtn'}  name = 'b3' onClick = {handleClick}>Past 30 days</Button> 
+                <Button id = {activeBtn==='b1'? 'activeChartBtn': 'chartBtn'}  name = 'b1' onClick = {handleClick}>Today</Button> &nbsp;
+                <Button id = {activeBtn==='b2'? 'activeChartBtn': 'chartBtn'}  name = 'b2' onClick = {handleClick}>Past 7 days</Button>  &nbsp;
+                <Button id = {activeBtn==='b3'? 'activeChartBtn': 'chartBtn'}  name = 'b3' onClick = {handleClick}>Past 30 days</Button> 
             </div>
         </div>
     )

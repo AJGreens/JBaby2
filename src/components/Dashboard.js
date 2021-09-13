@@ -7,6 +7,7 @@ import { AuthContext } from '../contexts/AuthContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCarrot,faAppleAlt,faCheese } from '@fortawesome/free-solid-svg-icons'
 import {app} from './Firebase'
+
  
 function Dashboard(){
     const{currUser}=useContext(AuthContext)

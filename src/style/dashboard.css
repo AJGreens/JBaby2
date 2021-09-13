@@ -7,62 +7,22 @@
    border:solid red 2px;
 } */
 
-.veg{
-   /* background: #FFDB5C; */
-   /* background: linear-gradient(60deg, rgba(255,219,92,1) 10%, rgba(255,219,92,1) 90%, rgba(250,110,89,1) 90%); */
-   /* background: linear-gradient(60deg,#4897D8 15%,rgba(255,255,255,1) 15%,rgba(255,255,255,1) 18%,#FFDB5C 18%, #FFDB5C 87%, rgba(255,255,255,1) 87%,rgba(255,255,255,1) 90%,rgba(250,110,89,1) 90%); */
-   /* background: linear-gradient(60deg, #FFDB5C 15%, #FFDB5C 85%,#4897D8 85%,#4897D8 90%, rgba(250,110,89,1) 90%); */
-   
-}
-.fruit{
-   /* background: #FA6E59; */
-   /* background: linear-gradient(60deg, rgba(255,219,92,1) 10%, rgba(250,110,89,1) 10%, rgba(250,110,89,1) 90%, rgba(72,151,216,1)  90%); */
-   /* background: linear-gradient(60deg, #FFDB5C 12%,#4897D8 12%,#4897D8 15%, rgba(250,110,89,1) 15%, rgba(250,110,89,1) 85%, #4897D8  85%); */
-   
-}
-.dairy{
-   
-   /* background: #4897D8; */
-   /* background: linear-gradient(60deg, rgba(250,110,89,1) 10%, rgba(72,151,216,1) 10%, rgba(72,151,216,1) 90%); */
-   /* background: linear-gradient(60deg, rgba(250,110,89,1) 10%,rgba(255,255,255,1) 10%,rgba(255,255,255,1) 13%, #4897D8 13%,#4897D8 85%,rgba(255,255,255,1) 85%,rgba(255,255,255,1) 88%,#FFDB5C 88%);  */
-   
-}
-/* 
-.v{
-   border:  #FFDB5C solid 15px;
-}
-.f{
-   border:  #FA6E59 solid 15px;
-}
-.d{
-   border:  #4897D8 solid 15px;
-
-} */
-
-
 .foodGroups{
-   /* background: linear-gradient(105deg, rgba(255,219,92,1) 33%, rgba(250,110,89,1) 33%, rgba(250,110,89,1) 66%, rgba(72,151,216,1) 66%); */
-   /* background:linear-gradient(120deg, rgba(255,219,92,1) 45%, rgba(250,110,89,1) 45%, rgba(250,110,89,1) 55%, rgba(72,151,216,1) 55%); */
    height: 93vh;
    padding-left: 20px;
    padding-right: 20px;
    color: white;
    border:solid 2vh white;
    width: 100%;
-   background-size: cover;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-image: url('../img/dash.svg');
+
  }
  .clouds{
    position: relative;
    color:black;
    height: 72vh;
    width: 100%;
-   /* border-left:#FA6E59 solid 10px; */
    border-radius: 25px;
    margin:auto 25px;
-   /* box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px; */
    background: rgba(255, 255, 255, 1);
    padding: 20px;
  }
@@ -72,7 +32,6 @@
    left: 0;
    right: 0;
    margin: auto;
-
 }
 
 .foodGroup{
@@ -85,6 +44,27 @@
    justify-content: center;
 }
 
+.veg{
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-image: url('../img/veg.svg');
+
+}
+.fruit{
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-image: url('../img/fruit.svg');
+
+}
+.dairy{
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-image: url('../img/dairy.svg');
+}
+
 .deleteBtn{
    float: right;
    border-radius: 2px;
@@ -92,32 +72,31 @@
    color: rgb(0, 0, 0);
    border: 0px solid white;
 }
+  
+#addBtn{
+   background-color: #004E64;
+   border: none;
+   box-shadow: none;
+}
+#addBtn:hover{
+   background-color: rgb(53, 50, 50);
+  
+}
 
-.addBtn{
-   background-color: #20A39E!important;
-   border: none !important;
-   box-shadow: none !important;
+  
+#chartBtn{
+   border: none;
+   box-shadow: none;
+   background-color: #20a39e;
 }
-.addBtn:hover{
-   background-color: rgb(53, 50, 50) !important;
+#chartBtn:hover{
+   background-color: #004E64 ;
   
 }
-  
-
-  
-.chartBtn{
-   border: none !important;
-   box-shadow: none !important;
-   background-color: #20A39E !important;
-}
-.chartBtn:hover{
-   background-color: rgb(53, 50, 50) !important;
-  
-}
-.activeChartBtn{
-   border: none !important;
-   box-shadow: none !important;
-   background-color: rgb(53, 50, 50)  !important;
+#activeChartBtn{
+   border: none;
+   box-shadow: none;
+   background-color: #004E64;
 }
 .chartButtons{
    text-align: center;
@@ -137,18 +116,14 @@
    color: white;
    padding:10px;
    color: black;
-   border-top: solid #20A39E 5px;
    
  }
 .itemList li{
    padding-bottom: 3px;
 }
 
-
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 
-
-
 
  }
 
@@ -159,6 +134,24 @@
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
+   .foodGroups{
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url('../img/dash.svg');
+   }
+   .veg{
+      background: none;
+
+   }
+   .fruit{
+      background: none;
+
+   }
+   .dairy{
+      background: none;
+
+   }
    .itemList{
       background-color: rgba(255, 255, 255, 1);
       text-align: left;
@@ -168,14 +161,10 @@
       margin-top: 60px;
       margin: 0 auto 10px;
       overflow:auto;
-      /* border-radius: 15px; */
       list-style: none;
       color: white;
       padding:10px;
       color: black;
-      /* border-top: solid #2A7EC3 5px; */
-      border-top: solid #20A39E 5px;
-      
     }
    .itemList li{
       padding-bottom: 3px;
@@ -186,3 +175,4 @@
 @media (min-width: 1200px) { 
 
  }
+
