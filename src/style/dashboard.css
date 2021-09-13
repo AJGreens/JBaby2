@@ -6,6 +6,10 @@
 /* *{
    border:solid red 2px;
 } */
+/* 
+E63946 */
+/* 2C3D55 */
+/* ornge F26419 */
 
 .foodGroups{
    height: 93vh;
@@ -13,6 +17,7 @@
    padding-right: 20px;
    color: white;
    border:solid 2vh white;
+
    width: 100%;
 
  }
@@ -22,8 +27,11 @@
    height: 72vh;
    width: 100%;
    border-radius: 25px;
+   /* border-left: solid white 20px;
+   border-right: solid white 20px; */
    margin:auto 25px;
    background: rgba(255, 255, 255, 1);
+   /* background: linear-gradient(76deg, rgba(255,255,255,1) 50%, rgba(72,151,216,0) 50%, rgba(255,255,255,0) 53%, rgba(255,255,255,1) 53%); */
    padding: 20px;
  }
  .clouds h6{
@@ -130,7 +138,7 @@
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
 
- }
+}
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
@@ -157,7 +165,7 @@
       text-align: left;
       max-height: inherit;
       height: 40%;
-      width: 95%;
+      width: 100%;
       margin-top: 60px;
       margin: 0 auto 10px;
       overflow:auto;
@@ -169,7 +177,24 @@
    .itemList li{
       padding-bottom: 3px;
    }
+
+   .foodGroups{   
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url('../img/dash.svg');
+      background-size: cover;
+   }
+   .veg{
+      background-image: none;
+   }
+   .fruit{
+      background-image: none;
+   }
+   .dairy{
+      background-image: none;
+   }
  }
+
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) { 
