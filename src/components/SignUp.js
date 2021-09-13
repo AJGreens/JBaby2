@@ -38,7 +38,7 @@ function SignUp(){
     return(
         <div className="parent">
             <div className="child">
-                <div className="headings"><img src={logo}/></div>
+                <div className="headings"><img src={logo} alt="Playtful"/></div>
                 <Container>
                     <Card>
                         <Card.Body>

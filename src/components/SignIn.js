@@ -8,7 +8,7 @@ import logo from '../img/logo.png'
 
 
 function SignIn(){
-    const{signIn,signInGoogle,currUser}=useContext(AuthContext)
+    const{signIn,signInGoogle}=useContext(AuthContext)
 
     const emailRef=useRef()
     const passwordRef=useRef()
@@ -44,7 +44,7 @@ function SignIn(){
             <div className="parent">
                 <div className="child">
                     <div className="headings">
-                        <img src={logo}/>
+                        <img src={logo} alt="Playtful"/>
                         <h1>Playtful</h1>
                     </div>
                     <Container className="containForm">

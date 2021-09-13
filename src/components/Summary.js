@@ -94,7 +94,7 @@ function Summary(){
                 datasets: dataSetC
             })
         })
-    },[])
+    },[currUser.uid])
 
     const options = {
         elements: {

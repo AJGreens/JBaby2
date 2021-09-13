@@ -4,7 +4,6 @@ import { AuthContext } from '../contexts/AuthContext'
 import {app} from './Firebase'
 import '../style/dashboard.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMinus } from '@fortawesome/free-solid-svg-icons'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
  
 function BoardForm(props){
@@ -73,7 +72,7 @@ function BoardForm(props){
             }
             
         })
-    },[dString])
+    },[dString,currUser.uid, props.fireRef])
 
 
     
@@ -108,7 +107,6 @@ function BoardForm(props){
 
     return(
         <>
-        {/* FORM SECTION */}
             <Form className="text-center mb-4 newForm">
                 <Row className="mb-3">
              
@@ -138,7 +136,6 @@ function BoardForm(props){
                 </Row>
                 {unit&&<Button className="w-25" id="addBtn" onClick = {handleAdd}>Add</Button>}
             </Form>
-        {/* FORM SECTION */}
         <ul className={"itemList scroll "+props.fireRef+"List"}>
                 {userList.map(item=>{
                     return (<li key={item.id}> 
@@ -150,7 +147,6 @@ function BoardForm(props){
                 
         </ul>
         <h6>{totalServs} / {props.idealserv} Ideal Daily Servings</h6>
-        {/* FORM SECTION */}
         </>
     )
 

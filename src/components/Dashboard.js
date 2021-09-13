@@ -36,7 +36,7 @@ function Dashboard(){
                 }
             }
         })
-    },[])
+    },[currUser,dString])
 
     return(
         <>
