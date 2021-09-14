@@ -65,7 +65,7 @@ function SignIn(){
                                             <Button className="mb-3" style={{width:"50%"}} type="submit" variant="primary">Sign In</Button>
                                             <br/>
                                             <Button style={{width:"50%"}} onClick={handleGoogle} variant="success">Google</Button>
-                                            <p className = 'text-center mt-2'>Need an account? <Link to = '/signup' style = {{color: 'orange'}}>Sign Up</Link> </p>
+                                            <p className = 'text-center mt-2'>Need an account? <Link to = '/signup'>Sign Up</Link> </p>
                                         </div>
                                     </Form>
                                 </Card.Body>
