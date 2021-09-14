@@ -1,6 +1,5 @@
 import React, { useEffect,useContext } from 'react'
-import {Row,Container} from 'react-bootstrap'
-import Col from 'react-bootstrap/Col'
+import {Col,Row,Container} from 'react-bootstrap'
 import BoardForm from './BoardForm'
 import '../style/dashboard.css'
 import MyNav from './MyNav'
