@@ -20,7 +20,7 @@ function MyNav(props){
                                 width="30"
                                 height="30"
                                 className="d-inline-block align-top"
-                            /> Playtful
+                            /> Platesome
                 </Navbar.Brand>
                 <Navbar.Toggle/>
                 <Navbar.Collapse>
