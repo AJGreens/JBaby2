@@ -20,6 +20,6 @@ const meta = {
 };
 
 ReactDOM.render(
-  <DocumentMeta {...meta}><App /></DocumentMeta>,
+  <div><DocumentMeta {...meta}/><App /></div>,
   document.getElementById('root')
 );
