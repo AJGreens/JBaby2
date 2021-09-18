@@ -46,7 +46,7 @@ function SignUp(){
                                 <h3 className = 'mb-4 text-center'>Sign up</h3>
                                 {error&& <Alert variant='danger'>{error}</Alert>}
                                 <Form.Group className = 'mb-3'>
-                                    <Form.Label> Username</Form.Label> 
+                                    <Form.Label>Email</Form.Label> 
                                     <Form.Control type = 'email' required ref = {emailRef}/>
                                 </Form.Group>
                                 <Form.Group className = 'mb-3'>
