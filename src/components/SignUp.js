@@ -21,6 +21,9 @@ function SignUp(){
         if(passwordRef.current.value!==passwordConfirmRef.current.value){
             setError('Passwords do not match')
         }
+        else if(passwordRef.current.value.length<6){
+            setError('Password must be at least 6 characters')
+        }
         else{
             setError('')
             try{
@@ -28,7 +31,7 @@ function SignUp(){
                 history.push('/')
             }
             catch{
-                setError('Failed to sign up')
+                setError('Email already in use')
             }
         }
 
