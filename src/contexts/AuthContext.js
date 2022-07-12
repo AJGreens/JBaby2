@@ -5,6 +5,7 @@ export const AuthContext= createContext()
 
 export function AuthProvider({children}){
     const [currUser,setCurrUser]=useState()
+    const[dummyAccount, setDummyAccount] = useState("no")
     const [loading, setLoading]=useState(true)
     useEffect(()=>{
         auth.onAuthStateChanged((user)=>{
@@ -35,7 +36,9 @@ export function AuthProvider({children}){
         signIn,
         signInGoogle,
         signOut,
-        currUser
+        currUser,
+        dummyAccount,
+        setDummyAccount
     }
 
 

@@ -1,14 +1,15 @@
-import React,{useState,useContext,useRef} from 'react'
+import React,{useState,useContext,useRef, useEffect} from 'react'
 import {Card,Form,Alert,Button} from 'react-bootstrap'
 import { AuthContext } from '../contexts/AuthContext'
 import {Link,useHistory} from 'react-router-dom'
 import {Container} from 'react-bootstrap'
 import '../style/sign.css'
 import logo from '../img/logo.png'
+import {app} from './Firebase'
 
 
 function SignIn(){
-    const{signIn,signInGoogle}=useContext(AuthContext)
+    const{signIn,signInGoogle,signUp, dummyAccount, setDummyAccount, signOut, currUser}=useContext(AuthContext)
 
     const emailRef=useRef()
     const passwordRef=useRef()
@@ -16,7 +17,9 @@ function SignIn(){
 
     const[error,setError]=useState()
 
+
     async function handleSubmit(e){
+        setDummyAccount("no")
         e.preventDefault()
         try{
             setError('')
@@ -28,6 +31,7 @@ function SignIn(){
         }
     }
     async function handleGoogle(e){
+        setDummyAccount("no")
         e.preventDefault()
         try{
             setError('')
@@ -40,20 +44,48 @@ function SignIn(){
     }
 
 
+    function makeRandEmail() {
+        var result           = '';
+        var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var charactersLength = characters.length;
+        for ( var i = 0; i < 10; i++ ) {
+          result += characters.charAt(Math.floor(Math.random() * 
+     charactersLength));
+       }
+       const randEmail = result+"@it.com";
+       console.log(randEmail)
+       return randEmail;
+    }
+
+    function makeRandPassword() {
+        var result           = '';
+        var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var charactersLength = characters.length;
+        for ( var i = 0; i < 6; i++ ) {
+          result += characters.charAt(Math.floor(Math.random() * 
+     charactersLength));
+       }
+       const randPassword = result;
+       return randPassword;
+    }
+
+
+
    async function handleDummy(){
-        try{
-            setError('')
-            await signIn("thorhammer@it.com", "bringmethanos21")
-            history.push('/')
-        }
-        catch{
-            setError('Failed to Login')
-        }
+    setDummyAccount("yes")
+    try{
+        await signUp(makeRandEmail(),makeRandPassword())
+        history.push('/')
+    }
+    catch{
+        setError('Email already in use')
+    }
         
     }
 
 
     return(
+        
             <div className="parent">
                 <div className="child">
                     <div className="headings">
@@ -79,7 +111,7 @@ function SignIn(){
                                             <br/>
                                             <Button style={{width:"50%"}} onClick={handleGoogle} variant="success">Google</Button>
                                             <p className = 'text-center mt-2'>Need an account? <Link to = '/signup'>Sign Up</Link> </p>
-                                            <p style = {{marginBottom: '0px', marginTop: "0px"}}>Or click <button type = "button" className="link" onClick = {handleDummy}>here</button> to login with a dummy account!</p>
+                                            <p style = {{marginBottom: '0px'}}>Or click <button type = "button" className="link" onClick = {handleDummy}>here</button> to login with a dummy account!</p>
                         
                                         </div>
                                     </Form>

@@ -10,7 +10,7 @@ import {app} from './Firebase'
 
  
 function Dashboard(){
-    const{currUser}=useContext(AuthContext)
+    const{currUser, dummyAccount}=useContext(AuthContext)
 
     const d=new Date();
     const dString=d.getMonth()+1+"-"+d.getDate()+"-"+d.getFullYear();
@@ -37,6 +37,22 @@ function Dashboard(){
             }
         })
     },[currUser,dString])
+
+    useEffect(()=>{
+        if (dummyAccount==="yes"){
+            console.log("dummy detected")
+            const dummyRef= app.database().ref(currUser.uid+'/Dummy')
+            dummyRef.once('value',snapshot=>{
+                const val=snapshot.val()
+                if(val==null){
+                    dummyRef.set({"dummy":"yes"})
+                }
+            })
+        
+        }
+
+
+    })
 
     return(
         <>

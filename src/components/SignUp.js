@@ -1,12 +1,13 @@
-import React,{useState,useRef,useContext} from 'react'
+import React,{useState,useRef,useContext, useEffect} from 'react'
 import {Card, Form, Button, Alert, Container} from 'react-bootstrap'
 import {AuthContext} from '../contexts/AuthContext'
 import {Link,useHistory} from 'react-router-dom'
 import '../style/sign.css'
 import logo from '../img/logo.png'
+import {app} from './Firebase'
 
 function SignUp(){
-    const {signUp}= useContext(AuthContext)
+    const {signUp, setDummyAccount, dummyAccount, signOut, currUser}= useContext(AuthContext)
 
     const emailRef= useRef()
     const passwordRef= useRef()
@@ -17,6 +18,7 @@ function SignUp(){
     const [error,setError]= useState()
 
     async function handleSubmit(e){
+        setDummyAccount("no")
         e.preventDefault()
         if(passwordRef.current.value!==passwordConfirmRef.current.value){
             setError('Passwords do not match')
