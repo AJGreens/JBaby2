@@ -40,6 +40,19 @@ function SignIn(){
     }
 
 
+   async function handleDummy(){
+        try{
+            setError('')
+            await signIn("thorhammer@it.com", "bringmethanos21")
+            history.push('/')
+        }
+        catch{
+            setError('Failed to Login')
+        }
+        
+    }
+
+
     return(
             <div className="parent">
                 <div className="child">
@@ -66,6 +79,8 @@ function SignIn(){
                                             <br/>
                                             <Button style={{width:"50%"}} onClick={handleGoogle} variant="success">Google</Button>
                                             <p className = 'text-center mt-2'>Need an account? <Link to = '/signup'>Sign Up</Link> </p>
+                                            <p style = {{marginBottom: '0px', marginTop: "0px"}}>Or click <button type = "button" className="link" onClick = {handleDummy}>here</button> to login with a dummy account!</p>
+                        
                                         </div>
                                     </Form>
                                 </Card.Body>
