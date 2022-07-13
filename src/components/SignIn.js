@@ -111,7 +111,7 @@ function SignIn(){
                                             <br/>
                                             <Button style={{width:"50%"}} onClick={handleGoogle} variant="success">Google</Button>
                                             <p className = 'text-center mt-2'>Need an account? <Link to = '/signup'>Sign Up</Link> </p>
-                                            <p style = {{marginBottom: '0px'}}>Or click <button type = "button" className="link" onClick = {handleDummy}>here</button> to login with a dummy account!</p>
+                                            <p style = {{marginBottom: '0px'}}>Or click <button type = "button" className="link" onClick = {handleDummy}>here</button> for demo!</p>
                         
                                         </div>
                                     </Form>
